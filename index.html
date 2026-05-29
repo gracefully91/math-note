@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>수1·수2 실전 치트키 완전판</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root{--bg:#0d0d0f;--bg2:#13131a;--bg3:#1a1a24;--border:#2a2a3a;--a1:#7c6af7;--a2:#f7c26a;--a3:#6af7c2;--a4:#f76a9a;--a5:#6ab4f7;--txt:#e8e8f0;--dim:#888899;}
@@ -44,8 +45,11 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--txt)
 .cb{background:rgba(106,180,247,.12);}
 .ct{font-size:14.5px;font-weight:700;line-height:1.4;}
 .cb2{font-size:13px;color:#b8b8cc;line-height:1.8;}
-.formula{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--a2);border-radius:8px;padding:11px 15px;margin:9px 0;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--a2);line-height:1.9;white-space:pre-wrap;}
-.proof{background:rgba(124,106,247,.05);border:1px solid rgba(124,106,247,.2);border-radius:8px;padding:11px 15px;margin:9px 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#a9a0f0;line-height:1.9;white-space:pre-wrap;}
+.formula{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--a2);border-radius:8px;padding:11px 15px;margin:9px 0;font-size:13px;color:var(--a2);line-height:2.1;}
+.formula p{margin:2px 0;}
+.proof{background:rgba(124,106,247,.05);border:1px solid rgba(124,106,247,.2);border-radius:8px;padding:11px 15px;margin:9px 0;font-size:12.5px;color:#a9a0f0;line-height:2.1;}
+.proof p{margin:2px 0;}
+.katex{color:inherit;font-size:1em;}
 .proof-title{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--a1);margin-bottom:5px;}
 .tip{background:rgba(106,247,194,.06);border:1px solid rgba(106,247,194,.2);border-radius:8px;padding:9px 13px;margin:9px 0;font-size:12.5px;color:var(--a3);line-height:1.7;}
 .tip::before{content:'💡 ';}
@@ -179,11 +183,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cp">📐</div><div class="ct">기울기 -1 직선과 √2 법칙</div></div>
 <div class="cb2">지수함수와 로그함수가 역함수 관계일 때, 기울기 -1인 직선 위의 두 교점은 반드시 y=x에 대해 대칭입니다.</div>
-<div class="formula">두 점의 x좌표 차이 = d
-→ 두 점 사이의 거리 = d√2
-
-일반 공식: 기울기 m인 직선 위 두 점 거리 = Δx · √(1+m²)
-m = -1 대입 → Δx · √2</div>
+<div class="formula"><p>두 점의 $x$좌표 차이 $= d$</p><p>→ 두 점 사이의 거리 $= d\sqrt{2}$</p><p style="margin-top:8px">일반 공식: 기울기 $m$인 직선 위 두 점 거리 $= \Delta x \cdot \sqrt{1+m^2}$</p><p>$m = -1$ 대입 → $\Delta x \cdot \sqrt{2}$</p></div>
 <div class="cond">기울기 -1인 직선이 지수·로그함수 쌍과 만날 때</div>
 <div class="tip">교점 좌표를 직접 구하지 않아도 거리 계산 즉시 가능</div>
 </div>
@@ -191,17 +191,14 @@ m = -1 대입 → Δx · √2</div>
 <div class="card">
 <div class="ch"><div class="ci cy">🔄</div><div class="ct">등차↔등비 변환 구조</div></div>
 <div class="cb2">그래프 위 점들의 좌표를 설정할 때 x/y 중 어느 것이 등차·등비를 이루는지 즉시 판단합니다.</div>
-<div class="formula">y = aˣ  →  x가 등차수열 ⟹  y는 등비수열
-y = logₐx  →  x가 등비수열 ⟹  y는 등차수열</div>
+<div class="formula"><p>$y = a^x$ → $x$가 등차수열 $\Rightarrow$ $y$는 등비수열</p><p>$y = \log_a x$ → $x$가 등비수열 $\Rightarrow$ $y$는 등차수열</p></div>
 <div class="tip">일정 간격 점들: x, x+d, x+2d 또는 x, xr, xr² 로 고정 후 빠르게 연립 세팅</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">📏</div><div class="ct">로그함수 '넓이 보존' 법칙</div></div>
 <div class="cb2">y=logₐx 와 y=logₐ(kx) 는 평행이동 관계. 두 그래프와 두 수평선으로 둘러싸인 넓이는 적분 없이 구합니다.</div>
-<div class="formula">넓이 = (c₂ - c₁) × logₐk
-
-이유: 두 그래프의 가로 간격이 어느 높이에서도 일정(= logₐk)</div>
+<div class="formula"><p>넓이 $= (c_2 - c_1) \times \log_a k$</p><p style="margin-top:8px">이유: 두 그래프의 가로 간격이 어느 높이에서도 일정 $(= \log_a k)$</p></div>
 <div class="tip">적분 계산 없이 평행사변형 넓이 공식처럼 처리</div>
 </div>
 
@@ -209,10 +206,7 @@ y = logₐx  →  x가 등비수열 ⟹  y는 등차수열</div>
 <div class="card">
 <div class="ch"><div class="ci cy">🔍</div><div class="ct">대소 비교 경계값 대입 강령</div></div>
 <div class="cb2">두 곡선의 교점 x₁의 범위를 추론할 때, 특정 경계값 x=k를 두 식에 각각 대입하여 y값의 위아래(대소 관계)가 어떻게 바뀌는지 확인합니다.</div>
-<div class="formula">예: "x₁ > 1/2 인가?" 검증 방법
-→  x = 1/2 를 두 함수에 각각 대입
-→  f(1/2) vs g(1/2) 대소 관계 확인
-→  교점 전후로 대소가 뒤집히는지 체크</div>
+<div class="formula"><p>예: "$x_1 > \frac{1}{2}$ 인가?" 검증 방법</p><p>→ $x = \frac{1}{2}$ 를 두 함수에 각각 대입</p><p>→ $f\!\left(\frac{1}{2}\right)$ vs $g\!\left(\frac{1}{2}\right)$ 대소 관계 확인</p><p>→ 교점 전후로 대소가 뒤집히는지 체크</p></div>
 <div class="cond">ㄱ/ㄴ/ㄷ 진위 판정형, 두 곡선 교점의 위치 추론 문제</div>
 <div class="tip">대략 찍는 게 아니라 수학적으로 정석인 행동 강령. 경계값 대입 하나로 해결</div>
 </div>
@@ -220,12 +214,7 @@ y = logₐx  →  x가 등비수열 ⟹  y는 등차수열</div>
 <div class="card">
 <div class="ch"><div class="ci cr">⚠️</div><div class="ct">로그 부등식 — 밑이 변수일 때 케이스 분류</div></div>
 <div class="cb2">밑에 변수가 들어가면 밑의 범위에 따라 부등호 방향이 뒤집힙니다. 이걸 즉석에서 생각하면 반드시 실수 납니다.</div>
-<div class="formula">log_{f(x)} g(x) > 0 꼴:
-
-① f(x) > 1  일 때:  g(x) > 1  (부등호 유지)
-② 0 < f(x) < 1  일 때:  0 < g(x) < 1  (부등호 유지, 범위 다름)
-
-+ 공통 조건: f(x) > 0, f(x) ≠ 1, g(x) > 0 반드시 체크</div>
+<div class="formula"><p>$\log_{f(x)} g(x) > 0$ 꼴:</p><p style="margin-top:8px">① $f(x) > 1$ 일 때: $g(x) > 1$ (부등호 유지)</p><p>② $0 < f(x) < 1$ 일 때: $0 < g(x) < 1$ (부등호 유지, 범위 다름)</p><p style="margin-top:8px">+ 공통 조건: $f(x) > 0,\; f(x) \neq 1,\; g(x) > 0$ 반드시 체크</p></div>
 <div class="warn">케이스 분류 표를 머릿속에 정형화해두지 않으면 시험장에서 반드시 실수</div>
 </div>
 
@@ -233,24 +222,14 @@ y = logₐx  →  x가 등비수열 ⟹  y는 등차수열</div>
 <div class="card">
 <div class="ch"><div class="ci cb">∞</div><div class="ct">쌍곡선함수 합성 구조</div></div>
 <div class="cb2">f(x) = (aˣ+a⁻ˣ)/2, g(x) = (aˣ-a⁻ˣ)/2 꼴이 조건으로 나올 때 이 성질을 모르면 연립에 5분 낭비.</div>
-<div class="formula">f(x)  →  y축 대칭 (우함수)
-g(x)  →  원점 대칭 (기함수)
-
-[핵심 항등식]  {f(x)}² - {g(x)}² = 1  (항상 성립)</div>
-<div class="proof"><div class="proof-title">증명</div>{f(x)}² - {g(x)}² 
-= [(aˣ+a⁻ˣ)/2]² - [(aˣ-a⁻ˣ)/2]²
-= [aˣ+a⁻ˣ + aˣ-a⁻ˣ]/2 · [aˣ+a⁻ˣ - aˣ+a⁻ˣ]/2
-= (2aˣ/2) · (2a⁻ˣ/2) = aˣ · a⁻ˣ = 1  ✓</div>
+<div class="formula"><p>$f(x)$ → $y$축 대칭 (우함수)</p><p>$g(x)$ → 원점 대칭 (기함수)</p><p style="margin-top:8px">[핵심 항등식] $\{f(x)\}^2 - \{g(x)\}^2 = 1$ (항상 성립)</p></div>
+<div class="proof"><div class="proof-title">증명</div><p>$\{f(x)\}^2 - \{g(x)\}^2$</p><p>$= \left[\dfrac{a^x+a^{-x}}{2}\right]^2 - \left[\dfrac{a^x-a^{-x}}{2}\right]^2$</p><p>$= \dfrac{2a^x}{2} \cdot \dfrac{2a^{-x}}{2} = a^x \cdot a^{-x} = 1$ ✓</p></div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">🔲</div><div class="ct">격자점 문제 — 부등식 영역화와 층별 분할</div></div>
 <div class="cb2">지수·로그 곡선 사이의 격자점을 하나씩 세다가는 시험 종이 칩니다.</div>
-<div class="formula">치트키 1: aˣ ≤ n 꼴 → 무조건 log 변환 후 정수 구간 처리
-  aˣ ≤ n  →  x ≤ logₐn
-
-치트키 2: y = aˣ 와 y = logₐx (역함수 관계) 사이의
-격자점 개수 = y=x 아래쪽 격자점 × 2 + 대칭축 위의 점</div>
+<div class="formula"><p>치트키 1: $a^x \leq n$ 꼴 → 무조건 $\log$ 변환 후 정수 구간 처리</p><p>$a^x \leq n \;\Rightarrow\; x \leq \log_a n$</p><p style="margin-top:8px">치트키 2: $y = a^x$ 와 $y = \log_a x$ (역함수 관계) 사이의</p><p>격자점 개수 $= y=x$ 아래쪽 격자점 $\times 2 +$ 대칭축 위의 점</p></div>
 <div class="tip">y축 방향으로 층별로 잘라서 각 층의 x 범위를 정수 구간으로 처리</div>
 </div>
 </div>
@@ -301,35 +280,21 @@ g(x)  →  원점 대칭 (기함수)
 <text x="265" y="9" class="lb">2π</text>
 </svg>
 </div>
-<div class="formula">한 주기 = 4개의 합동 직사각형 박스
-각 박스의 가로 = T/4  (T: 주기)
-
-1:√3 비율: 수평선 y=k가 박스와 만날 때
-→ 대칭축으로부터 교점까지의 거리 비율이 특수각과 연결</div>
+<div class="formula"><p>한 주기 = 4개의 합동 직사각형 박스</p><p>각 박스의 가로 $= T/4$ ($T$: 주기)</p><p style="margin-top:8px">$1:\sqrt{3}$ 비율: 수평선 $y=k$가 박스와 만날 때</p><p>→ 대칭축으로부터 교점까지의 거리 비율이 특수각과 연결</p></div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">🎯</div><div class="ct">대칭축을 이용한 교점의 합 공식</div></div>
 <div class="cb2">y=sin(ωx)와 수평선 y=k의 교점 x₁, x₂를 직접 구하지 않아도 합을 알 수 있습니다.</div>
-<div class="formula">x₁ + x₂ = 2 × (가장 가까운 대칭축의 x좌표)
-
-예: y=sin(x)와 y=0.5의 교점 x₁, x₂ (0 < x < π)
-    → 대칭축 x = π/2
-    → x₁ + x₂ = π</div>
-<div class="proof"><div class="proof-title">원리</div>sin(α) = sin(π-α) 이므로
-두 교점은 항상 삼각함수 대칭축에 대해 대칭.
-x₁ + x₂ = 2 × (대칭축) 자동 성립.</div>
+<div class="formula"><p>$x_1 + x_2 = 2 \times$ (가장 가까운 대칭축의 $x$좌표)</p><p style="margin-top:8px">예: $y=\sin(x)$와 $y=0.5$의 교점 $x_1,\,x_2$ $(0 < x < \pi)$</p><p>→ 대칭축 $x = \dfrac{\pi}{2}$</p><p>→ $x_1 + x_2 = \pi$</p></div>
+<div class="proof"><div class="proof-title">원리</div><p>$\sin(\alpha) = \sin(\pi-\alpha)$ 이므로</p><p>두 교점은 항상 삼각함수 대칭축에 대해 대칭.</p><p>$x_1 + x_2 = 2 \times$ (대칭축) 자동 성립.</p></div>
 <div class="tip">방정식의 근의 합을 그래프 대칭축으로 눈으로 읽음 → 계산 없이 연립 해소</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cy">🔀</div><div class="ct">합성 공식 역방향 실전</div></div>
 <div class="cb2">기본서는 "합성 후 단순화"를 가르치지만, 수능에서는 역방향이 훨씬 강력합니다.</div>
-<div class="formula">a·sinθ + b·cosθ 의 최댓값 = √(a² + b²)
-
-역방향 적용:
-"최댓값이 k이다" 조건 → a² + b² = k²
-                     → 계수 관계를 연립방정식으로 바로 세팅</div>
+<div class="formula"><p>$a\sin\theta + b\cos\theta$ 의 최댓값 $= \sqrt{a^2 + b^2}$</p><p style="margin-top:8px">역방향 적용:</p><p>"최댓값이 $k$이다" 조건 → $a^2 + b^2 = k^2$</p><p>→ 계수 관계를 연립방정식으로 바로 세팅</p></div>
 <div class="cond">최댓값/최솟값이 조건으로 주어지고, a, b 중 일부를 역산해야 할 때</div>
 <div class="tip">합성 과정 자체를 생략. "최댓값² = a² + b²"만 기억하면 됨</div>
 </div>
@@ -337,10 +302,7 @@ x₁ + x₂ = 2 × (대칭축) 자동 성립.</div>
 <div class="card">
 <div class="ch"><div class="ci cb">🔵</div><div class="ct">단위원 대칭 이동 독해법</div></div>
 <div class="cb2">sin/cos 각 변환을 공식 암기 대신 단위원 위의 점의 이동으로 파악합니다. 해의 개수 문제를 2초 안에 시각화.</div>
-<div class="formula">sin(π - x) = sin x     → y축 대칭
-sin(π + x) = -sin x    → 원점 대칭
-sin(-x) = -sin x       → x축 대칭
-cos(π/2 + x) = -sin x  → 90° 반시계 회전</div>
+<div class="formula"><p>$\sin(\pi - x) = \sin x$ → $y$축 대칭</p><p>$\sin(\pi + x) = -\sin x$ → 원점 대칭</p><p>$\sin(-x) = -\sin x$ → $x$축 대칭</p><p>$\cos\!\left(\dfrac{\pi}{2} + x\right) = -\sin x$ → 90° 반시계 회전</p></div>
 <div class="tip">삼각방정식 해의 개수 → 단위원 위에 수평선/수직선 하나 긋는 것으로 2초 컷</div>
 </div>
 
@@ -348,11 +310,7 @@ cos(π/2 + x) = -sin x  → 90° 반시계 회전</div>
 <div class="card">
 <div class="ch"><div class="ci cp">⭕</div><div class="ct">외접원과 지름의 직각삼각형 활용</div></div>
 <div class="cb2">문제에 외접원이 나오고 원주각이 보이면 십중팔구 사인법칙이 출발점입니다.</div>
-<div class="formula">사인법칙: a/sinA = b/sinB = c/sinC = 2R
-
-외접원 지름 = 2R 이면:
-→ 지름의 끝점에서 보이는 원주각 = 90°
-→ 직각삼각형 생성 → 피타고라스/삼각비 활용</div>
+<div class="formula"><p>사인법칙: $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R$</p><p style="margin-top:8px">외접원 지름 $= 2R$ 이면:</p><p>→ 지름의 끝점에서 보이는 원주각 $= 90°$</p><p>→ 직각삼각형 생성 → 피타고라스/삼각비 활용</p></div>
 <div class="cond">외접원 반지름 R이 주어지거나 구해야 할 때</div>
 <div class="tip">2R = a/sinA → R = a/(2sinA). 외접원 나오면 이 식부터 쓸 것</div>
 </div>
@@ -360,50 +318,28 @@ cos(π/2 + x) = -sin x  → 90° 반시계 회전</div>
 <div class="card">
 <div class="ch"><div class="ci cy">🔷</div><div class="ct">내접 사각형 — 마주보는 각의 합 180°</div></div>
 <div class="cb2">원에 내접하는 사각형의 마주보는 두 각의 합은 항상 π. 이를 이용해 대각선을 공유하는 두 삼각형에 코사인 법칙을 연립합니다.</div>
-<div class="formula">원에 내접하는 사각형 ABCD:
-∠A + ∠C = π,  ∠B + ∠D = π
-
-∠C = π - ∠A  이므로
-cos(∠C) = cos(π - ∠A) = -cos(∠A)
-
-→ 대각선 AC를 공유하는 △ABC와 △ACD에
-  각각 코사인 법칙 적용 후 연립 (cos∠A = -cos∠C 이용)</div>
+<div class="formula"><p>원에 내접하는 사각형 ABCD:</p><p>$\angle A + \angle C = \pi,\quad \angle B + \angle D = \pi$</p><p style="margin-top:8px">$\angle C = \pi - \angle A$ 이므로</p><p>$\cos(\angle C) = \cos(\pi - \angle A) = -\cos(\angle A)$</p><p style="margin-top:8px">→ 대각선 AC를 공유하는 △ABC와 △ACD에</p><p>각각 코사인 법칙 적용 후 연립 ($\cos\angle A = -\cos\angle C$ 이용)</p></div>
 <div class="cond">원에 내접하는 사각형 + 대각선 길이 또는 넓이를 구하는 문제</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">⊙</div><div class="ct">할선 정리 (교차하는 현)</div></div>
 <div class="cb2">삼각함수 활용 단원이지만 원 안에서 두 현이 교차할 때 성립하는 중학 기하 성질이 4점짜리 결정적 단서로 등장합니다.</div>
-<div class="formula">두 현 AC, BD가 원 안의 점 P에서 교차할 때:
-PA · PC = PB · PD
-
-원 밖의 점 P에서 할선 두 개를 그을 때:
-PA · PB = PC · PD  (A, B는 한 할선의 교점, C, D는 다른 할선)</div>
+<div class="formula"><p>두 현 AC, BD가 원 안의 점 P에서 교차할 때:</p><p>$PA \cdot PC = PB \cdot PD$</p><p style="margin-top:8px">원 밖의 점 P에서 할선 두 개를 그을 때:</p><p>$PA \cdot PB = PC \cdot PD$ (A, B는 한 할선의 교점, C, D는 다른 할선)</p></div>
 <div class="tip">원과 직선이 나오고 길이 관계를 묻는 문제 → 이 공식이 핵심 단서일 가능성 높음</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">📐</div><div class="ct">사영 정리 (제1코사인법칙)</div></div>
 <div class="cb2">교과서에서 사라진 공식이지만 수능 도형 문제에서 한 줄 선형 연립을 만들어줍니다.</div>
-<div class="formula">삼각형 ABC에서 A에서 BC에 수선의 발을 내릴 때:
-a = b·cosC + c·cosB
-
-"한 변 = 다른 두 변을 바닥에 사영한 길이의 합"</div>
-<div class="proof"><div class="proof-title">유도</div>코사인 법칙 b² = a²+c²-2ac·cosB 에서 c에 대해 정리,
-c² = a²+b²-2ab·cosC 에서 b에 대해 정리하여 더하면
-a = b·cosC + c·cosB 가 나옵니다 (교육과정 내 수준).</div>
+<div class="formula"><p>삼각형 ABC에서 A에서 BC에 수선의 발을 내릴 때:</p><p>$$a = b\cos C + c\cos B$$</p><p>"한 변 = 다른 두 변을 바닥에 사영한 길이의 합"</p></div>
+<div class="proof"><div class="proof-title">유도</div><p>코사인 법칙 $b^2 = a^2+c^2-2ac\cos B$ 에서 $c$에 대해 정리,</p><p>$c^2 = a^2+b^2-2ab\cos C$ 에서 $b$에 대해 정리하여 더하면</p><p>$a = b\cos C + c\cos B$ 가 나옵니다 (교육과정 내 수준).</p></div>
 <div class="tip">제곱(a²) 없이 선형 방정식. 두 변이 주어지고 세 번째 변을 구할 때 연립을 단순화</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cy">△</div><div class="ct">삼각형 넓이 3종 세트 + 코사인 이차방정식</div></div>
-<div class="formula">넓이 기본:  S = (1/2)ab·sinC
-넓이 외접원: S = abc / (4R)
-넓이 내접원: S = (a+b+c)·r / 2
-
-코사인 법칙의 c에 대한 이차방정식:
-c² - (2b·cosA)c + (b²-a²) = 0
-→ 두 근의 합 = 2b·cosA,  두 근의 곱 = b²-a²</div>
+<div class="formula"><p>넓이 기본: $S = \dfrac{1}{2}ab\sin C$</p><p>넓이 외접원: $S = \dfrac{abc}{4R}$</p><p>넓이 내접원: $S = \dfrac{(a+b+c) \cdot r}{2}$</p><p style="margin-top:8px">코사인 법칙의 $c$에 대한 이차방정식:</p><p>$c^2 - (2b\cos A)c + (b^2-a^2) = 0$</p><p>→ 두 근의 합 $= 2b\cos A$, 두 근의 곱 $= b^2-a^2$</p></div>
 <div class="tip">세 변과 외접원 R이 주어질 때 abc/(4R)로 넓이 한 줄 처리. c를 모를 땐 이차방정식 세워서 근과 계수 관계 사용</div>
 </div>
 </div>
@@ -415,10 +351,7 @@ c² - (2b·cosA)c + (b²-a²) = 0
 <div class="ul">등차수열의 합 S_n</div>
 <div class="card">
 <div class="ch"><div class="ci cp">📈</div><div class="ct">S_n — 상수항 없는 이차함수 관점</div></div>
-<div class="formula">S_n = (d/2)n² + (a₁ - d/2)n    ← 상수항 = 0 항상!
-
-꼭짓점(대칭축): n = -(a₁-d/2)/(d) = (d/2-a₁)/d 근처 자연수
-원점 외 교점 (S_n=0): 꼭짓점 n의 정확히 2배</div>
+<div class="formula"><p>$$S_n = \frac{d}{2}n^2 + \left(a_1 - \frac{d}{2}\right)n \quad \leftarrow \text{상수항} = 0 \text{ 항상!}$$</p><p>꼭짓점(대칭축): $n = \dfrac{d/2 - a_1}{d}$ 근처 자연수</p><p>원점 외 교점 $(S_n=0)$: 꼭짓점 $n$의 정확히 2배</p></div>
 <div class="svg-wrap">
 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg" width="280" height="130">
 <defs><style>.ax2{stroke:#3a3a50;stroke-width:1;fill:none;}.cv2{stroke:#7c6af7;stroke-width:2;fill:none;}.dl2{stroke:#888899;stroke-width:1;stroke-dasharray:3,3;}.lb2{fill:#888899;font-size:9px;font-family:sans-serif;}.lh2{fill:#f7c26a;font-size:10px;font-family:sans-serif;}.pt2{fill:#6af7c2;r:4;}</style></defs>
@@ -448,22 +381,13 @@ c² - (2b·cosA)c + (b²-a²) = 0
 <div class="card">
 <div class="ch"><div class="ci cy">|S|</div><div class="ct">S_n 절댓값 조건 — 기하학적 대칭성</div></div>
 <div class="cb2">|S_n| = |S_m| 또는 S_k = S_{2k} 같은 조건은 식을 세우는 게 아니라 이차함수 그래프의 대칭성으로 해결합니다.</div>
-<div class="formula">S_n = An² + Bn (상수항 0, 대칭축: n = -B/(2A))
-
-|S_n| = |S_m| 조건:
-→ 그래프 위 두 점의 "절댓값 높이"가 같음
-→ 대칭축에 대해 대칭이거나 x축에 대해 대칭
-→ 가능한 경우: n+m = 2×(대칭축) 또는 n, m이 S_n=0 교점 중 하나</div>
+<div class="formula"><p>$S_n = An^2 + Bn$ (상수항 0, 대칭축: $n = -\dfrac{B}{2A}$)</p><p style="margin-top:8px">$|S_n| = |S_m|$ 조건:</p><p>→ 그래프 위 두 점의 "절댓값 높이"가 같음</p><p>→ 대칭축에 대해 대칭이거나 $x$축에 대해 대칭</p><p>→ 가능한 경우: $n+m = 2\times$(대칭축) 또는 $n,\,m$이 $S_n=0$ 교점 중 하나</p></div>
 <div class="warn">식을 전개해서 n, m을 연립하면 시간 폭발. 반드시 그래프로 먼저 파악할 것</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">🔗</div><div class="ct">블록 합 등차·등비 보존 성질</div></div>
-<div class="formula">등차수열을 k개씩 블록으로 합산 → 새 수열도 등차
-  (새 공차 = 원래 공차 × k²)
-
-등비수열을 k개씩 블록으로 합산 → 새 수열도 등비
-  (새 공비 = 원래 공비의 k제곱)</div>
+<div class="formula"><p>등차수열을 $k$개씩 블록으로 합산 → 새 수열도 등차</p><p>(새 공차 $=$ 원래 공차 $\times k^2$)</p><p style="margin-top:8px">등비수열을 $k$개씩 블록으로 합산 → 새 수열도 등비</p><p>(새 공비 $=$ 원래 공비의 $k$제곱)</p></div>
 <div class="tip">수열 문제에서 "k개씩 묶어서" 나오면 블록 합 성질 먼저 확인</div>
 </div>
 
@@ -471,94 +395,50 @@ c² - (2b·cosA)c + (b²-a²) = 0
 <div class="card">
 <div class="ch"><div class="ci cp">Δ</div><div class="ct">개차수열 일반화 공식 (점화식 축차대입)</div></div>
 <div class="cb2">a_{n+1} - a_n = f(n) 꼴을 1부터 n-1까지 대입해서 더하는 노가다를 Σ 한 줄로 압축합니다.</div>
-<div class="formula">a_{n+1} - a_n = f(n) 꼴일 때:
-
-a_n = a_1 + Σ[k=1 to n-1] f(k)
-
-(단, n ≥ 2. n=1은 별도 확인)</div>
-<div class="proof"><div class="proof-title">유도 (축차대입)</div>a_2 - a_1 = f(1)
-a_3 - a_2 = f(2)
-  ⋮
-a_n - a_{n-1} = f(n-1)
-─────────────────────
-모두 더하면: a_n - a_1 = Σ[k=1 to n-1] f(k)
-따라서 a_n = a_1 + Σ[k=1 to n-1] f(k)</div>
+<div class="formula"><p>$a_{n+1} - a_n = f(n)$ 꼴일 때:</p><p>$$a_n = a_1 + \sum_{k=1}^{n-1} f(k)$$</p><p>(단, $n \geq 2$. $n=1$은 별도 확인)</p></div>
+<div class="proof"><div class="proof-title">유도 (축차대입)</div><p>$a_2 - a_1 = f(1)$</p><p>$a_3 - a_2 = f(2)$</p><p>$\quad\vdots$</p><p>$a_n - a_{n-1} = f(n-1)$</p><p>모두 더하면: $a_n - a_1 = \displaystyle\sum_{k=1}^{n-1} f(k)$</p><p>따라서 $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} f(k)$</p></div>
 <div class="tip">이 공식을 외워두면 1~(n-1) 대입 노가다 없이 바로 Σ 계산으로 점프</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cr">🌀</div><div class="ct">귀납수열 고정점 · 궤도 분석</div></div>
 <div class="cb2">a_{n+1}=f(a_n) 킬러 수열에서 역추적 수형도 그리기 전에 반드시 이 작업 먼저.</div>
-<div class="formula">고정점: f(x) = x 를 만족하는 x
-→ 수열이 도달하면 영원히 머무는 값
-
-주기 궤도: f(f(x)) = x 이지만 f(x) ≠ x 인 x
-→ 두 값을 왔다갔다 하는 2주기 수열 가능</div>
-<div class="formula">실전 순서:
-1단계: 고정점 찾기 → 가능한 a₁의 범위 좁히기
-2단계: 주기 궤도 존재 여부 확인
-3단계: 역추적 수형도 그려서 a₁의 개수 세기</div>
+<div class="formula"><p>고정점: $f(x) = x$ 를 만족하는 $x$</p><p>→ 수열이 도달하면 영원히 머무는 값</p><p style="margin-top:8px">주기 궤도: $f(f(x)) = x$ 이지만 $f(x) \neq x$ 인 $x$</p><p>→ 두 값을 왔다갔다 하는 2주기 수열 가능</p></div>
+<div class="formula"><p>실전 순서:</p><p>1단계: 고정점 찾기 → 가능한 $a_1$의 범위 좁히기</p><p>2단계: 주기 궤도 존재 여부 확인</p><p>3단계: 역추적 수형도 그려서 $a_1$의 개수 세기</p></div>
 <div class="warn">수형도를 바로 그리면 경우의 수가 너무 많아 시간 폭발. 반드시 고정점 먼저</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">🌿</div><div class="ct">역추적 수형도 (Backtracking)</div></div>
 <div class="cb2">뒤 항 조건이 먼저 주어질 때 화살표를 거꾸로 타고 올라가며 a₁을 찾는 정형화된 구조.</div>
-<div class="formula">a₅ 조건 주어짐
-   ↑ 역추적: f(x) = a₅를 만족하는 a₄ 나열
-a₄ 가능한 값들
-   ↑ 역추적: 각 a₄에 대해 a₃ 나열
-a₃ 가능한 값들
-   ⋮
-a₁ 가능한 값 ← 조건을 만족하는 개수 카운트</div>
+<div class="formula"><p>$a_5$ 조건 주어짐</p><p>↑ 역추적: $f(x) = a_5$를 만족하는 $a_4$ 나열</p><p>$a_4$ 가능한 값들</p><p>↑ 역추적: 각 $a_4$에 대해 $a_3$ 나열</p><p>$a_3$ 가능한 값들 ⋮</p><p>$a_1$ 가능한 값 ← 조건을 만족하는 개수 카운트</p></div>
 <div class="tip">각 분기점에서 f(x) = k 의 역상(preimage)을 구하는 것이 핵심. 고정점 분석 후 하면 분기수가 훨씬 줄어듦</div>
 </div>
 
 <div class="ul">시그마 심화</div>
 <div class="card">
 <div class="ch"><div class="ci cy">∑</div><div class="ct">연속한 두·세 수의 곱의 합 공식</div></div>
-<div class="formula">연속한 두 수의 곱의 합:
-Σ[k=1 to n] k(k+1) = n(n+1)(n+2)/3
-
-연속한 세 수의 곱의 합:
-Σ[k=1 to n] k(k+1)(k+2) = n(n+1)(n+2)(n+3)/4</div>
-<div class="proof"><div class="proof-title">유도 원리 (계차법)</div>k(k+1) = [(k+1)k(k-1+2)] ... 
-더 간단하게: 부분분수 없이
-k(k+1)(k+2)를 Σk, Σk², Σk³ 으로 전개하면 
-위 공식이 나옵니다. 분모 = (항 개수+1) 규칙.</div>
+<div class="formula"><p>연속한 두 수의 곱의 합:</p><p>$$\sum_{k=1}^{n} k(k+1) = \frac{n(n+1)(n+2)}{3}$$</p><p>연속한 세 수의 곱의 합:</p><p>$$\sum_{k=1}^{n} k(k+1)(k+2) = \frac{n(n+1)(n+2)(n+3)}{4}$$</p></div>
+<div class="proof"><div class="proof-title">유도 원리 (계차법)</div><p>$k(k+1)(k+2)$를 $\sum k,\;\sum k^2,\;\sum k^3$ 으로 전개하면</p><p>위 공식이 나옵니다. 분모 $=$ (항 개수$+1$) 규칙.</p></div>
 <div class="tip">분수형 수열을 부분분수로 찢거나 전개해서 따로따로 Σ 쓰는 시간을 완전히 제로로 만듦</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">🔭</div><div class="ct">부분분수 망원합 — 간격별 압축 공식</div></div>
-<div class="formula">간격 1칸: Σ(1/k - 1/(k+1)) → 맨 앞 1개 - 맨 뒤 1개
-  = 1 - 1/(n+1)
-
-간격 2칸: Σ(1/k - 1/(k+2)) → 앞 2개 - 뒤 2개
-  = (1 + 1/2) - (1/(n+1) + 1/(n+2))
-
-간격 d칸: 앞 d개의 합 - 뒤 d개의 합</div>
+<div class="formula"><p>간격 1칸: $\sum\!\left(\dfrac{1}{k} - \dfrac{1}{k+1}\right)$ → 맨 앞 1개 $-$ 맨 뒤 1개</p><p>$= 1 - \dfrac{1}{n+1}$</p><p style="margin-top:8px">간격 2칸: $\sum\!\left(\dfrac{1}{k} - \dfrac{1}{k+2}\right)$ → 앞 2개 $-$ 뒤 2개</p><p>$= \left(1 + \dfrac{1}{2}\right) - \left(\dfrac{1}{n+1} + \dfrac{1}{n+2}\right)$</p><p style="margin-top:8px">간격 $d$칸: 앞 $d$개의 합 $-$ 뒤 $d$개의 합</p></div>
 <div class="tip">중간 항을 10~20개 나열하며 지우는 과정 자체를 생략 → 계산 실수 원천 차단</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">rᵏ</div><div class="ct">∑k·rᵏ 소거법 (등차×등비 합)</div></div>
-<div class="formula">S = Σ[k=1 to n] k·rᵏ
-rS = Σ[k=1 to n] k·rᵏ⁺¹
-─────────────────────────────
-(1-r)S = r + r² + ··· + rⁿ - nrⁿ⁺¹
-       = r(1-rⁿ)/(1-r) - nrⁿ⁺¹</div>
-<div class="proof"><div class="proof-title">핵심 행동 강령</div>공식을 외우는 게 아니라
-"S - rS 소거" 라는 행동 강령을 외울 것.
-시험에서 변형 꼴이 나와도 즉석 유도 가능.</div>
+<div class="formula"><p>$S = \displaystyle\sum_{k=1}^{n} k \cdot r^k$</p><p>$rS = \displaystyle\sum_{k=1}^{n} k \cdot r^{k+1}$</p><p style="margin-top:8px">$(1-r)S = r + r^2 + \cdots + r^n - nr^{n+1}$</p><p>$\quad\quad\quad = \dfrac{r(1-r^n)}{1-r} - nr^{n+1}$</p></div>
+<div class="proof"><div class="proof-title">핵심 행동 강령</div><p>공식을 외우는 게 아니라</p><p>"$S - rS$ 소거" 라는 행동 강령을 외울 것.</p><p>시험에서 변형 꼴이 나와도 즉석 유도 가능.</p></div>
 <div class="warn">이 꼴이 복잡하게 변형되어 나올 수 있음. S-rS 소거 메커니즘을 완벽히 내재화할 것</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cr">🔢</div><div class="ct">군수열 역방향 추정</div></div>
-<div class="formula">n번째 항이 제 몇 군인지 역추정:
-k군까지 항 수 = k(k+1)/2 = n
-→  k ≈ (√(8n+1) - 1) / 2 근처 자연수 확인</div>
+<div class="formula"><p>$n$번째 항이 제 몇 군인지 역추정:</p><p>$k$군까지 항 수 $= \dfrac{k(k+1)}{2} = n$</p><p>→ $k \approx \dfrac{\sqrt{8n+1} - 1}{2}$ 근처 자연수 확인</p></div>
 <div class="tip">정확한 값이 아닌 "근처 자연수를 빠르게 추정"하는 용도. 그 주변 1~2개만 확인하면 끝</div>
 </div>
 </div>
@@ -570,32 +450,21 @@ k군까지 항 수 = k(k+1)/2 = n
 <div class="ul">극한 조건으로 함수 결정</div>
 <div class="card">
 <div class="ch"><div class="ci cb">∞</div><div class="ct">다항함수 결정 법칙 — 극한 조건 두 개</div></div>
-<div class="formula">lim(x→∞) 조건  →  최고차항의 차수·계수 결정
-lim(x→0) 조건  →  최저차항의 차수·계수 결정
-
-예: lim[x→0] f(x)/x² = 3
-  → f(x)는 x²을 인수로 갖고, 상수항·1차항 = 0
-  → f(x) = 3x² + (고차항들)</div>
+<div class="formula"><p>$\lim_{x \to \infty}$ 조건 → 최고차항의 차수·계수 결정</p><p>$\lim_{x \to 0}$ 조건 → 최저차항의 차수·계수 결정</p><p style="margin-top:8px">예: $\displaystyle\lim_{x \to 0} \dfrac{f(x)}{x^2} = 3$</p><p>→ $f(x)$는 $x^2$을 인수로 갖고, 상수항·1차항 $= 0$</p><p>→ $f(x) = 3x^2 + (\text{고차항들})$</p></div>
 <div class="tip">두 극한 조건이 주어지면 함수의 "머리(최고차)"와 "꼬리(최저차)"를 각각 결정하는 것으로 구조화</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">🔑</div><div class="ct">극한·인수 정리 초고속 공식</div></div>
 <div class="cb2">극한 조건에서 함수의 인수를 즉시 읽어내는 행동 강령입니다.</div>
-<div class="formula">lim[x→a] f(x)/(x-a)ⁿ = k  (k ≠ 0)
-
-→  f(x)는 (x-a)ⁿ을 인수로 가짐
-→  f(x) = (x-a)ⁿ · Q(x),  Q(a) = k
-
-→  Q(a) = k를 이용해 나머지 계수를 바로 결정</div>
+<div class="formula"><p>$\displaystyle\lim_{x \to a} \dfrac{f(x)}{(x-a)^n} = k \quad (k \neq 0)$</p><p style="margin-top:8px">→ $f(x)$는 $(x-a)^n$을 인수로 가짐</p><p>→ $f(x) = (x-a)^n \cdot Q(x),\quad Q(a) = k$</p><p style="margin-top:8px">→ $Q(a) = k$를 이용해 나머지 계수를 바로 결정</p></div>
 <div class="tip">연립방정식 없이 인수와 계수를 즉시 읽어냄. 다항함수 추론 킬러의 기본 무기</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cy">📝</div><div class="ct">로피탈 정리 (L'Hôpital's Rule)</div></div>
 <div class="cb2">교육과정 외지만 다항함수 0/0 꼴에서 미분계수 형태로 묶기 어려울 때 3초 컷.</div>
-<div class="formula">lim[x→a] f(x)/g(x)  (0/0 또는 ∞/∞ 꼴)
-= lim[x→a] f'(x)/g'(x)  (이 극한이 존재하면)</div>
+<div class="formula"><p>$\displaystyle\lim_{x \to a} \dfrac{f(x)}{g(x)}$ $\left(\dfrac{0}{0}\right.$ 또는 $\left.\dfrac{\infty}{\infty}\right)$ 꼴</p><p>$= \displaystyle\lim_{x \to a} \dfrac{f'(x)}{g'(x)}$ (이 극한이 존재하면)</p></div>
 <div class="warn">수능에서 채점상 불이익은 없으나, 미분한 후의 극한이 존재하는 조건을 반드시 확인해야 안전. 다항함수 범위에서만 사용.</div>
 </div>
 
@@ -603,22 +472,13 @@ lim(x→0) 조건  →  최저차항의 차수·계수 결정
 <div class="card">
 <div class="ch"><div class="ci cp">🧮</div><div class="ct">인수 개수 법칙 — 연속·미분가능</div></div>
 <div class="cb2">불연속 함수에 (x-α)ⁿ을 곱할 때 n의 개수가 결과를 결정합니다.</div>
-<div class="formula">(x-α)¹ 곱하기  →  끊긴 점을 연속으로
-(x-α)² 곱하기  →  꺾인 첨점을 미분가능하게 (접함)
-(x-α)³ 곱하기  →  변곡점 형태로 통과
-
-역방향: 그래프가 α에서 어떻게 보이느냐로
-→  필요한 인수 개수를 역산</div>
+<div class="formula"><p>$(x-\alpha)^1$ 곱하기 → 끊긴 점을 연속으로</p><p>$(x-\alpha)^2$ 곱하기 → 꺾인 첨점을 미분가능하게 (접함)</p><p>$(x-\alpha)^3$ 곱하기 → 변곡점 형태로 통과</p><p style="margin-top:8px">역방향: 그래프가 $\alpha$에서 어떻게 보이느냐로</p><p>→ 필요한 인수 개수를 역산</p></div>
 <div class="tip">조건부 함수의 미분가능성 문제에서 인수를 몇 개 곱해야 하는지 즉시 판단 가능</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cr">🔍</div><div class="ct">합성함수 h(x)=f(g(x)) 미분불가능점 2단계</div></div>
-<div class="formula">1단계: g(x) 자체가 미분불가능한 x=a 전부 체크
-  → h'(a) 존재 여부 별도 확인 필요
-
-2단계: g(c) = b 이고 f가 x=b에서 미분불가능한
-  모든 x=c 를 찾아서 체크</div>
+<div class="formula"><p>1단계: $g(x)$ 자체가 미분불가능한 $x=a$ 전부 체크</p><p>→ $h'(a)$ 존재 여부 별도 확인 필요</p><p style="margin-top:8px">2단계: $g(c) = b$ 이고 $f$가 $x=b$에서 미분불가능한</p><p>모든 $x=c$ 를 찾아서 체크</p></div>
 <div class="warn">⚠️ 핵심 예외: 2단계에서 g'(c) = 0 이면
 f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 미분가능할 수 있음. 이 케이스 빠뜨리면 오답!</div>
@@ -666,16 +526,8 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 <text x="10" y="145" fill="#a9a0f0" font-size="10" font-family="sans-serif">극점 x = (2β + α) / 3</text>
 </svg>
 </div>
-<div class="formula">f(x) = a(x-α)²(x-β) 일 때
-
-[접점 α] ─── 2d ─── [극점] ─── d ─── [교점 β]
-
-극점의 x좌표 = (2β + α) / 3</div>
-<div class="proof"><div class="proof-title">유도</div>f'(x) = 2a(x-α)(x-β) + a(x-α)²
-      = a(x-α)[2(x-β)+(x-α)]
-      = a(x-α)[3x - 2β - α]
-
-f'(x) = 0 → x = α 또는 x = (2β+α)/3  ✓</div>
+<div class="formula"><p>$f(x) = a(x-\alpha)^2(x-\beta)$ 일 때</p><p style="margin-top:8px">[접점 $\alpha$] ─── $2d$ ─── [극점] ─── $d$ ─── [교점 $\beta$]</p><p>$$\text{극점의 } x\text{좌표} = \frac{2\beta + \alpha}{3}$$</p></div>
+<div class="proof"><div class="proof-title">유도</div><p>$f'(x) = 2a(x-\alpha)(x-\beta) + a(x-\alpha)^2$</p><p>$\quad\quad = a(x-\alpha)[2(x-\beta)+(x-\alpha)]$</p><p>$\quad\quad = a(x-\alpha)[3x - 2\beta - \alpha]$</p><p style="margin-top:8px">$f'(x) = 0 \Rightarrow x = \alpha$ 또는 $x = \dfrac{2\beta+\alpha}{3}$ ✓</p></div>
 <div class="cond">인수분해가 a(x-α)²(x-β) 형태로 보이는 순간</div>
 <div class="tip">보자마자 극점 x = (α+2β)/3 이라고 쓰면 미분 0줄. 가장 자주 쓰이는 치트키</div>
 </div>
@@ -723,82 +575,42 @@ f'(x) = 0 → x = α 또는 x = (2β+α)/3  ✓</div>
 <text x="237" y="71" class="g4">교점</text>
 </svg>
 </div>
-<div class="formula">변곡점에서 극점(극대/극소)까지 거리 : 1
-변곡점에서 수평선(변곡점 y값 기준) 바깥 교점까지 거리 : √3
-
-[바깥교점] ─√3─ [극점] ─1─ [변곡점] ─1─ [극점] ─√3─ [바깥교점]</div>
+<div class="formula"><p>변곡점에서 극점(극대/극소)까지 거리 : $1$</p><p>변곡점에서 수평선(변곡점 $y$값 기준) 바깥 교점까지 거리 : $\sqrt{3}$</p><p style="margin-top:8px">[바깥교점] $-\sqrt{3}-$ [극점] $-1-$ [변곡점] $-1-$ [극점] $-\sqrt{3}-$ [바깥교점]</p></div>
 <div class="tip">기함수 f(x)=x³-ax 에서 극점이 x=1이면 변곡점 수평선 바깥 교점은 바로 x=√3</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">📦</div><div class="ct">삼차함수 8칸 박스 구조 (완전 정리)</div></div>
-<div class="formula">극대점과 극소점을 꼭짓점으로 감싸는 직사각형을 그리면
-→ 가로 4등분 (간격 d로 균등)
-→ 세로 2등분 (변곡점 y값이 정중앙)
-→ 총 8개의 합동 직사각형 박스
-
-x 방향 배치 (등간격 d):
-[극대] ─d─ [변곡점] ─d─ [극소] ─d─ [수평선 교점]
-(수평선 = 극대 또는 극소 높이에서 그은 선)
-
-y 방향: 극댓값, 변곡점 y, 극솟값이 등간격</div>
+<div class="formula"><p>극대점과 극소점을 꼭짓점으로 감싸는 직사각형을 그리면</p><p>→ 가로 4등분 (간격 $d$로 균등)</p><p>→ 세로 2등분 (변곡점 $y$값이 정중앙)</p><p>→ 총 8개의 합동 직사각형 박스</p><p style="margin-top:8px">$x$ 방향 배치 (등간격 $d$):</p><p>[극대] $-d-$ [변곡점] $-d-$ [극소] $-d-$ [수평선 교점]</p><p>$y$ 방향: 극댓값, 변곡점 $y$, 극솟값이 등간격</p></div>
 <div class="tip">이 박스 구조를 머릿속에 그리면 1:2 법칙과 1:√3 법칙이 왜 성립하는지 직관적으로 이해됨</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cr">⚡</div><div class="ct">삼차함수 극댓값·극솟값 차이 공식</div></div>
 <div class="cb2">도함수의 근을 알 때 극댓값과 극솟값의 차이를 식에 대입하지 않고 구합니다.</div>
-<div class="formula">f(x) = ax³ + ··· 의 도함수 f'(x) = 0 의
-두 근이 α, β (α < β) 일 때:
-
-극댓값 - 극솟값 = |a| · (β-α)³ / 2
-
-(도함수 이차함수의 넓이 공식에서 유도)</div>
-<div class="proof"><div class="proof-title">유도</div>f'(x) = a·(x-α)(x-β) (이차함수)
-극값의 차 = |∫[α to β] f'(x) dx|
-          = |a| · (β-α)³ / 6 ... 
-정확히는: |a|/2 · |β-α|³
-(6분의 공식 변형, 계수 a/2 주의)</div>
+<div class="formula"><p>$f(x) = ax^3 + \cdots$ 의 도함수 $f'(x) = 0$ 의</p><p>두 근이 $\alpha,\,\beta\;(\alpha < \beta)$ 일 때:</p><p>$$\text{극댓값} - \text{극솟값} = \frac{|a|}{2} \cdot (\beta-\alpha)^3$$</p><p>(도함수 이차함수의 넓이 공식에서 유도)</p></div>
+<div class="proof"><div class="proof-title">유도</div><p>$f'(x) = 3a(x-\alpha)(x-\beta)$ (이차함수)</p><p>극값의 차 $= \left|\displaystyle\int_\alpha^\beta f'(x)\,dx\right|$</p><p>$= \left|3a \cdot \left(-\dfrac{(\beta-\alpha)^3}{6}\right)\right| = \dfrac{|a|}{2}(\beta-\alpha)^3$ ✓</p></div>
 <div class="tip">극점의 x좌표만 알면 극댓값과 극솟값의 차이를 바로 계산 → 그래프 높이 파악 즉시</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">⚡</div><div class="ct">접점 → 교점 공식 (−2t − p)</div></div>
 <div class="cb2">x=t에서의 접선이 삼차함수와 다시 만나는 점을 미분·연립 없이 1초에 찾습니다. 대치동 킬러 치트키.</div>
-<div class="formula">f(x) = x³ + px² + qx + r 에서
-x = t에서의 접선이 만나는 나머지 교점의 x좌표:
-
-s = −2t − p</div>
-<div class="proof"><div class="proof-title">증명</div>f(x) - [x=t에서의 접선] = (x-t)² · (x-s)
-
-좌변 전개 시 x²의 계수 비교:
-p - (-2t) = -(2t+s)
-즉  2t + s = -p  →  s = -2t - p  ✓</div>
+<div class="formula"><p>$f(x) = x^3 + px^2 + qx + r$ 에서</p><p>$x = t$에서의 접선이 만나는 나머지 교점의 $x$좌표:</p><p>$$s = -2t - p$$</p></div>
+<div class="proof"><div class="proof-title">증명</div><p>$f(x) - [x=t\text{에서의 접선}] = (x-t)^2 \cdot (x-s)$</p><p style="margin-top:8px">좌변 전개 시 $x^2$의 계수 비교:</p><p>$p - (-2t) = -(2t+s)$</p><p>즉 $2t + s = -p \;\Rightarrow\; s = -2t - p$ ✓</p></div>
 <div class="tip">접점 x=t 와 최고차항 이차계수 p 만 알면 나머지 교점 즉시 확정. 연립방정식 한 줄 절약</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cb">∑</div><div class="ct">교점 x좌표의 합 보존 법칙</div></div>
-<div class="formula">f(x) = x³ + px² + ··· 와 임의의 직선이 만나는
-세 교점의 x좌표 α, β, γ:
-
-α + β + γ = −p  (근과 계수의 관계, 항상 불변)
-
-직선이 이동해도 세 교점의 합은 변하지 않음</div>
+<div class="formula"><p>$f(x) = x^3 + px^2 + \cdots$ 와 임의의 직선이 만나는</p><p>세 교점의 $x$좌표 $\alpha,\,\beta,\,\gamma$:</p><p>$$\alpha + \beta + \gamma = -p \quad (\text{근과 계수의 관계, 항상 불변})$$</p><p>직선이 이동해도 세 교점의 합은 변하지 않음</p></div>
 <div class="tip">두 교점을 알면 세 번째 교점을 계산 없이 즉시 도출. 연립 통째 생략 가능</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">🧪</div><div class="ct">f(x)−f(t) = f'(t)(x−t) 직관적 해석</div></div>
 <div class="cb2">수능 22번 단골 표현. 식으로 접근하면 계산 지옥. 기하학으로 먼저 파악해야 합니다.</div>
-<div class="formula">f(x) - f(t) - f'(t)(x-t) = 0
-
-직관: "곡선 f(x) 와 x=t에서의 접선의 차이"를
-나타내는 함수
-
-→ 반드시 x=t 에서 최소 2중근을 가짐
-→ 2중근이면 접함 (튕김)
-→ 3중근이면 변곡점 통과 (꺾이지 않고 통과)</div>
+<div class="formula"><p>$f(x) - f(t) - f'(t)(x-t) = 0$</p><p style="margin-top:8px">직관: "곡선 $f(x)$ 와 $x=t$에서의 접선의 차이"를 나타내는 함수</p><p style="margin-top:8px">→ 반드시 $x=t$ 에서 최소 2중근을 가짐</p><p>→ 2중근이면 접함 (튕김)</p><p>→ 3중근이면 변곡점 통과 (꺾이지 않고 통과)</p></div>
 <div class="tip">이 식이 나오면 "접선과 곡선의 거리"로 즉시 해석. 2중근/3중근 판별이 핵심 분기점</div>
 </div>
 
@@ -831,26 +643,14 @@ p - (-2t) = -(2t+s)
 <text x="20" y="15" class="g5">y</text>
 </svg>
 </div>
-<div class="formula">f(x) = k 의 실근 개수
-= y=f(x) 와 수평선 y=k 의 교점 개수
-
-|f(x)| = k 일 때:
-1. y=f(x) 그래프 그리기
-2. x축 아래 부분을 위로 접기 → y=|f(x)|
-3. y=k 수평선과의 교점 개수 세기</div>
+<div class="formula"><p>$f(x) = k$ 의 실근 개수</p><p>$= y=f(x)$ 와 수평선 $y=k$ 의 교점 개수</p><p style="margin-top:8px">$|f(x)| = k$ 일 때:</p><p>1. $y=f(x)$ 그래프 그리기</p><p>2. $x$축 아래 부분을 위로 접기 → $y=|f(x)|$</p><p>3. $y=k$ 수평선과의 교점 개수 세기</p></div>
 <div class="warn">직접 방정식을 풀면 거의 대부분 시간 초과. 반드시 그래프 교점 개수로 전환할 것</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cy">🔒</div><div class="ct">변곡접선과 접선의 개수 — 영역 분할 법칙</div></div>
 <div class="cb2">삼차함수 외부의 점에서 그을 수 있는 접선의 개수를 영역으로 결정합니다.</div>
-<div class="formula">경계선: 삼차함수 곡선 자체 + 변곡점에서의 접선
-
-점의 위치에 따른 접선 개수:
-· 변곡접선 위 또는 곡선의 볼록한 바깥쪽: 1개
-· 변곡점 자체: 1개
-· 곡선과 변곡접선 사이 안쪽 영역: 3개
-· 곡선 위의 점 (변곡점 제외): 2개</div>
+<div class="formula"><p>경계선: 삼차함수 곡선 자체 + 변곡점에서의 접선</p><p style="margin-top:8px">점의 위치에 따른 접선 개수:</p><p>· 변곡접선 위 또는 곡선의 볼록한 바깥쪽: 1개</p><p>· 변곡점 자체: 1개</p><p>· 곡선과 변곡접선 사이 안쪽 영역: 3개</p><p>· 곡선 위의 점 (변곡점 제외): 2개</p></div>
 <div class="tip">"접선의 개수가 3개" 조건 → 변곡접선 구하고, 그 아래 영역에 점이 있다는 부등식으로 전환</div>
 </div>
 
@@ -885,16 +685,8 @@ p - (-2t) = -(2t+s)
 <text x="10" y="135" fill="#a9a0f0" font-size="9" font-family="sans-serif">극소 x = (3β+α)/4 = α + 3(β-α)/4</text>
 </svg>
 </div>
-<div class="formula">f(x) = a(x-α)³(x-β) 일 때
-
-[3중근 α] ─── 3d ─── [극소] ─── d ─── [교점 β]
-
-극소점의 x좌표 = α + 3(β-α)/4 = (3β+α)/4</div>
-<div class="proof"><div class="proof-title">유도</div>f'(x) = 3a(x-α)²(x-β) + a(x-α)³
-      = a(x-α)²[3(x-β)+(x-α)]
-      = a(x-α)²[4x - 3β - α]
-
-f'(x) = 0 → x = α 또는 x = (3β+α)/4  ✓</div>
+<div class="formula"><p>$f(x) = a(x-\alpha)^3(x-\beta)$ 일 때</p><p style="margin-top:8px">[3중근 $\alpha$] ─── $3d$ ─── [극소] ─── $d$ ─── [교점 $\beta$]</p><p>$$\text{극소점의 } x\text{좌표} = \frac{3\beta+\alpha}{4}$$</p></div>
+<div class="proof"><div class="proof-title">유도</div><p>$f'(x) = 3a(x-\alpha)^2(x-\beta) + a(x-\alpha)^3$</p><p>$\quad\quad = a(x-\alpha)^2[3(x-\beta)+(x-\alpha)]$</p><p>$\quad\quad = a(x-\alpha)^2[4x - 3\beta - \alpha]$</p><p style="margin-top:8px">$f'(x) = 0 \Rightarrow x = \alpha$ 또는 $x = \dfrac{3\beta+\alpha}{4}$ ✓</p></div>
 <div class="tip">f(x) = x³(x-4): 3중근 α=0, 교점 β=4 → 극소 = (3·4+0)/4 = 3 즉시 확정</div>
 </div>
 
@@ -939,32 +731,20 @@ f'(x) = 0 → x = α 또는 x = (3β+α)/4  ✓</div>
 <text x="222" y="44" fill="#6af7c2" font-size="8" font-family="sans-serif">교점</text>
 </svg>
 </div>
-<div class="formula">좌우 대칭 W자 사차함수에서 극대점 기준 수평선을 그을 때:
-
-[극대 기준 수평선과 외부 교점] 까지의 거리
- 극대→극소 거리 : 극대→교점 거리 = 1 : √2</div>
+<div class="formula"><p>좌우 대칭 W자 사차함수에서 극대점 기준 수평선을 그을 때:</p><p style="margin-top:8px">극대→극소 거리 : 극대→교점 거리 $= 1 : \sqrt{2}$</p></div>
 <div class="tip">극대 x=0, 극소 x=1이면 바깥 교점은 x=±√2. 계산 불필요</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cr">📏</div><div class="ct">W자 사차함수 높이 차이 공식</div></div>
-<div class="formula">최고차항 계수 a, 극대↔극소 x간격 d인
-대칭형 사차함수에서:
-
-극댓값 - 극솟값 = a · d⁴
-
-예: 계수=1, d=2 → 높이 차이 = 1×2⁴ = 16</div>
+<div class="formula"><p>최고차항 계수 $a$, 극대↔극소 $x$간격 $d$인 대칭형 사차함수에서:</p><p>$$\text{극댓값} - \text{극솟값} = a \cdot d^4$$</p><p>예: 계수$=1$, $d=2$ → 높이 차이 $= 1\times 2^4 = 16$</p></div>
 <div class="tip">미분하고 식 구하고 대입하는 과정을 완전히 생략</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cb">🔬</div><div class="ct">롤의 정리 실전 활용</div></div>
 <div class="cb2">교육과정 외이지만 킬러 문항에서 암묵적으로 전제되는 논리입니다.</div>
-<div class="formula">롤의 정리: f(a) = f(b) 이면
-열린 구간 (a, b)에서 f'(c) = 0 인 c가 반드시 존재
-
-평균값 정리: [f(b)-f(a)]/(b-a) 와 같은 기울기의
-접선이 (a,b) 사이에 반드시 존재</div>
+<div class="formula"><p>롤의 정리: $f(a) = f(b)$ 이면</p><p>열린 구간 $(a, b)$에서 $f'(c) = 0$ 인 $c$가 반드시 존재</p><p style="margin-top:8px">평균값 정리: $\dfrac{f(b)-f(a)}{b-a}$ 와 같은 기울기의</p><p>접선이 $(a,b)$ 사이에 반드시 존재</p></div>
 <div class="tip">문제에서 두 점의 함숫값이 같다는 조건 → 그 사이에 극값(f'=0)이 존재함을 보장하는 근거로 사용</div>
 </div>
 </div>
@@ -996,11 +776,7 @@ f'(x) = 0 → x = α 또는 x = (3β+α)/4  ✓</div>
 <text x="10" y="15" fill="#f7c26a" font-size="10" font-family="sans-serif">S = |a|/6 · l³</text>
 </svg>
 </div>
-<div class="formula">∫[α→β] a(x-α)(x-β) dx = −a/6 · l³
-넓이 S = |a|/6 · l³    (l = β − α)
-
-적용: 두 교점의 x좌표 차이 l만 알면
-∫ 기호 없이 한 줄 계산</div>
+<div class="formula"><p>$$\int_\alpha^\beta a(x-\alpha)(x-\beta)\,dx = -\frac{a}{6} \cdot l^3$$</p><p>넓이 $S = \dfrac{|a|}{6} \cdot l^3 \quad (l = \beta - \alpha)$</p><p style="margin-top:8px">적용: 두 교점의 $x$좌표 차이 $l$만 알면 $\int$ 기호 없이 한 줄 계산</p></div>
 <div class="tip">이차함수와 x축, 또는 이차함수와 직선 사이의 넓이 문제에서 무조건 이 공식 먼저</div>
 </div>
 
@@ -1027,141 +803,76 @@ f'(x) = 0 → x = α 또는 x = (3β+α)/4  ✓</div>
 <text x="200" y="68" fill="#888899" font-size="8" font-family="sans-serif">β (교)</text>
 </svg>
 </div>
-<div class="formula">∫[α→β] a(x-α)²(x-β) dx = −a/12 · l⁴
-넓이 S = |a|/12 · l⁴    (l = β − α)
-
-1:2 비율 관계와 결합 시 시너지 극대화
-→ 접점·교점만 알면 넓이 즉시 계산</div>
+<div class="formula"><p>$$\int_\alpha^\beta a(x-\alpha)^2(x-\beta)\,dx = -\frac{a}{12} \cdot l^4$$</p><p>넓이 $S = \dfrac{|a|}{12} \cdot l^4 \quad (l = \beta - \alpha)$</p><p style="margin-top:8px">1:2 비율 관계와 결합 시 시너지 극대화 → 접점·교점만 알면 넓이 즉시 계산</p></div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">㉚</div><div class="ct">30분의 공식 시리즈 — 사차함수</div></div>
-<div class="formula">W자 바닥형:   a(x-α)²(x-β)²  →  넓이 = |a|/30 · l⁵
-
-3중근 접선형: a(x-α)³(x-β)  →  넓이 = |a|/20 · l⁵
-
-한 접점 두 교점: a(x-α)²(x-β)(x-γ) (특수형)
-  →  20분의 공식 변형 (접점이 정중앙일 때)</div>
-<div class="formula">분모 정리표:
-이차 × 1차 (6분의):   l³ / 6
-삼차 (12분의):        l⁴ / 12
-사차 3중근 (20분의):   l⁵ / 20
-사차 W바닥 (30분의):   l⁵ / 30</div>
+<div class="formula"><p>W자 바닥형: $a(x-\alpha)^2(x-\beta)^2$ → 넓이 $= \dfrac{|a|}{30} \cdot l^5$</p><p style="margin-top:8px">3중근 접선형: $a(x-\alpha)^3(x-\beta)$ → 넓이 $= \dfrac{|a|}{20} \cdot l^5$</p><p style="margin-top:8px">한 접점 두 교점: $a(x-\alpha)^2(x-\beta)(x-\gamma)$ (특수형, 접점이 정중앙일 때)</p></div>
+<div class="formula"><p>분모 정리표:</p><p>이차 $\times$ 1차 (6분의): $l^3 / 6$</p><p>삼차 (12분의): $l^4 / 12$</p><p>사차 3중근 (20분의): $l^5 / 20$</p><p>사차 W바닥 (30분의): $l^5 / 30$</p></div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cr">✂️</div><div class="ct">평행이동으로 인수 단순화 — 핵심 행동 강령</div></div>
-<div class="formula">지저분한 숫자가 나오면 x축 방향 평행이동으로
-인수를 x 꼴로 먼저 바꾸기:
-
-∫[2→5] (x-2)²(x-5) dx
-→ x축 방향 -2 이동
-∫[0→3] x²(x-3) dx
-→ 12분의 공식: |a|/12 · 3⁴ = 81/12 = 27/4</div>
-<div class="proof"><div class="proof-title">근거</div>정적분은 평행이동에 불변:
-∫[a→b] f(x)dx = ∫[a+c→b+c] f(x-c)dx</div>
+<div class="formula"><p>지저분한 숫자가 나오면 $x$축 방향 평행이동으로 인수를 $x$ 꼴로 먼저 바꾸기:</p><p style="margin-top:8px">$\displaystyle\int_2^5 (x-2)^2(x-5)\,dx$</p><p>→ $x$축 방향 $-2$ 이동</p><p>$\displaystyle\int_0^3 x^2(x-3)\,dx$</p><p>→ 12분의 공식: $\dfrac{1}{12} \cdot 3^4 = \dfrac{81}{12} = \dfrac{27}{4}$</p></div>
+<div class="proof"><div class="proof-title">근거</div><p>정적분은 평행이동에 불변:</p><p>$\displaystyle\int_a^b f(x)\,dx = \int_{a+c}^{b+c} f(x-c)\,dx$</p></div>
 <div class="tip">항상 구간이 0에서 시작하도록 이동시킬 것. 계산 실수 원천 차단</div>
 </div>
 
 <div class="ul">심화 적분 공식</div>
 <div class="card">
 <div class="ch"><div class="ci cy">S</div><div class="ct">삼차함수 세 근 사이 넓이 (변형 공식)</div></div>
-<div class="formula">f(x) = a(x-α)(x-β)(x-γ) (세 근 α < β < γ)
-
-∫[α→β] f(x) dx = a/12 · (β-α)³ · (4β-3α-γ)
-
-특수 케이스 — 등간격 (β-α = γ-β = d):
-∫[α→β] f(x) dx = a/4 · d⁴</div>
+<div class="formula"><p>$f(x) = a(x-\alpha)(x-\beta)(x-\gamma)$ (세 근 $\alpha < \beta < \gamma$)</p><p>$$\int_\alpha^\beta f(x)\,dx = \frac{a}{12}(\beta-\alpha)^3(4\beta-3\alpha-\gamma)$$</p><p>특수 케이스 — 등간격 $(\beta-\alpha = \gamma-\beta = d)$:</p><p>$$\int_\alpha^\beta f(x)\,dx = \frac{a}{4} \cdot d^4$$</p></div>
 <div class="tip">세 근이 등간격이면 4분의 공식으로 한 번에 처리</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">∫∫</div><div class="ct">변곡접선 통짜 넓이 공식</div></div>
-<div class="formula">삼차함수 f(x)에서 변곡점을 지나는 직선이
-곡선과 만드는 두 영역의 통짜 넓이:
-
-두 교점 사이 거리 = l 일 때
-통짜 넓이 S = |a|/4 · l⁴
-(양쪽 각각 |a|/8 · l⁴)</div>
+<div class="formula"><p>삼차함수 $f(x)$에서 변곡점을 지나는 직선이 곡선과 만드는 두 영역의 통짜 넓이:</p><p>두 교점 사이 거리 $= l$ 일 때</p><p>$$\text{통짜 넓이 } S = \frac{|a|}{4} \cdot l^4$$</p><p>(양쪽 각각 $\dfrac{|a|}{8} \cdot l^4$)</p></div>
 <div class="tip">삼각함수 대칭축으로 자른 면적 = 대칭이므로 각 부분은 |a|/8 · l⁴. 인테그랄 완전 소멸</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">📐</div><div class="ct">심프슨 공식 (이차·삼차함수에서 정확 성립)</div></div>
-<div class="formula">∫[a→b] f(x) dx = (b-a)/6 · [f(a) + 4f(m) + f(b)]
-    (m = (a+b)/2 : 구간 중점)
-
-⚠️  이차·삼차함수에서만 정확히 성립
-    사차 이상은 근삿값</div>
-<div class="proof"><div class="proof-title">왜 이차·삼차에서 정확한가?</div>삼차 이하의 다항함수는 심프슨 규칙의
-오차항이 정확히 0이 됩니다.
-→ 6분의 공식의 일반화 형태</div>
+<div class="formula"><p>$$\int_a^b f(x)\,dx = \frac{b-a}{6}\left[f(a) + 4f(m) + f(b)\right]$$</p><p>$\left(m = \dfrac{a+b}{2}\right)$: 구간 중점</p><p style="margin-top:8px">⚠️ 이차·삼차함수에서만 정확히 성립. 사차 이상은 근삿값</p></div>
+<div class="proof"><div class="proof-title">왜 이차·삼차에서 정확한가?</div><p>삼차 이하의 다항함수는 심프슨 규칙의 오차항이 정확히 0이 됩니다.</p><p>→ 6분의 공식의 일반화 형태</p></div>
 <div class="tip">식을 연립하기 어렵지만 세 점 (a, f(a)), (m, f(m)), (b, f(b))의 높이만 기하적으로 알 때 한 줄 컷</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cy">↩️</div><div class="ct">역함수 정적분 — ㄱ자 넓이</div></div>
-<div class="formula">∫[a→b] f(x)dx + ∫[f(a)→f(b)] f⁻¹(x)dx
-= b·f(b) − a·f(a)</div>
-<div class="proof"><div class="proof-title">기하학적 의미</div>y=f(x)와 y=f⁻¹(x)로 둘러싸인 넓이가
-큰 직사각형(b×f(b))에서 작은 직사각형(a×f(a))을 뺀
-"ㄱ자 모양 넓이"와 같음.</div>
+<div class="formula"><p>$$\int_a^b f(x)\,dx + \int_{f(a)}^{f(b)} f^{-1}(x)\,dx = b\cdot f(b) - a\cdot f(a)$$</p></div>
+<div class="proof"><div class="proof-title">기하학적 의미</div><p>$y=f(x)$와 $y=f^{-1}(x)$로 둘러싸인 넓이가</p><p>큰 직사각형 $(b \times f(b))$에서 작은 직사각형 $(a \times f(a))$을 뺀</p><p>"ㄱ자 모양 넓이"와 같음.</p></div>
 <div class="tip">원함수 적분 + 역함수 적분이 동시에 나오는 문제 → 이 공식으로 연산 없이 처리</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">🔁</div><div class="ct">주기함수 정적분 평행이동</div></div>
-<div class="formula">f(x+p) = f(x) (주기 p)이면:
-
-∫[a→a+p] f(x)dx = ∫[0→p] f(x)dx  (구간 무관, 항상 동일)
-
-∫[2024→2026] f(x)dx  (주기 2인 경우)
-→ ∫[0→2] f(x)dx 로 강제 이동</div>
+<div class="formula"><p>$f(x+p) = f(x)$ (주기 $p$)이면:</p><p>$$\int_a^{a+p} f(x)\,dx = \int_0^p f(x)\,dx \quad \text{(구간 무관, 항상 동일)}$$</p><p>$\displaystyle\int_{2024}^{2026} f(x)\,dx$ (주기 2인 경우)</p><p>→ $\displaystyle\int_0^2 f(x)\,dx$ 로 강제 이동</p></div>
 <div class="tip">아무리 더러운 숫자가 나와도 주기를 빼서 가장 계산 편한 대칭 구간으로 이동</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cb">↔️</div><div class="ct">우함수·기함수 적분 변환</div></div>
-<div class="formula">∫[-a→a] 기함수 dx = 0
-∫[-a→a] 우함수 dx = 2·∫[0→a] 우함수 dx
-
-우함수 적분 → 기함수
-기함수 적분 → 우함수 (상수항 때문에 y축 대칭이나 원점 통과 아닐 수 있음)</div>
+<div class="formula"><p>$\displaystyle\int_{-a}^{a} \text{기함수}\,dx = 0$</p><p>$\displaystyle\int_{-a}^{a} \text{우함수}\,dx = 2\displaystyle\int_0^a \text{우함수}\,dx$</p><p style="margin-top:8px">우함수 적분 → 기함수</p><p>기함수 적분 → 우함수 (상수항 때문에 $y$축 대칭이나 원점 통과 아닐 수 있음)</p></div>
 <div class="tip">대칭 조건 있는 함수를 정적분 함수 F(x)로 확장할 때 그래프 개형을 미분 없이 파악</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cr">🚗</div><div class="ct">속도·위치·거리 — 삼각형 넓이로 처리</div></div>
-<div class="formula">v(t)가 직선(1차식)이면 이동 거리를 적분 대신
-삼각형·사다리꼴 넓이 공식으로 처리:
-
-이동 거리 = v(t) 그래프와 t축 사이의 넓이
-(방향 전환 시 각 구간별로 넓이 합산)
-
-v(t) = 0이 되는 t를 먼저 찾아 구간 분리</div>
+<div class="formula"><p>$v(t)$가 직선(1차식)이면 이동 거리를 적분 대신 삼각형·사다리꼴 넓이 공식으로 처리:</p><p style="margin-top:8px">이동 거리 $= v(t)$ 그래프와 $t$축 사이의 넓이</p><p>(방향 전환 시 각 구간별로 넓이 합산)</p><p style="margin-top:8px">$v(t) = 0$이 되는 $t$를 먼저 찾아 구간 분리</p></div>
 <div class="warn">위치 변화량 = ∫v dt (부호 포함), 이동 거리 = ∫|v| dt (절댓값). 둘을 혼동하지 말 것</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cp">⏱️</div><div class="ct">등가속도 운동 — 평균속도 공식</div></div>
-<div class="formula">v(t)가 1차식(등가속도)일 때:
-
-t₁~t₂ 구간 이동 거리
-= 평균 속도 × 걸린 시간
-= [v(t₁) + v(t₂)]/2 × (t₂ - t₁)
-
-= 사다리꼴 넓이!</div>
+<div class="formula"><p>$v(t)$가 1차식(등가속도)일 때:</p><p style="margin-top:8px">$t_1 \sim t_2$ 구간 이동 거리</p><p>$= \dfrac{v(t_1) + v(t_2)}{2} \times (t_2 - t_1)$</p><p style="margin-top:8px">$=$ 사다리꼴 넓이!</p></div>
 <div class="tip">적분 연산 없이 초·말 속도의 평균 × 시간으로 즉시 계산</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cg">🔗</div><div class="ct">이중접선 1:1 법칙 (W자 사차함수)</div></div>
-<div class="formula">W자 사차함수에서 두 극소점을 동시에 지나는
-"공통 접선(이중접선)"이 존재할 때:
-
-두 접점 α, β 사이의 중점 = 가운데 극대점의 x좌표
-
-→ 극대점 = (α + β) / 2  (1:1 내분)</div>
+<div class="formula"><p>W자 사차함수에서 두 극소점을 동시에 지나는 "공통 접선(이중접선)"이 존재할 때:</p><p style="margin-top:8px">두 접점 $\alpha,\,\beta$ 사이의 중점 $=$ 가운데 극대점의 $x$좌표</p><p>$$\text{극대점} = \frac{\alpha + \beta}{2} \quad (1:1 \text{ 내분})$$</p></div>
 <div class="tip">좌우 비대칭 W자에서도 성립. 이중접선이 나오면 두 접점의 중점이 극대점</div>
 </div>
 </div>
@@ -1176,6 +887,19 @@ function show(id){
   document.querySelectorAll('.nb')[ids.indexOf(id)].classList.add('on');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  renderMathInElement(document.body,{
+    delimiters:[
+      {left:'$$',right:'$$',display:true},
+      {left:'$',right:'$',display:false}
+    ],
+    throwOnError:false
+  });
+});
 </script>
 </body>
 </html>
