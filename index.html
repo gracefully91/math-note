@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>수1·수2 실전 치트키 완전판</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 :root{--bg:#0d0d0f;--bg2:#13131a;--bg3:#1a1a24;--border:#2a2a3a;--a1:#7c6af7;--a2:#f7c26a;--a3:#6af7c2;--a4:#f76a9a;--a5:#6ab4f7;--txt:#e8e8f0;--dim:#888899;}
@@ -59,6 +60,9 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--txt)
 .cond::before{content:'🎯 적용 조건: ';}
 .svg-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px;margin:10px 0;display:flex;justify-content:center;overflow:hidden;}
 .svg-wrap svg{max-width:100%;height:auto;}
+.jxg-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px;margin:10px 0;overflow:hidden;}
+.jxg-board{width:100%;max-width:540px;height:220px;margin:0 auto;background:transparent!important;border:0!important;}
+.jxgbox{background:transparent!important;border:0!important;}
 .ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
 @media(max-width:560px){.ov-grid{grid-template-columns:1fr;}}
 .ovc{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;}
@@ -82,7 +86,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <p>기본서 밖의 실전 개념 · 비율 관계 · 연산 단축 공식 완전 수록</p>
 <div class="hero-stats">
 <div class="stat"><div class="stat-n">46</div><div class="stat-l">총 치트키</div></div>
-<div class="stat"><div class="stat-n">9</div><div class="stat-l">SVG 그래프</div></div>
+<div class="stat"><div class="stat-n">9</div><div class="stat-l">그래프</div></div>
 <div class="stat"><div class="stat-n">12</div><div class="stat-l">증명 수록</div></div>
 </div>
 </div>
@@ -221,7 +225,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="ul">심화 · 격자점</div>
 <div class="card">
 <div class="ch"><div class="ci cb">∞</div><div class="ct">쌍곡선함수 합성 구조</div></div>
-<div class="cb2">f(x) = (aˣ+a⁻ˣ)/2, g(x) = (aˣ-a⁻ˣ)/2 꼴이 조건으로 나올 때 이 성질을 모르면 연립에 5분 낭비.</div>
+<div class="cb2">$f(x) = \dfrac{a^x+a^{-x}}{2}$, $g(x) = \dfrac{a^x-a^{-x}}{2}$ 꼴이 조건으로 나올 때 이 성질을 모르면 연립에 5분 낭비.</div>
 <div class="formula"><p>$f(x)$ → $y$축 대칭 (우함수)</p><p>$g(x)$ → 원점 대칭 (기함수)</p><p style="margin-top:8px">[핵심 항등식] $\{f(x)\}^2 - \{g(x)\}^2 = 1$ (항상 성립)</p></div>
 <div class="proof"><div class="proof-title">증명</div><p>$\{f(x)\}^2 - \{g(x)\}^2$</p><p>$= \left[\dfrac{a^x+a^{-x}}{2}\right]^2 - \left[\dfrac{a^x-a^{-x}}{2}\right]^2$</p><p>$= \dfrac{2a^x}{2} \cdot \dfrac{2a^{-x}}{2} = a^x \cdot a^{-x} = 1$ ✓</p></div>
 </div>
@@ -242,45 +246,10 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cp">📦</div><div class="ct">사인/코사인 4등분 박스 법칙</div></div>
 <div class="cb2">한 주기를 직사각형 박스로 감싸면 4개의 합동 영역으로 쪼개집니다. 넓이 계산·대칭성 추론의 기반.</div>
-<div class="svg-wrap">
-<svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" width="300" height="120">
-<defs><style>.ax{stroke:#3a3a50;stroke-width:1;fill:none;} .cv{stroke:#7c6af7;stroke-width:2;fill:none;} .dl{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;} .lb{fill:#888899;font-size:9px;font-family:sans-serif;} .lh{fill:#f7c26a;font-size:9px;font-family:sans-serif;} .pt{fill:#6af7c2;} .rb{fill:rgba(124,106,247,.08);stroke:rgba(124,106,247,.3);stroke-width:1;}</style></defs>
-<!-- 박스 배경 -->
-<rect x="30" y="15" width="60" height="55" class="rb"/>
-<rect x="90" y="15" width="60" height="55" class="rb"/>
-<rect x="150" y="15" width="60" height="55" class="rb"/>
-<rect x="210" y="15" width="60" height="55" class="rb"/>
-<!-- x축 -->
-<line x1="20" y1="70" x2="285" y2="70" class="ax"/>
-<!-- 중간선 -->
-<line x1="20" y1="42" x2="285" y2="42" class="dl"/>
-<!-- 세로선 -->
-<line x1="30" y1="10" x2="30" y2="80" class="dl"/>
-<line x1="90" y1="10" x2="90" y2="80" class="dl"/>
-<line x1="150" y1="10" x2="150" y2="80" class="dl"/>
-<line x1="210" y1="10" x2="210" y2="80" class="dl"/>
-<line x1="270" y1="10" x2="270" y2="80" class="dl"/>
-<!-- sin 곡선 한 주기 (0 to 2π) -->
-<path d="M 30,70 C 45,70 55,15 90,15 C 125,15 135,70 150,70 C 165,70 175,105 210,105 C 245,105 255,70 270,70" class="cv"/>
-<!-- 수평 진폭선 -->
-<line x1="25" y1="15" x2="155" y2="15" stroke="#6af7c2" stroke-width="1" stroke-dasharray="3,2"/>
-<!-- 레이블 -->
-<text x="55" y="105" class="lb" text-anchor="middle">①</text>
-<text x="115" y="105" class="lb" text-anchor="middle">②</text>
-<text x="175" y="105" class="lb" text-anchor="middle">③</text>
-<text x="235" y="105" class="lb" text-anchor="middle">④</text>
-<text x="55" y="40" class="lh" text-anchor="middle">합동</text>
-<text x="115" y="40" class="lh" text-anchor="middle">합동</text>
-<text x="175" y="92" class="lh" text-anchor="middle">합동</text>
-<text x="235" y="92" class="lh" text-anchor="middle">합동</text>
-<text x="30" y="9" class="lb">0</text>
-<text x="87" y="9" class="lb">π/2</text>
-<text x="147" y="9" class="lb">π</text>
-<text x="203" y="9" class="lb">3π/2</text>
-<text x="265" y="9" class="lb">2π</text>
-</svg>
+<div class="jxg-wrap">
+<div id="trig-box-board" class="jxg-board" aria-label="y=sin(x) 한 주기의 4등분 박스 그래프"></div>
 </div>
-<div class="formula"><p>한 주기 = 4개의 합동 직사각형 박스</p><p>각 박스의 가로 $= T/4$ ($T$: 주기)</p><p style="margin-top:8px">$1:\sqrt{3}$ 비율: 수평선 $y=k$가 박스와 만날 때</p><p>→ 대칭축으로부터 교점까지의 거리 비율이 특수각과 연결</p></div>
+<div class="formula"><p>한 주기 = 4개의 합동 직사각형 박스</p><p>각 박스의 가로 $= \dfrac{T}{4}$ ($T$: 주기)</p><p style="margin-top:8px">$1:\sqrt{3}$ 비율: 수평선 $y=k$가 박스와 만날 때</p><p>→ 대칭축으로부터 교점까지의 거리 비율이 특수각과 연결</p></div>
 </div>
 
 <div class="card">
@@ -296,7 +265,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="cb2">기본서는 "합성 후 단순화"를 가르치지만, 수능에서는 역방향이 훨씬 강력합니다.</div>
 <div class="formula"><p>$a\sin\theta + b\cos\theta$ 의 최댓값 $= \sqrt{a^2 + b^2}$</p><p style="margin-top:8px">역방향 적용:</p><p>"최댓값이 $k$이다" 조건 → $a^2 + b^2 = k^2$</p><p>→ 계수 관계를 연립방정식으로 바로 세팅</p></div>
 <div class="cond">최댓값/최솟값이 조건으로 주어지고, a, b 중 일부를 역산해야 할 때</div>
-<div class="tip">합성 과정 자체를 생략. "최댓값² = a² + b²"만 기억하면 됨</div>
+<div class="tip">합성 과정 자체를 생략. "최댓값$^2 = a^2 + b^2$"만 기억하면 됨</div>
 </div>
 
 <div class="card">
@@ -312,7 +281,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="cb2">문제에 외접원이 나오고 원주각이 보이면 십중팔구 사인법칙이 출발점입니다.</div>
 <div class="formula"><p>사인법칙: $\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R$</p><p style="margin-top:8px">외접원 지름 $= 2R$ 이면:</p><p>→ 지름의 끝점에서 보이는 원주각 $= 90°$</p><p>→ 직각삼각형 생성 → 피타고라스/삼각비 활용</p></div>
 <div class="cond">외접원 반지름 R이 주어지거나 구해야 할 때</div>
-<div class="tip">2R = a/sinA → R = a/(2sinA). 외접원 나오면 이 식부터 쓸 것</div>
+<div class="tip">$2R = \dfrac{a}{\sin A}$ → $R = \dfrac{a}{2\sin A}$. 외접원 나오면 이 식부터 쓸 것</div>
 </div>
 
 <div class="card">
@@ -340,7 +309,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cy">△</div><div class="ct">삼각형 넓이 3종 세트 + 코사인 이차방정식</div></div>
 <div class="formula"><p>넓이 기본: $S = \dfrac{1}{2}ab\sin C$</p><p>넓이 외접원: $S = \dfrac{abc}{4R}$</p><p>넓이 내접원: $S = \dfrac{(a+b+c) \cdot r}{2}$</p><p style="margin-top:8px">코사인 법칙의 $c$에 대한 이차방정식:</p><p>$c^2 - (2b\cos A)c + (b^2-a^2) = 0$</p><p>→ 두 근의 합 $= 2b\cos A$, 두 근의 곱 $= b^2-a^2$</p></div>
-<div class="tip">세 변과 외접원 R이 주어질 때 abc/(4R)로 넓이 한 줄 처리. c를 모를 땐 이차방정식 세워서 근과 계수 관계 사용</div>
+<div class="tip">세 변과 외접원 $R$이 주어질 때 $\dfrac{abc}{4R}$로 넓이 한 줄 처리. $c$를 모를 땐 이차방정식 세워서 근과 계수 관계 사용</div>
 </div>
 </div>
 
@@ -351,7 +320,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="ul">등차수열의 합 S_n</div>
 <div class="card">
 <div class="ch"><div class="ci cp">📈</div><div class="ct">S_n — 상수항 없는 이차함수 관점</div></div>
-<div class="formula"><p>$$S_n = \frac{d}{2}n^2 + \left(a_1 - \frac{d}{2}\right)n \quad \leftarrow \text{상수항} = 0 \text{ 항상!}$$</p><p>꼭짓점(대칭축): $n = \dfrac{d/2 - a_1}{d}$ 근처 자연수</p><p>원점 외 교점 $(S_n=0)$: 꼭짓점 $n$의 정확히 2배</p></div>
+<div class="formula"><p>$$S_n = \frac{d}{2}n^2 + \left(a_1 - \frac{d}{2}\right)n \quad \leftarrow \text{상수항} = 0 \text{ 항상!}$$</p><p>꼭짓점(대칭축): $n = \dfrac{d - 2a_1}{2d}$ 근처 자연수</p><p>원점 외 교점 $(S_n=0)$: 꼭짓점 $n$의 정확히 2배</p></div>
 <div class="svg-wrap">
 <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg" width="280" height="130">
 <defs><style>.ax2{stroke:#3a3a50;stroke-width:1;fill:none;}.cv2{stroke:#7c6af7;stroke-width:2;fill:none;}.dl2{stroke:#888899;stroke-width:1;stroke-dasharray:3,3;}.lb2{fill:#888899;font-size:9px;font-family:sans-serif;}.lh2{fill:#f7c26a;font-size:10px;font-family:sans-serif;}.pt2{fill:#6af7c2;r:4;}</style></defs>
@@ -375,12 +344,12 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <text x="18" y="110" class="lb2">0</text>
 </svg>
 </div>
-<div class="tip">"S₁₁에서 최댓값" → S₂₂ 또는 S₂₃ 근처에서 S_n=0으로 꺾임. 대입 없이 구조 파악 가능</div>
+<div class="tip">"$S_{11}$에서 최댓값" → $S_{22}$ 또는 $S_{23}$ 근처에서 $S_n=0$으로 꺾임. 대입 없이 구조 파악 가능</div>
 </div>
 
 <div class="card">
 <div class="ch"><div class="ci cy">|S|</div><div class="ct">S_n 절댓값 조건 — 기하학적 대칭성</div></div>
-<div class="cb2">|S_n| = |S_m| 또는 S_k = S_{2k} 같은 조건은 식을 세우는 게 아니라 이차함수 그래프의 대칭성으로 해결합니다.</div>
+<div class="cb2">$|S_n| = |S_m|$ 또는 $S_k = S_{2k}$ 같은 조건은 식을 세우는 게 아니라 이차함수 그래프의 대칭성으로 해결합니다.</div>
 <div class="formula"><p>$S_n = An^2 + Bn$ (상수항 0, 대칭축: $n = -\dfrac{B}{2A}$)</p><p style="margin-top:8px">$|S_n| = |S_m|$ 조건:</p><p>→ 그래프 위 두 점의 "절댓값 높이"가 같음</p><p>→ 대칭축에 대해 대칭이거나 $x$축에 대해 대칭</p><p>→ 가능한 경우: $n+m = 2\times$(대칭축) 또는 $n,\,m$이 $S_n=0$ 교점 중 하나</p></div>
 <div class="warn">식을 전개해서 n, m을 연립하면 시간 폭발. 반드시 그래프로 먼저 파악할 것</div>
 </div>
@@ -394,7 +363,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="ul">점화식 · 귀납수열</div>
 <div class="card">
 <div class="ch"><div class="ci cp">Δ</div><div class="ct">개차수열 일반화 공식 (점화식 축차대입)</div></div>
-<div class="cb2">a_{n+1} - a_n = f(n) 꼴을 1부터 n-1까지 대입해서 더하는 노가다를 Σ 한 줄로 압축합니다.</div>
+<div class="cb2">$a_{n+1} - a_n = f(n)$ 꼴을 1부터 $n-1$까지 대입해서 더하는 노가다를 $\Sigma$ 한 줄로 압축합니다.</div>
 <div class="formula"><p>$a_{n+1} - a_n = f(n)$ 꼴일 때:</p><p>$$a_n = a_1 + \sum_{k=1}^{n-1} f(k)$$</p><p>(단, $n \geq 2$. $n=1$은 별도 확인)</p></div>
 <div class="proof"><div class="proof-title">유도 (축차대입)</div><p>$a_2 - a_1 = f(1)$</p><p>$a_3 - a_2 = f(2)$</p><p>$\quad\vdots$</p><p>$a_n - a_{n-1} = f(n-1)$</p><p>모두 더하면: $a_n - a_1 = \displaystyle\sum_{k=1}^{n-1} f(k)$</p><p>따라서 $a_n = a_1 + \displaystyle\sum_{k=1}^{n-1} f(k)$</p></div>
 <div class="tip">이 공식을 외워두면 1~(n-1) 대입 노가다 없이 바로 Σ 계산으로 점프</div>
@@ -402,7 +371,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 
 <div class="card">
 <div class="ch"><div class="ci cr">🌀</div><div class="ct">귀납수열 고정점 · 궤도 분석</div></div>
-<div class="cb2">a_{n+1}=f(a_n) 킬러 수열에서 역추적 수형도 그리기 전에 반드시 이 작업 먼저.</div>
+<div class="cb2">$a_{n+1}=f(a_n)$ 킬러 수열에서 역추적 수형도 그리기 전에 반드시 이 작업 먼저.</div>
 <div class="formula"><p>고정점: $f(x) = x$ 를 만족하는 $x$</p><p>→ 수열이 도달하면 영원히 머무는 값</p><p style="margin-top:8px">주기 궤도: $f(f(x)) = x$ 이지만 $f(x) \neq x$ 인 $x$</p><p>→ 두 값을 왔다갔다 하는 2주기 수열 가능</p></div>
 <div class="formula"><p>실전 순서:</p><p>1단계: 고정점 찾기 → 가능한 $a_1$의 범위 좁히기</p><p>2단계: 주기 궤도 존재 여부 확인</p><p>3단계: 역추적 수형도 그려서 $a_1$의 개수 세기</p></div>
 <div class="warn">수형도를 바로 그리면 경우의 수가 너무 많아 시간 폭발. 반드시 고정점 먼저</div>
@@ -433,7 +402,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="ch"><div class="ci cg">rᵏ</div><div class="ct">∑k·rᵏ 소거법 (등차×등비 합)</div></div>
 <div class="formula"><p>$S = \displaystyle\sum_{k=1}^{n} k \cdot r^k$</p><p>$rS = \displaystyle\sum_{k=1}^{n} k \cdot r^{k+1}$</p><p style="margin-top:8px">$(1-r)S = r + r^2 + \cdots + r^n - nr^{n+1}$</p><p>$\quad\quad\quad = \dfrac{r(1-r^n)}{1-r} - nr^{n+1}$</p></div>
 <div class="proof"><div class="proof-title">핵심 행동 강령</div><p>공식을 외우는 게 아니라</p><p>"$S - rS$ 소거" 라는 행동 강령을 외울 것.</p><p>시험에서 변형 꼴이 나와도 즉석 유도 가능.</p></div>
-<div class="warn">이 꼴이 복잡하게 변형되어 나올 수 있음. S-rS 소거 메커니즘을 완벽히 내재화할 것</div>
+<div class="warn">이 꼴이 복잡하게 변형되어 나올 수 있음. $S-rS$ 소거 메커니즘을 완벽히 내재화할 것</div>
 </div>
 
 <div class="card">
@@ -479,9 +448,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cr">🔍</div><div class="ct">합성함수 h(x)=f(g(x)) 미분불가능점 2단계</div></div>
 <div class="formula"><p>1단계: $g(x)$ 자체가 미분불가능한 $x=a$ 전부 체크</p><p>→ $h'(a)$ 존재 여부 별도 확인 필요</p><p style="margin-top:8px">2단계: $g(c) = b$ 이고 $f$가 $x=b$에서 미분불가능한</p><p>모든 $x=c$ 를 찾아서 체크</p></div>
-<div class="warn">⚠️ 핵심 예외: 2단계에서 g'(c) = 0 이면
-f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
-미분가능할 수 있음. 이 케이스 빠뜨리면 오답!</div>
+<div class="warn">⚠️ 핵심 예외: 2단계에서 $g'(c) = 0$ 이면 $f'(b)$가 없어도 $h'(c) = f'(g(c))\cdot g'(c) = 0$ 으로 미분가능할 수 있음. 이 케이스 빠뜨리면 오답!</div>
 </div>
 </div>
 
@@ -529,7 +496,7 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 <div class="formula"><p>$f(x) = a(x-\alpha)^2(x-\beta)$ 일 때</p><p style="margin-top:8px">[접점 $\alpha$] ─── $2d$ ─── [극점] ─── $d$ ─── [교점 $\beta$]</p><p>$$\text{극점의 } x\text{좌표} = \frac{2\beta + \alpha}{3}$$</p></div>
 <div class="proof"><div class="proof-title">유도</div><p>$f'(x) = 2a(x-\alpha)(x-\beta) + a(x-\alpha)^2$</p><p>$\quad\quad = a(x-\alpha)[2(x-\beta)+(x-\alpha)]$</p><p>$\quad\quad = a(x-\alpha)[3x - 2\beta - \alpha]$</p><p style="margin-top:8px">$f'(x) = 0 \Rightarrow x = \alpha$ 또는 $x = \dfrac{2\beta+\alpha}{3}$ ✓</p></div>
 <div class="cond">인수분해가 a(x-α)²(x-β) 형태로 보이는 순간</div>
-<div class="tip">보자마자 극점 x = (α+2β)/3 이라고 쓰면 미분 0줄. 가장 자주 쓰이는 치트키</div>
+<div class="tip">보자마자 극점 $x = \dfrac{\alpha+2\beta}{3}$ 이라고 쓰면 미분 0줄. 가장 자주 쓰이는 치트키</div>
 </div>
 
 <div class="card">
@@ -576,7 +543,7 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 </svg>
 </div>
 <div class="formula"><p>변곡점에서 극점(극대/극소)까지 거리 : $1$</p><p>변곡점에서 수평선(변곡점 $y$값 기준) 바깥 교점까지 거리 : $\sqrt{3}$</p><p style="margin-top:8px">[바깥교점] $-\sqrt{3}-$ [극점] $-1-$ [변곡점] $-1-$ [극점] $-\sqrt{3}-$ [바깥교점]</p></div>
-<div class="tip">기함수 f(x)=x³-ax 에서 극점이 x=1이면 변곡점 수평선 바깥 교점은 바로 x=√3</div>
+<div class="tip">기함수 $f(x)=x^3-ax$ 에서 극점이 $x=1$이면 변곡점 수평선 바깥 교점은 바로 $x=\sqrt{3}$</div>
 </div>
 
 <div class="card">
@@ -687,7 +654,7 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 </div>
 <div class="formula"><p>$f(x) = a(x-\alpha)^3(x-\beta)$ 일 때</p><p style="margin-top:8px">[3중근 $\alpha$] ─── $3d$ ─── [극소] ─── $d$ ─── [교점 $\beta$]</p><p>$$\text{극소점의 } x\text{좌표} = \frac{3\beta+\alpha}{4}$$</p></div>
 <div class="proof"><div class="proof-title">유도</div><p>$f'(x) = 3a(x-\alpha)^2(x-\beta) + a(x-\alpha)^3$</p><p>$\quad\quad = a(x-\alpha)^2[3(x-\beta)+(x-\alpha)]$</p><p>$\quad\quad = a(x-\alpha)^2[4x - 3\beta - \alpha]$</p><p style="margin-top:8px">$f'(x) = 0 \Rightarrow x = \alpha$ 또는 $x = \dfrac{3\beta+\alpha}{4}$ ✓</p></div>
-<div class="tip">f(x) = x³(x-4): 3중근 α=0, 교점 β=4 → 극소 = (3·4+0)/4 = 3 즉시 확정</div>
+<div class="tip">$f(x) = x^3(x-4)$: 3중근 $\alpha=0$, 교점 $\beta=4$ → 극소 $= \dfrac{3\cdot4+0}{4} = 3$ 즉시 확정</div>
 </div>
 
 <div class="card">
@@ -732,7 +699,7 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 </svg>
 </div>
 <div class="formula"><p>좌우 대칭 W자 사차함수에서 극대점 기준 수평선을 그을 때:</p><p style="margin-top:8px">극대→극소 거리 : 극대→교점 거리 $= 1 : \sqrt{2}$</p></div>
-<div class="tip">극대 x=0, 극소 x=1이면 바깥 교점은 x=±√2. 계산 불필요</div>
+<div class="tip">극대 $x=0$, 극소 $x=1$이면 바깥 교점은 $x=\pm\sqrt{2}$. 계산 불필요</div>
 </div>
 
 <div class="card">
@@ -829,7 +796,7 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 <div class="card">
 <div class="ch"><div class="ci cg">∫∫</div><div class="ct">변곡접선 통짜 넓이 공식</div></div>
 <div class="formula"><p>삼차함수 $f(x)$에서 변곡점을 지나는 직선이 곡선과 만드는 두 영역의 통짜 넓이:</p><p>두 교점 사이 거리 $= l$ 일 때</p><p>$$\text{통짜 넓이 } S = \frac{|a|}{4} \cdot l^4$$</p><p>(양쪽 각각 $\dfrac{|a|}{8} \cdot l^4$)</p></div>
-<div class="tip">삼각함수 대칭축으로 자른 면적 = 대칭이므로 각 부분은 |a|/8 · l⁴. 인테그랄 완전 소멸</div>
+<div class="tip">삼각함수 대칭축으로 자른 면적 = 대칭이므로 각 부분은 $\dfrac{|a|}{8} \cdot l^4$. 인테그랄 완전 소멸</div>
 </div>
 
 <div class="card">
@@ -861,7 +828,7 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 <div class="card">
 <div class="ch"><div class="ci cr">🚗</div><div class="ct">속도·위치·거리 — 삼각형 넓이로 처리</div></div>
 <div class="formula"><p>$v(t)$가 직선(1차식)이면 이동 거리를 적분 대신 삼각형·사다리꼴 넓이 공식으로 처리:</p><p style="margin-top:8px">이동 거리 $= v(t)$ 그래프와 $t$축 사이의 넓이</p><p>(방향 전환 시 각 구간별로 넓이 합산)</p><p style="margin-top:8px">$v(t) = 0$이 되는 $t$를 먼저 찾아 구간 분리</p></div>
-<div class="warn">위치 변화량 = ∫v dt (부호 포함), 이동 거리 = ∫|v| dt (절댓값). 둘을 혼동하지 말 것</div>
+<div class="warn">위치 변화량 $= \int v\,dt$ (부호 포함), 이동 거리 $= \int |v|\,dt$ (절댓값). 둘을 혼동하지 말 것</div>
 </div>
 
 <div class="card">
@@ -879,15 +846,87 @@ f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
 
 </div><!-- /main -->
 <script>
+let trigBoxBoard=null;
+
 function show(id){
   document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
   document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
   document.getElementById(id).classList.add('on');
   const ids=['ov','exp','trig','seq','lim','dif','int'];
   document.querySelectorAll('.nb')[ids.indexOf(id)].classList.add('on');
+  if(id==='trig') initTrigBoxGraph();
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+function initTrigBoxGraph(){
+  if(trigBoxBoard || typeof JXG==='undefined') return;
+
+  const pi=Math.PI;
+  const board=JXG.JSXGraph.initBoard('trig-box-board',{
+    boundingbox:[-0.35,1.35,6.65,-1.5],
+    axis:false,
+    showNavigation:false,
+    showCopyright:false,
+    keepaspectratio:false,
+    pan:{enabled:false},
+    zoom:{enabled:false},
+    resize:{enabled:true}
+  });
+  trigBoxBoard=board;
+
+  const fixed={fixed:true,highlight:false};
+  const line={...fixed,strokeColor:'#888899',strokeWidth:1,dash:2};
+  const axis={...fixed,strokeColor:'#3a3a50',strokeWidth:1.2};
+  const label={...fixed,strokeColor:'#888899',fontSize:11,anchorX:'middle',anchorY:'middle'};
+  const gold={...fixed,strokeColor:'#f7c26a',fontSize:12,anchorX:'middle',anchorY:'middle'};
+
+  function segment(a,b,attrs){board.create('segment',[a,b],attrs);}
+  function box(x1,x2,y1,y2){
+    const pts=[[x1,y1],[x2,y1],[x2,y2],[x1,y2]].map(p=>board.create('point',p,{visible:false,fixed:true}));
+    board.create('polygon',pts,{
+      ...fixed,
+      fillColor:'#7c6af7',
+      fillOpacity:0.08,
+      borders:{strokeColor:'rgba(124,106,247,.45)',strokeWidth:1,highlight:false}
+    });
+  }
+
+  box(0,pi/2,0,1);
+  box(pi/2,pi,0,1);
+  box(pi,3*pi/2,-1,0);
+  box(3*pi/2,2*pi,-1,0);
+
+  segment([-0.15,0],[2*pi+0.15,0],axis);
+  segment([-0.15,1],[2*pi+0.15,1],line);
+  segment([-0.15,-1],[2*pi+0.15,-1],line);
+  [0,pi/2,pi,3*pi/2,2*pi].forEach(x=>segment([x,-1.15],[x,1.15],line));
+
+  board.create('functiongraph',[x=>Math.sin(x),0,2*pi],{
+    ...fixed,
+    strokeColor:'#7c6af7',
+    strokeWidth:2.4,
+    doAdvancedPlot:true,
+    numberPointsHigh:900
+  });
+
+  segment([-0.12,1],[pi+0.12,1],{...fixed,strokeColor:'#6af7c2',strokeWidth:1,dash:2});
+
+  [
+    [0,1.22,'0'],[pi/2,1.22,'π/2'],[pi,1.22,'π'],[3*pi/2,1.22,'3π/2'],[2*pi,1.22,'2π'],
+    [pi/4,-1.28,'①'],[3*pi/4,-1.28,'②'],[5*pi/4,-1.28,'③'],[7*pi/4,-1.28,'④']
+  ].forEach(([x,y,t])=>board.create('text',[x,y,t],label));
+
+  [[pi/4,0.62],[3*pi/4,0.62],[5*pi/4,-0.62],[7*pi/4,-0.62]]
+    .forEach(([x,y])=>board.create('text',[x,y,'합동'],gold));
+
+  board.update();
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('trig')?.classList.contains('on')) initTrigBoxGraph();
+});
 </script>
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 <script>
