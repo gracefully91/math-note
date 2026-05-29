@@ -20,7 +20,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--txt)
 .stat{text-align:center;}
 .stat-n{font-size:22px;font-weight:900;color:var(--a2);}
 .stat-l{font-size:11px;color:var(--dim);letter-spacing:1px;}
-.nav{position:sticky;top:0;z-index:100;background:rgba(13,13,15,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 16px;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,13,15,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;justify-content:center;overflow-x:auto;scrollbar-width:none;padding:0 16px;}
 .nav::-webkit-scrollbar{display:none;}
 .nb{flex-shrink:0;padding:13px 16px;font-size:13px;font-weight:500;color:var(--dim);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;}
 .nb:hover{color:var(--txt);}
@@ -65,6 +65,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--txt)
 .jxgbox{background:transparent!important;border:0!important;}
 .ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
 @media(max-width:560px){.ov-grid{grid-template-columns:1fr;}}
+@media(max-width:760px){.nav{justify-content:flex-start;}}
 .ovc{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;}
 .ovc-t{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
 .ovi{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(42,42,58,.4);font-size:12.5px;}
@@ -168,41 +169,6 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="ovi"><span>속도·거리 면적 해석</span><span class="ovi-s">★★★★</span></div>
 </div>
 </div>
-<table>
-<thead><tr><th>치트키</th><th>단원</th><th>파괴력</th><th>출처</th></tr></thead>
-<tbody>
-<tr><td>동등무한소 6종 세트</td><td>수II·극한</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>테일러 1·2차 근사</td><td>수II·극한</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>삼차함수 변곡점 중심 표준형</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>경계는 중근 조건</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>외부점 접선 매개변수 공식</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>합성함수 해 개수 분해법</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>정적분 함수 그래프 해석</td><td>수II·적분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>$S_n$ 이차함수 대칭축 추론</td><td>수I·수열</td><td>★★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>귀납수열 고정점·궤도 분석</td><td>수I·수열</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>삼차함수 1:2 비율 관계</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>접점→교점 공식 $s=-2t-p$</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>매개변수 분리법</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>6분의·12분의 넓이 공식</td><td>수II·적분</td><td>★★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>삼각함수 합성 역방향</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>대칭축 교점의 합 공식</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>사영 정리</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>개차수열 일반화</td><td>수I·수열</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>$\sum k\cdot r^k$ 소거법</td><td>수I·수열</td><td>★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>삼차함수 $1:\sqrt{3}$ · 8칸 박스</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>교점 x좌표의 합 보존</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>변곡접선 접선 개수 영역</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>합성함수 미분불가능점 2단계</td><td>수II·미분</td><td>★★★★</td><td><span class="src-a">추가</span></td></tr>
-<tr><td>심프슨 공식</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>역함수 정적분 ㄱ자 넓이</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>내접 사각형 마주보는 각</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>$S_n$ 절댓값 조건 기하학</td><td>수I·수열</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>삼차함수 극댓값·극솟값 차이</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>$f(x)-f(t)$ 직관적 해석</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>변곡접선 통짜 넓이 공식</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-<tr><td>속도·거리 삼각형 넓이</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
-</tbody>
-</table>
 </div>
 
 <!-- ======= 지수·로그 ======= -->
@@ -503,38 +469,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cp">V</div><div class="ct">삼차함수 변곡점 중심 표준형</div></div>
 <div class="cb2">삼차함수는 변곡점을 원점처럼 잡는 순간 비율·대칭·넓이 공식이 한 번에 정리됩니다.</div>
-<div class="svg-wrap">
-<svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" width="320" height="170">
-<defs><style>.c10{stroke:#7c6af7;stroke-width:2.2;fill:none;}.a10{stroke:#3a3a50;stroke-width:1;fill:none;}.d10{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;}.t10{fill:#888899;font-size:9px;font-family:sans-serif;}.y10{fill:#f7c26a;font-size:9px;font-family:sans-serif;}.g10{fill:#6af7c2;font-size:9px;font-family:sans-serif;}</style></defs>
-<line x1="20" y1="85" x2="300" y2="85" class="a10"/>
-<line x1="160" y1="18" x2="160" y2="150" class="d10"/>
-<line x1="20" y1="42" x2="300" y2="42" stroke="#f7c26a" stroke-width="1" stroke-dasharray="3,3"/>
-<line x1="20" y1="128" x2="300" y2="128" stroke="#f76a9a" stroke-width="1" stroke-dasharray="3,3"/>
-<path d="M 30,145 C 50,142 64,112 86,52 C 102,37 124,37 138,52 C 150,64 154,76 160,85 C 166,94 170,106 182,118 C 196,133 218,133 234,118 C 256,58 270,28 290,25" class="c10"/>
-<circle cx="106" cy="42" r="4" fill="#f7c26a"/>
-<circle cx="160" cy="85" r="4" fill="#7c6af7"/>
-<circle cx="214" cy="128" r="4" fill="#f7c26a"/>
-<circle cx="66" cy="85" r="4" fill="#6af7c2"/>
-<circle cx="254" cy="85" r="4" fill="#6af7c2"/>
-<line x1="106" y1="153" x2="106" y2="38" class="d10"/>
-<line x1="214" y1="153" x2="214" y2="132" class="d10"/>
-<line x1="66" y1="153" x2="66" y2="82" class="d10"/>
-<line x1="254" y1="153" x2="254" y2="82" class="d10"/>
-<line x1="106" y1="156" x2="160" y2="156" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="160" y1="156" x2="214" y2="156" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="66" y1="18" x2="160" y2="18" stroke="#6af7c2" stroke-width="1.2"/>
-<line x1="160" y1="18" x2="254" y2="18" stroke="#6af7c2" stroke-width="1.2"/>
-<text x="132" y="166" class="y10" text-anchor="middle">d</text>
-<text x="187" y="166" class="y10" text-anchor="middle">d</text>
-<text x="113" y="13" class="g10" text-anchor="middle">√3d</text>
-<text x="207" y="13" class="g10" text-anchor="middle">√3d</text>
-<text x="146" y="82" fill="#7c6af7" font-size="9" font-family="sans-serif">변곡점</text>
-<text x="94" y="36" class="y10">극대</text>
-<text x="203" y="141" class="y10">극소</text>
-<text x="42" y="80" class="g10">교점</text>
-<text x="246" y="80" class="g10">교점</text>
-<text x="150" y="103" class="t10">x=m</text>
-</svg>
+<div class="jxg-wrap">
+<div id="cubic-standard-board" class="jxg-board" aria-label="삼차함수 변곡점 중심 표준형 그래프"></div>
 </div>
 <div class="formula"><p>일반 삼차함수 $f(x)=Ax^3+Bx^2+Cx+D$ 에서</p><p>변곡점의 $x$좌표는 $$m=-\frac{B}{3A}$$</p><p>좌표를 $u=x-m$ 으로 바꾸면</p><p>$$f(x)=A(x-m)^3+P(x-m)+Q$$</p><p>즉, 변곡점 기준으로는 짝수차항이 사라진 홀함수형 구조가 됩니다.</p></div>
 <div class="tip">삼차함수 킬러는 먼저 변곡점으로 평행이동. 그 다음 $1:2$, $1:\sqrt3$, 접선 재교점, 넓이 공식을 적용합니다.</div>
@@ -543,38 +479,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cy">📊</div><div class="ct">삼차함수 1 : 2 비율 관계</div></div>
 <div class="cb2">f(x) = a(x-α)²(x-β) 꼴에서 미분 없이 극점의 위치를 1초에 찾습니다.</div>
-<div class="svg-wrap">
-<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" width="300" height="150">
-<defs><style>.c3{stroke:#7c6af7;stroke-width:2;fill:none;}.a3{stroke:#3a3a50;stroke-width:1;fill:none;}.d3{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;}.t3{fill:#888899;font-size:9px;font-family:sans-serif;}.y3{fill:#f7c26a;font-size:9px;font-family:sans-serif;}.g3{fill:#6af7c2;font-size:9px;font-family:sans-serif;}.p3{fill:#6af7c2;}.pv{fill:#f7c26a;}</style></defs>
-<!-- x축 -->
-<line x1="10" y1="55" x2="285" y2="55" class="a3"/>
-<!-- 곡선: (x-α)²(x-β) shape, 접점α=55, 극소=167, 교점β=225 -->
-<path d="M 15,65 C 28,57 40,55 55,55 C 68,55 105,118 135,130 C 155,136 162,138 167,136 C 178,133 200,95 225,55 C 235,40 252,22 270,5" class="c3"/>
-<!-- 수직 점선 -->
-<line x1="55" y1="30" x2="55" y2="65" class="d3"/>
-<line x1="167" y1="30" x2="167" y2="136" class="d3"/>
-<line x1="225" y1="30" x2="225" y2="65" class="d3"/>
-<!-- 거리 표시 (위쪽) -->
-<line x1="55" y1="32" x2="167" y2="32" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="167" y1="32" x2="225" y2="32" stroke="#6af7c2" stroke-width="1.2"/>
-<!-- 화살표 끝 -->
-<line x1="55" y1="28" x2="55" y2="36" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="167" y1="28" x2="167" y2="36" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="225" y1="28" x2="225" y2="36" stroke="#6af7c2" stroke-width="1.2"/>
-<!-- 레이블 -->
-<text x="95" y="27" class="y3" text-anchor="middle">← 2d →</text>
-<text x="196" y="27" class="g3" text-anchor="middle">← d →</text>
-<!-- 점 -->
-<circle cx="55" cy="55" r="4" class="p3"/>
-<circle cx="167" cy="136" r="4" class="pv"/>
-<circle cx="225" cy="55" r="4" class="p3"/>
-<!-- 점 레이블 -->
-<text x="50" y="68" class="t3">α(접점)</text>
-<text x="155" y="148" class="t3">극점</text>
-<text x="218" y="68" class="t3">β(교점)</text>
-<!-- 공식 -->
-<text x="10" y="145" fill="#a9a0f0" font-size="10" font-family="sans-serif">극점 x = (2β + α) / 3</text>
-</svg>
+<div class="jxg-wrap">
+<div id="cubic-ratio-board" class="jxg-board" aria-label="삼차함수 1대2 비율 그래프"></div>
 </div>
 <div class="formula"><p>$f(x) = a(x-\alpha)^2(x-\beta)$ 일 때</p><p style="margin-top:8px">[접점 $\alpha$] ─── $2d$ ─── [극점] ─── $d$ ─── [교점 $\beta$]</p><p>$$\text{극점의 } x\text{좌표} = \frac{2\beta + \alpha}{3}$$</p></div>
 <div class="proof"><div class="proof-title">유도</div><p>$f'(x) = 2a(x-\alpha)(x-\beta) + a(x-\alpha)^2$</p><p>$\quad\quad = a(x-\alpha)[2(x-\beta)+(x-\alpha)]$</p><p>$\quad\quad = a(x-\alpha)[3x - 2\beta - \alpha]$</p><p style="margin-top:8px">$f'(x) = 0 \Rightarrow x = \alpha$ 또는 $x = \dfrac{2\beta+\alpha}{3}$ ✓</p></div>
@@ -585,45 +491,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cg">📐</div><div class="ct">삼차함수 $1 : \sqrt{3}$ 비율 + 8칸 박스</div></div>
 <div class="cb2">변곡점을 지나는 수평선과 삼각함수 교점 사이의 비율. 8칸 박스 구조 이해의 핵심.</div>
-<div class="svg-wrap">
-<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" width="300" height="150">
-<defs><style>.c4{stroke:#6af7c2;stroke-width:2;fill:none;}.a4{stroke:#3a3a50;stroke-width:1;fill:none;}.d4{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;}.t4{fill:#888899;font-size:9px;font-family:sans-serif;}.y4{fill:#f7c26a;font-size:9px;font-family:sans-serif;}.g4{fill:#6af7c2;font-size:9px;font-family:sans-serif;}.p4c{fill:#6af7c2;}.p4y{fill:#f7c26a;}.p4p{fill:#7c6af7;}</style></defs>
-<!-- y축 (대칭축) -->
-<line x1="150" y1="10" x2="150" y2="140" class="d4"/>
-<!-- x축/변곡점 수평선 -->
-<line x1="10" y1="75" x2="285" y2="75" class="a4"/>
-<!-- 극대 수평선 -->
-<line x1="10" y1="32" x2="285" y2="32" stroke="#f7c26a" stroke-width="1" stroke-dasharray="3,3"/>
-<!-- 극소 수평선 -->
-<line x1="10" y1="118" x2="285" y2="118" stroke="#f76a9a" stroke-width="1" stroke-dasharray="3,3"/>
-<!-- 삼차함수 S커브 (x³-3x 형태) -->
-<path d="M 20,130 C 35,125 50,95 75,32 C 95,28 115,28 125,31 C 135,34 142,55 150,75 C 158,95 165,118 175,119 C 185,120 205,118 225,116 C 245,70 265,26 280,20" class="c4"/>
-<!-- 변곡점 -->
-<circle cx="150" cy="75" r="4" class="p4p"/>
-<!-- 극대점 (x=-d=-54px), 변곡점에서 d=54px 거리 -->
-<circle cx="96" cy="32" r="4" class="p4y"/>
-<!-- 극소점 (x=+d=+54px) -->
-<circle cx="204" cy="118" r="4" class="p4y"/>
-<!-- 왼쪽 외부 교점 (변곡점에서 √3·d = 93.5px) -->
-<circle cx="57" cy="75" r="4" class="p4c"/>
-<!-- 오른쪽 외부 교점 -->
-<circle cx="243" cy="75" r="4" class="p4c"/>
-<!-- 거리 화살표 (변곡점에서 각 방향) -->
-<line x1="96" y1="83" x2="150" y2="83" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="150" y1="83" x2="204" y2="83" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="57" y1="65" x2="150" y2="65" stroke="#6af7c2" stroke-width="1.2"/>
-<line x1="150" y1="65" x2="243" y2="65" stroke="#6af7c2" stroke-width="1.2"/>
-<!-- 레이블 -->
-<text x="120" y="95" class="y4" text-anchor="middle">1</text>
-<text x="178" y="95" class="y4" text-anchor="middle">1</text>
-<text x="100" y="59" class="g4" text-anchor="middle">√3</text>
-<text x="198" y="59" class="g4" text-anchor="middle">√3</text>
-<text x="148" y="72" fill="#7c6af7" font-size="8" font-family="sans-serif">변곡</text>
-<text x="88" y="28" class="y4">극대</text>
-<text x="197" y="115" class="y4">극소</text>
-<text x="38" y="71" class="g4">교점</text>
-<text x="237" y="71" class="g4">교점</text>
-</svg>
+<div class="jxg-wrap">
+<div id="cubic-root3-board" class="jxg-board" aria-label="삼차함수 1대 루트3 비율 그래프"></div>
 </div>
 <div class="formula"><p>변곡점에서 극점(극대/극소)까지 거리 : $1$</p><p>변곡점에서 수평선(변곡점 $y$값 기준) 바깥 교점까지 거리 : $\sqrt{3}$</p><p style="margin-top:8px">[바깥교점] $-\sqrt{3}-$ [극점] $-1-$ [변곡점] $-1-$ [극점] $-\sqrt{3}-$ [바깥교점]</p></div>
 <div class="tip">기함수 $f(x)=x^3-ax$ 에서 극점이 $x=1$이면 변곡점 수평선 바깥 교점은 바로 $x=\sqrt{3}$</div>
@@ -689,32 +558,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 
 <div class="card">
 <div class="ch"><div class="ci cy">🗺️</div><div class="ct">매개변수 분리법 — 실근 개수 킬러</div></div>
-<div class="svg-wrap">
-<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" width="300" height="150">
-<defs><style>.c5{stroke:#f7c26a;stroke-width:2;fill:none;}.a5{stroke:#3a3a50;stroke-width:1;fill:none;}.kl{stroke:#f76a9a;stroke-width:1.5;stroke-dasharray:5,3;}.t5{fill:#888899;font-size:9px;font-family:sans-serif;}.g5{fill:#6af7c2;font-size:9px;font-family:sans-serif;}.p5{fill:#f76a9a;r:3.5;}</style></defs>
-<!-- 축 -->
-<line x1="15" y1="120" x2="285" y2="120" class="a5"/>
-<line x1="40" y1="10" x2="40" y2="135" class="a5"/>
-<!-- y = f(x) 삼차함수 (극대 = (90,40), 극소 = (200,95)) -->
-<path d="M 15,130 C 30,125 55,80 90,40 C 115,15 140,30 160,55 C 175,72 185,88 200,95 C 215,102 240,85 270,30" class="c5"/>
-<!-- k값 수평선들 -->
-<line x1="15" y1="40" x2="285" y2="40" class="kl" opacity="0.5"/>
-<line x1="15" y1="65" x2="285" y2="65" class="kl"/>
-<line x1="15" y1="95" x2="285" y2="95" class="kl" opacity="0.5"/>
-<!-- 교점 표시 -->
-<circle cx="90" cy="40" r="3.5" fill="#f7c26a"/>
-<circle cx="200" cy="95" r="3.5" fill="#f7c26a"/>
-<!-- k=65 교점들 -->
-<circle cx="62" cy="65" r="3" fill="#f76a9a"/>
-<circle cx="128" cy="65" r="3" fill="#f76a9a"/>
-<circle cx="235" cy="65" r="3" fill="#f76a9a"/>
-<!-- 레이블 -->
-<text x="285" y="37" class="t5">k=극댓값 (교점 1개 or 접점)</text>
-<text x="285" y="62" fill="#f76a9a" font-size="9" font-family="sans-serif">k=중간값 (교점 3개)</text>
-<text x="285" y="92" class="t5">k=극솟값 (교점 1개 or 접점)</text>
-<text x="43" y="130" class="t5">y=f(x)</text>
-<text x="20" y="15" class="g5">y</text>
-</svg>
+<div class="jxg-wrap">
+<div id="parameter-count-board" class="jxg-board" aria-label="매개변수 분리법 실근 개수 그래프"></div>
 </div>
 <div class="formula"><p>$f(x) = k$ 의 실근 개수</p><p>$= y=f(x)$ 와 수평선 $y=k$ 의 교점 개수</p><p style="margin-top:8px">$|f(x)| = k$ 일 때:</p><p>1. $y=f(x)$ 그래프 그리기</p><p>2. $x$축 아래 부분을 위로 접기 → $y=|f(x)|$</p><p>3. $y=k$ 수평선과의 교점 개수 세기</p></div>
 <div class="warn">직접 방정식을 풀면 거의 대부분 시간 초과. 반드시 그래프 교점 개수로 전환할 것</div>
@@ -730,33 +575,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="ul">사차함수 비율 관계</div>
 <div class="card">
 <div class="ch"><div class="ci cp">📊</div><div class="ct">사차함수 3 : 1 비율 — 3중근 형태</div></div>
-<div class="svg-wrap">
-<svg viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg" width="280" height="140">
-<defs><style>.c6{stroke:#7c6af7;stroke-width:2;fill:none;}.a6{stroke:#3a3a50;stroke-width:1;}.d6{stroke:#888899;stroke-width:1;stroke-dasharray:3,3;}.t6{fill:#888899;font-size:9px;font-family:sans-serif;}.y6{fill:#f7c26a;font-size:9px;font-family:sans-serif;}</style></defs>
-<line x1="10" y1="50" x2="265" y2="50" class="a6" fill="none"/>
-<!-- (x-0)³(x-4) shape: 3중근at x=0, 극소at x=3, 교점at x=4 -->
-<!-- SVG x: α=40, extreme=176, β=216 (3:1 = 136:40 ≈ 3.4:1, let me use 45,175,220) -->
-<!-- α=45(x_svg), extreme=180, β=223 → 180-45=135, 223-180=43 ≈ 3:1 -->
-<path d="M 10,25 C 22,25 33,40 45,50 C 55,57 70,95 105,115 C 130,127 155,130 180,125 C 200,120 215,85 223,50 C 230,32 242,15 258,5" class="c6"/>
-<!-- 수직 점선 -->
-<line x1="45" y1="30" x2="45" y2="60" class="d6"/>
-<line x1="180" y1="30" x2="180" y2="125" class="d6"/>
-<line x1="223" y1="30" x2="223" y2="60" class="d6"/>
-<!-- 거리 표시 -->
-<line x1="45" y1="33" x2="180" y2="33" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="180" y1="33" x2="223" y2="33" stroke="#6af7c2" stroke-width="1.2"/>
-<!-- 포인트 -->
-<circle cx="45" cy="50" r="4" fill="#6af7c2"/>
-<circle cx="180" cy="125" r="4" fill="#f7c26a"/>
-<circle cx="223" cy="50" r="4" fill="#6af7c2"/>
-<!-- 레이블 -->
-<text x="105" y="28" class="y6" text-anchor="middle">← 3d →</text>
-<text x="202" y="28" fill="#6af7c2" font-size="9" font-family="sans-serif" text-anchor="middle">←d→</text>
-<text x="30" y="63" class="t6">α(3중근)</text>
-<text x="165" y="138" class="t6">극소</text>
-<text x="217" y="63" class="t6">β</text>
-<text x="10" y="135" fill="#a9a0f0" font-size="9" font-family="sans-serif">극소 x = (3β+α)/4 = α + 3(β-α)/4</text>
-</svg>
+<div class="jxg-wrap">
+<div id="quartic-31-board" class="jxg-board" aria-label="사차함수 3대1 비율 그래프"></div>
 </div>
 <div class="formula"><p>$f(x) = a(x-\alpha)^3(x-\beta)$ 일 때</p><p style="margin-top:8px">[3중근 $\alpha$] ─── $3d$ ─── [극소] ─── $d$ ─── [교점 $\beta$]</p><p>$$\text{극소점의 } x\text{좌표} = \frac{3\beta+\alpha}{4}$$</p></div>
 <div class="proof"><div class="proof-title">유도</div><p>$f'(x) = 3a(x-\alpha)^2(x-\beta) + a(x-\alpha)^3$</p><p>$\quad\quad = a(x-\alpha)^2[3(x-\beta)+(x-\alpha)]$</p><p>$\quad\quad = a(x-\alpha)^2[4x - 3\beta - \alpha]$</p><p style="margin-top:8px">$f'(x) = 0 \Rightarrow x = \alpha$ 또는 $x = \dfrac{3\beta+\alpha}{4}$ ✓</p></div>
@@ -765,44 +585,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 
 <div class="card">
 <div class="ch"><div class="ci cg">🅆</div><div class="ct">사차함수 $1 : \sqrt{2}$ 비율 — W자 대칭형</div></div>
-<div class="svg-wrap">
-<svg viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg" width="280" height="140">
-<defs><style>.c7{stroke:#6af7c2;stroke-width:2;fill:none;}.a7{stroke:#3a3a50;stroke-width:1;}.d7{stroke:#888899;stroke-width:1;stroke-dasharray:3,3;}.t7{fill:#888899;font-size:9px;font-family:sans-serif;}</style></defs>
-<line x1="10" y1="120" x2="265" y2="120" class="a7" fill="none"/>
-<!-- 중앙 극대 기준선 -->
-<line x1="10" y1="30" x2="265" y2="30" class="d7"/>
-<!-- W shape: 극대(140,30), 극소(86,120)과(194,120), √2 교점(50,30)과(230,30) -->
-<path d="M 15,25 C 25,25 38,25 50,30 C 62,35 70,90 86,120 C 100,135 120,138 140,130 C 160,122 168,100 175,88 C 180,80 183,70 186,60 C 188,50 190,35 194,120 C 200,135 218,35 230,30 C 240,25 253,22 265,18" class="c7"/>
-<!-- 더 정확한 W 곡선 -->
-<path d="M 15,20 C 30,20 40,26 50,30 C 63,36 73,88 86,120 C 96,130 118,135 140,130 C 162,125 170,95 180,70 C 184,60 187,50 190,45 C 193,42 196,50 200,70 C 206,90 214,115 222,128 C 230,135 250,40 262,22" class="c7"/>
-<!-- 수직 점선 -->
-<line x1="50" y1="15" x2="50" y2="35" class="d7"/>
-<line x1="86" y1="15" x2="86" y2="122" class="d7"/>
-<line x1="140" y1="15" x2="140" y2="132" class="d7"/>
-<line x1="194" y1="15" x2="194" y2="122" class="d7"/>
-<line x1="230" y1="15" x2="230" y2="35" class="d7"/>
-<!-- 거리 표시 (위 기준선 위) -->
-<line x1="86" y1="18" x2="140" y2="18" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="140" y1="18" x2="194" y2="18" stroke="#f7c26a" stroke-width="1.2"/>
-<line x1="50" y1="10" x2="140" y2="10" stroke="#f76a9a" stroke-width="1.2"/>
-<line x1="140" y1="10" x2="230" y2="10" stroke="#f76a9a" stroke-width="1.2"/>
-<!-- 포인트 -->
-<circle cx="50" cy="30" r="3.5" fill="#6af7c2"/>
-<circle cx="86" cy="120" r="3.5" fill="#f7c26a"/>
-<circle cx="140" cy="30" r="3.5" fill="#7c6af7"/>
-<circle cx="194" cy="120" r="3.5" fill="#f7c26a"/>
-<circle cx="230" cy="30" r="3.5" fill="#6af7c2"/>
-<!-- 레이블 -->
-<text x="113" y="14" fill="#f7c26a" font-size="9" font-family="sans-serif" text-anchor="middle">1</text>
-<text x="167" y="14" fill="#f7c26a" font-size="9" font-family="sans-serif" text-anchor="middle">1</text>
-<text x="95" y="7" fill="#f76a9a" font-size="9" font-family="sans-serif" text-anchor="middle">√2</text>
-<text x="185" y="7" fill="#f76a9a" font-size="9" font-family="sans-serif" text-anchor="middle">√2</text>
-<text x="130" y="27" fill="#7c6af7" font-size="8" font-family="sans-serif">극대</text>
-<text x="75" y="133" fill="#f7c26a" font-size="8" font-family="sans-serif">극소</text>
-<text x="185" y="133" fill="#f7c26a" font-size="8" font-family="sans-serif">극소</text>
-<text x="38" y="44" fill="#6af7c2" font-size="8" font-family="sans-serif">교점</text>
-<text x="222" y="44" fill="#6af7c2" font-size="8" font-family="sans-serif">교점</text>
-</svg>
+<div class="jxg-wrap">
+<div id="quartic-w-board" class="jxg-board" aria-label="사차함수 W자 대칭형 그래프"></div>
 </div>
 <div class="formula"><p>좌우 대칭 W자 사차함수에서 극대점 기준 수평선을 그을 때:</p><p style="margin-top:8px">극대→극소 거리 : 극대→교점 거리 $= 1 : \sqrt{2}$</p></div>
 <div class="tip">극대 $x=0$, 극소 $x=1$이면 바깥 교점은 $x=\pm\sqrt{2}$. 계산 불필요</div>
@@ -829,25 +613,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="ul">넓이 공식 핵심 시리즈</div>
 <div class="card">
 <div class="ch"><div class="ci cy">⑥</div><div class="ct">6분의 공식 — 이차함수와 직선</div></div>
-<div class="svg-wrap">
-<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" width="260" height="120">
-<defs><style>.c8{stroke:#f7c26a;stroke-width:2;fill:none;}.a8{stroke:#3a3a50;stroke-width:1;fill:none;}.sh8{fill:rgba(124,106,247,.15);stroke:none;}.t8{fill:#888899;font-size:9px;font-family:sans-serif;}</style></defs>
-<line x1="10" y1="90" x2="245" y2="90" class="a8"/>
-<!-- 이차함수 포물선 (아래로, 두 근 α=60, β=200) -->
-<path d="M 40,90 C 60,90 75,25 130,10 C 185,25 200,90 220,90" fill="rgba(124,106,247,.12)" stroke="#7c6af7" stroke-width="1.5"/>
-<!-- x축 (직선 y=0) -->
-<line x1="40" y1="90" x2="220" y2="90" stroke="#f7c26a" stroke-width="1.5"/>
-<!-- 포인트 -->
-<circle cx="40" cy="90" r="3" fill="#6af7c2"/>
-<circle cx="220" cy="90" r="3" fill="#6af7c2"/>
-<!-- l 레이블 -->
-<line x1="40" y1="100" x2="220" y2="100" stroke="#6af7c2" stroke-width="1"/>
-<text x="130" y="112" fill="#6af7c2" font-size="9" font-family="sans-serif" text-anchor="middle">← l = β - α →</text>
-<text x="40" y="104" fill="#888899" font-size="8" font-family="sans-serif">α</text>
-<text x="215" y="104" fill="#888899" font-size="8" font-family="sans-serif">β</text>
-<!-- 공식 -->
-<text x="10" y="15" fill="#f7c26a" font-size="10" font-family="sans-serif">S = |a|/6 · l³</text>
-</svg>
+<div class="jxg-wrap">
+<div id="integral-sixth-board" class="jxg-board" aria-label="6분의 공식 이차함수와 직선 넓이 그래프"></div>
 </div>
 <div class="formula"><p>$$\int_\alpha^\beta a(x-\alpha)(x-\beta)\,dx = -\frac{a}{6} \cdot l^3$$</p><p>넓이 $S = \dfrac{|a|}{6} \cdot l^3 \quad (l = \beta - \alpha)$</p><p style="margin-top:8px">적용: 두 교점의 $x$좌표 차이 $l$만 알면 $\int$ 기호 없이 한 줄 계산</p></div>
 <div class="tip">이차함수와 x축, 또는 이차함수와 직선 사이의 넓이 문제에서 무조건 이 공식 먼저</div>
@@ -855,26 +622,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 
 <div class="card">
 <div class="ch"><div class="ci cg">⑫</div><div class="ct">12분의 공식 — 삼차함수와 접선</div></div>
-<div class="svg-wrap">
-<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" width="260" height="120">
-<defs><style>.c9{stroke:#6af7c2;stroke-width:2;fill:none;}</style></defs>
-<line x1="10" y1="55" x2="245" y2="55" stroke="#3a3a50" stroke-width="1" fill="none"/>
-<!-- 삼차함수: (x-α)²(x-β) 형태, 접점α=50, 교점β=210 -->
-<path d="M 15,62 C 30,57 42,55 50,55 C 62,55 100,105 135,113 C 160,118 185,105 210,55 C 220,38 238,18 250,5" stroke="#6af7c2" stroke-width="2" fill="none"/>
-<!-- 직선 y=55 (x축) -->
-<!-- 음영 -->
-<path d="M 50,55 C 62,55 100,105 135,113 C 160,118 185,105 210,55 Z" fill="rgba(106,247,194,.12)"/>
-<!-- 포인트 -->
-<circle cx="50" cy="55" r="3.5" fill="#f7c26a"/>
-<circle cx="210" cy="55" r="3.5" fill="#6af7c2"/>
-<!-- l 레이블 -->
-<line x1="50" y1="43" x2="210" y2="43" stroke="#f7c26a" stroke-width="1"/>
-<text x="130" y="38" fill="#f7c26a" font-size="9" font-family="sans-serif" text-anchor="middle">← l →</text>
-<!-- 공식 -->
-<text x="8" y="15" fill="#6af7c2" font-size="10" font-family="sans-serif">S = |a|/12 · l⁴</text>
-<text x="38" y="68" fill="#888899" font-size="8" font-family="sans-serif">α (접)</text>
-<text x="200" y="68" fill="#888899" font-size="8" font-family="sans-serif">β (교)</text>
-</svg>
+<div class="jxg-wrap">
+<div id="integral-twelfth-board" class="jxg-board" aria-label="12분의 공식 삼차함수와 접선 넓이 그래프"></div>
 </div>
 <div class="formula"><p>$$\int_\alpha^\beta a(x-\alpha)^2(x-\beta)\,dx = -\frac{a}{12} \cdot l^4$$</p><p>넓이 $S = \dfrac{|a|}{12} \cdot l^4 \quad (l = \beta - \alpha)$</p><p style="margin-top:8px">1:2 비율 관계와 결합 시 시너지 극대화 → 접점·교점만 알면 넓이 즉시 계산</p></div>
 </div>
@@ -896,27 +645,8 @@ tr:hover td{background:rgba(255,255,255,.02);}
 <div class="card">
 <div class="ch"><div class="ci cg">F′</div><div class="ct">정적분 함수 그래프 해석 — $F'(x)=f(x)$</div></div>
 <div class="cb2">누적 넓이 함수는 원래 함수의 부호와 그래프만 읽으면 증가·감소·극값이 바로 결정됩니다.</div>
-<div class="svg-wrap">
-<svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" width="320" height="170">
-<defs><style>.a11{stroke:#3a3a50;stroke-width:1;fill:none;}.c11{stroke:#6af7c2;stroke-width:2.2;fill:none;}.d11{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;}.t11{fill:#888899;font-size:9px;font-family:sans-serif;}.p11{fill:#6af7c2;font-size:9px;font-family:sans-serif;}.n11{fill:#f76a9a;font-size:9px;font-family:sans-serif;}</style></defs>
-<line x1="20" y1="88" x2="300" y2="88" class="a11"/>
-<line x1="50" y1="20" x2="50" y2="150" class="a11"/>
-<path d="M 38,115 C 60,118 76,104 92,88 C 118,62 138,35 165,42 C 190,48 202,88 224,88 C 252,88 262,58 288,46" class="c11"/>
-<path d="M 92,88 C 118,62 138,35 165,42 C 190,48 202,88 224,88 L 92,88 Z" fill="rgba(106,247,194,.14)"/>
-<path d="M 38,115 C 60,118 76,104 92,88 L 38,88 Z" fill="rgba(247,106,154,.13)"/>
-<line x1="92" y1="28" x2="92" y2="145" class="d11"/>
-<line x1="224" y1="28" x2="224" y2="145" class="d11"/>
-<circle cx="92" cy="88" r="4" fill="#f7c26a"/>
-<circle cx="224" cy="88" r="4" fill="#f7c26a"/>
-<text x="78" y="103" class="t11">f=0</text>
-<text x="211" y="103" class="t11">f=0</text>
-<text x="125" y="68" class="p11">f(x)>0 → F 증가</text>
-<text x="39" y="132" class="n11">f(x)<0 → F 감소</text>
-<text x="230" y="74" class="p11">F 다시 증가</text>
-<text x="28" y="22" class="t11">y=f(x)</text>
-<text x="95" y="158" class="t11">F 극소 후보</text>
-<text x="206" y="158" class="t11">극값 아님: 부호 확인</text>
-</svg>
+<div class="jxg-wrap">
+<div id="integral-function-board" class="jxg-board" aria-label="정적분 함수 그래프 해석 그래프"></div>
 </div>
 <div class="formula"><p>$$F(x)=\int_a^x f(t)\,dt \quad\Rightarrow\quad F'(x)=f(x)$$</p><p>따라서</p><p>$f(x)>0$ → $F(x)$ 증가</p><p>$f(x)<0$ → $F(x)$ 감소</p><p>$f(x)=0$ 이고 부호가 바뀌면 → $F(x)$의 극값 후보</p></div>
 <div class="proof"><div class="proof-title">한 단계 더</div><p>$F''(x)=f'(x)$ 이므로</p><p>$f$가 증가하면 $F$는 아래로 볼록, $f$가 감소하면 $F$는 위로 볼록으로 읽을 수 있습니다.</p></div>
@@ -984,6 +714,7 @@ tr:hover td{background:rgba(255,255,255,.02);}
 </div><!-- /main -->
 <script>
 let trigBoxBoard=null;
+const graphBoards={};
 
 function show(id){
   document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
@@ -992,6 +723,8 @@ function show(id){
   const ids=['ov','exp','trig','seq','lim','dif','int'];
   document.querySelectorAll('.nb')[ids.indexOf(id)].classList.add('on');
   if(id==='trig') initTrigBoxGraph();
+  if(id==='dif') initDifferentialGraphs();
+  if(id==='int') initIntegralGraphs();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1059,8 +792,281 @@ function initTrigBoxGraph(){
   board.update();
 }
 
+function initGraphBoard(id,boundingbox){
+  if(graphBoards[id] || typeof JXG==='undefined') return null;
+  const board=JXG.JSXGraph.initBoard(id,{
+    boundingbox,
+    axis:false,
+    showNavigation:false,
+    showCopyright:false,
+    keepaspectratio:false,
+    pan:{enabled:false},
+    zoom:{enabled:false},
+    resize:{enabled:true}
+  });
+  graphBoards[id]=board;
+  return board;
+}
+
+function drawCalcGraph(board,fn,x1,x2,color){
+  return board.create('functiongraph',[fn,x1,x2],{
+    fixed:true,
+    highlight:false,
+    strokeColor:color,
+    strokeWidth:2.5,
+    doAdvancedPlot:true,
+    numberPointsHigh:900
+  });
+}
+
+function seg(board,a,b,attrs={}){
+  return board.create('segment',[a,b],{fixed:true,highlight:false,...attrs});
+}
+
+function calcText(board,x,y,t,attrs={}){
+  return board.create('text',[x,y,t],{
+    fixed:true,
+    highlight:false,
+    strokeColor:'#888899',
+    fontSize:11,
+    anchorX:'middle',
+    anchorY:'middle',
+    ...attrs
+  });
+}
+
+function calcPoint(board,x,y,color,label,labelDx=0,labelDy=0){
+  const p=board.create('point',[x,y],{
+    fixed:true,
+    highlight:false,
+    name:'',
+    size:4,
+    strokeColor:color,
+    fillColor:color
+  });
+  if(label) calcText(board,x+labelDx,y+labelDy,label,{strokeColor:color,fontSize:11});
+  return p;
+}
+
+function dashedV(board,x,y1,y2){
+  seg(board,[x,y1],[x,y2],{strokeColor:'#888899',strokeWidth:1,dash:2});
+}
+
+function filledArea(board,fn,a,b,base,color,opacity=0.13,steps=44){
+  const pts=[];
+  pts.push(board.create('point',[a,base],{visible:false,fixed:true}));
+  for(let i=0;i<=steps;i++){
+    const x=a+(b-a)*i/steps;
+    pts.push(board.create('point',[x,fn(x)],{visible:false,fixed:true}));
+  }
+  pts.push(board.create('point',[b,base],{visible:false,fixed:true}));
+  board.create('polygon',pts,{
+    fixed:true,
+    highlight:false,
+    fillColor:color,
+    fillOpacity:opacity,
+    borders:{visible:false,highlight:false}
+  });
+}
+
+function initDifferentialGraphs(){
+  initCubicStandardGraph();
+  initCubicRatioGraph();
+  initCubicRoot3Graph();
+  initParameterCountGraph();
+  initQuartic31Graph();
+  initQuarticWGraph();
+}
+
+function initIntegralGraphs(){
+  initIntegralSixthGraph();
+  initIntegralTwelfthGraph();
+  initIntegralFunctionGraph();
+}
+
+function initCubicStandardGraph(){
+  const board=initGraphBoard('cubic-standard-board',[-2.35,2.9,2.35,-2.9]);
+  if(!board) return;
+  const f=x=>x*x*x-3*x;
+  const r=Math.sqrt(3);
+  seg(board,[-2.15,0],[2.15,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  seg(board,[0,-2.55],[0,2.55],{strokeColor:'#888899',strokeWidth:1,dash:2});
+  seg(board,[-2.15,2],[2.15,2],{strokeColor:'#f7c26a',strokeWidth:1,dash:2});
+  seg(board,[-2.15,-2],[2.15,-2],{strokeColor:'#f76a9a',strokeWidth:1,dash:2});
+  [-r,-1,1,r].forEach(x=>dashedV(board,x,-2.55,2.55));
+  drawCalcGraph(board,f,-2.05,2.05,'#7c6af7');
+  calcPoint(board,-1,2,'#f7c26a','극대',-.18,.35);
+  calcPoint(board,1,-2,'#f7c26a','극소',.2,-.35);
+  calcPoint(board,0,0,'#7c6af7','변곡점',.35,.35);
+  calcPoint(board,-r,0,'#6af7c2','교점',-.18,.35);
+  calcPoint(board,r,0,'#6af7c2','교점',.18,.35);
+  seg(board,[-1,-2.55],[0,-2.55],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  seg(board,[0,-2.55],[1,-2.55],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  calcText(board,-.5,-2.72,'d',{strokeColor:'#f7c26a'});
+  calcText(board,.5,-2.72,'d',{strokeColor:'#f7c26a'});
+  seg(board,[-r,2.55],[0,2.55],{strokeColor:'#6af7c2',strokeWidth:1.4});
+  seg(board,[0,2.55],[r,2.55],{strokeColor:'#6af7c2',strokeWidth:1.4});
+  calcText(board,-.86,2.72,'√3d',{strokeColor:'#6af7c2'});
+  calcText(board,.86,2.72,'√3d',{strokeColor:'#6af7c2'});
+}
+
+function initCubicRatioGraph(){
+  const board=initGraphBoard('cubic-ratio-board',[-.7,1.25,3.8,-4.9]);
+  if(!board) return;
+  const f=x=>x*x*(x-3);
+  seg(board,[-.55,0],[3.6,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  [0,2,3].forEach(x=>dashedV(board,x,-4.55,.9));
+  drawCalcGraph(board,f,-.45,3.55,'#7c6af7');
+  calcPoint(board,0,0,'#6af7c2','α(접점)',-.18,-.45);
+  calcPoint(board,2,-4,'#f7c26a','극점',.05,-.42);
+  calcPoint(board,3,0,'#6af7c2','β(교점)',.2,-.45);
+  seg(board,[0,.82],[2,.82],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  seg(board,[2,.82],[3,.82],{strokeColor:'#6af7c2',strokeWidth:1.4});
+  calcText(board,1,1.02,'← 2d →',{strokeColor:'#f7c26a'});
+  calcText(board,2.5,1.02,'← d →',{strokeColor:'#6af7c2'});
+  calcText(board,1.1,-4.45,'극점 x = (2β + α) / 3',{strokeColor:'#a9a0f0',fontSize:12});
+}
+
+function initCubicRoot3Graph(){
+  const board=initGraphBoard('cubic-root3-board',[-2.25,2.75,2.25,-2.75]);
+  if(!board) return;
+  const f=x=>x*x*x-3*x;
+  const r=Math.sqrt(3);
+  seg(board,[-2.05,0],[2.05,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  seg(board,[0,-2.45],[0,2.45],{strokeColor:'#888899',strokeWidth:1,dash:2});
+  seg(board,[-2.05,2],[2.05,2],{strokeColor:'#f7c26a',strokeWidth:1,dash:2});
+  seg(board,[-2.05,-2],[2.05,-2],{strokeColor:'#f76a9a',strokeWidth:1,dash:2});
+  drawCalcGraph(board,f,-2,2,'#6af7c2');
+  calcPoint(board,-1,2,'#f7c26a','극대',-.18,.34);
+  calcPoint(board,1,-2,'#f7c26a','극소',.2,-.34);
+  calcPoint(board,0,0,'#7c6af7','변곡',.28,-.28);
+  calcPoint(board,-r,0,'#6af7c2','교점',-.16,.33);
+  calcPoint(board,r,0,'#6af7c2','교점',.16,.33);
+  seg(board,[-1,-.65],[0,-.65],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  seg(board,[0,-.65],[1,-.65],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  calcText(board,-.5,-.86,'1',{strokeColor:'#f7c26a'});
+  calcText(board,.5,-.86,'1',{strokeColor:'#f7c26a'});
+  seg(board,[-r,.68],[0,.68],{strokeColor:'#6af7c2',strokeWidth:1.4});
+  seg(board,[0,.68],[r,.68],{strokeColor:'#6af7c2',strokeWidth:1.4});
+  calcText(board,-.86,.9,'√3',{strokeColor:'#6af7c2'});
+  calcText(board,.86,.9,'√3',{strokeColor:'#6af7c2'});
+}
+
+function initParameterCountGraph(){
+  const board=initGraphBoard('parameter-count-board',[-2.55,2.65,3.2,-3.45]);
+  if(!board) return;
+  const f=x=>x*x*x-3*x;
+  seg(board,[-2.25,0],[2.25,0],{strokeColor:'#3a3a50',strokeWidth:1});
+  seg(board,[-2.25,-3],[2.25,-3],{strokeColor:'#3a3a50',strokeWidth:1});
+  seg(board,[-2.25,2],[2.25,2],{strokeColor:'#f76a9a',strokeWidth:1,dash:2,opacity:.65});
+  seg(board,[-2.25,0],[2.25,0],{strokeColor:'#f76a9a',strokeWidth:1.6,dash:2});
+  seg(board,[-2.25,-2],[2.25,-2],{strokeColor:'#f76a9a',strokeWidth:1,dash:2,opacity:.65});
+  drawCalcGraph(board,f,-2.15,2.15,'#f7c26a');
+  calcPoint(board,-1,2,'#f7c26a','');
+  calcPoint(board,1,-2,'#f7c26a','');
+  [-Math.sqrt(3),0,Math.sqrt(3)].forEach(x=>calcPoint(board,x,0,'#f76a9a',''));
+  calcText(board,2.35,2,'k=극댓값',{anchorX:'left'});
+  calcText(board,2.35,0,'k=중간값',{strokeColor:'#f76a9a',anchorX:'left'});
+  calcText(board,2.35,-2,'k=극솟값',{anchorX:'left'});
+  calcText(board,-1.85,-3.2,'y=f(x)',{anchorX:'left'});
+  calcText(board,-2.25,2.9,'y',{strokeColor:'#6af7c2'});
+}
+
+function initQuartic31Graph(){
+  const board=initGraphBoard('quartic-31-board',[-.9,2.0,4.75,-6.45]);
+  if(!board) return;
+  const f=x=>.08*x*x*x*(x-4);
+  seg(board,[-.65,0],[4.5,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  [0,3,4].forEach(x=>dashedV(board,x,-5.8,1.25));
+  drawCalcGraph(board,f,-.75,4.55,'#7c6af7');
+  calcPoint(board,0,0,'#6af7c2','α(3중근)',-.1,-.55);
+  calcPoint(board,3,f(3),'#f7c26a','극소',.08,-.55);
+  calcPoint(board,4,0,'#6af7c2','β',.15,-.45);
+  seg(board,[0,1.25],[3,1.25],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  seg(board,[3,1.25],[4,1.25],{strokeColor:'#6af7c2',strokeWidth:1.4});
+  calcText(board,1.5,1.52,'← 3d →',{strokeColor:'#f7c26a'});
+  calcText(board,3.5,1.52,'← d →',{strokeColor:'#6af7c2'});
+  calcText(board,1.7,-6.05,'극소 x = (3β+α)/4 = α + 3(β-α)/4',{strokeColor:'#a9a0f0',fontSize:12});
+}
+
+function initQuarticWGraph(){
+  const board=initGraphBoard('quartic-w-board',[-1.8,.42,1.8,-1.45]);
+  if(!board) return;
+  const f=x=>x*x*x*x-2*x*x;
+  const r=Math.sqrt(2);
+  seg(board,[-1.65,0],[1.65,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  seg(board,[-1.65,-1],[1.65,-1],{strokeColor:'#3a3a50',strokeWidth:1});
+  [ -r,-1,0,1,r ].forEach(x=>dashedV(board,x,-1.25,.25));
+  drawCalcGraph(board,f,-1.65,1.65,'#6af7c2');
+  calcPoint(board,0,0,'#7c6af7','극대',0,.22);
+  calcPoint(board,-1,-1,'#f7c26a','극소',-.08,-.24);
+  calcPoint(board,1,-1,'#f7c26a','극소',.08,-.24);
+  calcPoint(board,-r,0,'#6af7c2','교점',-.12,-.23);
+  calcPoint(board,r,0,'#6af7c2','교점',.12,-.23);
+  seg(board,[-1,.24],[0,.24],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  seg(board,[0,.24],[1,.24],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  seg(board,[-r,.34],[0,.34],{strokeColor:'#f76a9a',strokeWidth:1.4});
+  seg(board,[0,.34],[r,.34],{strokeColor:'#f76a9a',strokeWidth:1.4});
+  calcText(board,-.5,.12,'1',{strokeColor:'#f7c26a'});
+  calcText(board,.5,.12,'1',{strokeColor:'#f7c26a'});
+  calcText(board,-.7,.48,'√2',{strokeColor:'#f76a9a'});
+  calcText(board,.7,.48,'√2',{strokeColor:'#f76a9a'});
+}
+
+function initIntegralSixthGraph(){
+  const board=initGraphBoard('integral-sixth-board',[-.55,2.45,3.55,-.55]);
+  if(!board) return;
+  const f=x=>x*(3-x);
+  filledArea(board,f,0,3,0,'#7c6af7',.16);
+  seg(board,[-.35,0],[3.35,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  drawCalcGraph(board,f,-.25,3.25,'#7c6af7');
+  calcPoint(board,0,0,'#6af7c2','α',-.1,-.25);
+  calcPoint(board,3,0,'#6af7c2','β',.1,-.25);
+  seg(board,[0,-.32],[3,-.32],{strokeColor:'#6af7c2',strokeWidth:1.4});
+  calcText(board,1.5,-.45,'← l = β - α →',{strokeColor:'#6af7c2'});
+  calcText(board,.55,2.12,'S = |a|/6 · l³',{strokeColor:'#f7c26a',fontSize:12});
+}
+
+function initIntegralTwelfthGraph(){
+  const board=initGraphBoard('integral-twelfth-board',[-.55,1.2,3.7,-4.55]);
+  if(!board) return;
+  const f=x=>x*x*(x-3);
+  filledArea(board,f,0,3,0,'#6af7c2',.15);
+  seg(board,[-.35,0],[3.45,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  drawCalcGraph(board,f,-.25,3.45,'#6af7c2');
+  calcPoint(board,0,0,'#f7c26a','α (접)',-.08,-.42);
+  calcPoint(board,3,0,'#6af7c2','β (교)',.12,-.42);
+  seg(board,[0,.68],[3,.68],{strokeColor:'#f7c26a',strokeWidth:1.4});
+  calcText(board,1.5,.9,'← l →',{strokeColor:'#f7c26a'});
+  calcText(board,.78,1.04,'S = |a|/12 · l⁴',{strokeColor:'#6af7c2',fontSize:12});
+}
+
+function initIntegralFunctionGraph(){
+  const board=initGraphBoard('integral-function-board',[-3.35,1.7,2.35,-1.15]);
+  if(!board) return;
+  const f=x=>.23*(x+2)*(x-1)*(x-1);
+  filledArea(board,f,-3,-2,0,'#f76a9a',.13,24);
+  filledArea(board,f,-2,1,0,'#6af7c2',.14,44);
+  filledArea(board,f,1,2.1,0,'#6af7c2',.1,22);
+  seg(board,[-3.1,0],[2.15,0],{strokeColor:'#3a3a50',strokeWidth:1.2});
+  seg(board,[-3,-1],[ -3,1.55],{strokeColor:'#3a3a50',strokeWidth:1});
+  drawCalcGraph(board,f,-3.1,2.1,'#6af7c2');
+  dashedV(board,-2,-1,1.45);
+  dashedV(board,1,-1,1.45);
+  calcPoint(board,-2,0,'#f7c26a','f=0',-.2,.22);
+  calcPoint(board,1,0,'#f7c26a','f=0',.16,.22);
+  calcText(board,-2.75,1.4,'y=f(x)',{anchorX:'left'});
+  calcText(board,-2.65,-.72,'f(x)<0 → F 감소',{strokeColor:'#f76a9a',anchorX:'left'});
+  calcText(board,-.65,.55,'f(x)>0 → F 증가',{strokeColor:'#6af7c2'});
+  calcText(board,1.55,.38,'F 다시 증가',{strokeColor:'#6af7c2'});
+  calcText(board,-2,-.95,'F 극소 후보',{strokeColor:'#888899'});
+  calcText(board,1,-.95,'극값 아님: 부호 확인',{strokeColor:'#888899'});
+}
+
 document.addEventListener('DOMContentLoaded',function(){
   if(document.getElementById('trig')?.classList.contains('on')) initTrigBoxGraph();
+  if(document.getElementById('dif')?.classList.contains('on')) initDifferentialGraphs();
+  if(document.getElementById('int')?.classList.contains('on')) initIntegralGraphs();
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
