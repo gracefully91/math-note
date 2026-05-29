@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수1·수2 실전 치트키 완전판</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+:root{--bg:#0d0d0f;--bg2:#13131a;--bg3:#1a1a24;--border:#2a2a3a;--a1:#7c6af7;--a2:#f7c26a;--a3:#6af7c2;--a4:#f76a9a;--a5:#6ab4f7;--txt:#e8e8f0;--dim:#888899;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;}
+.hero{background:linear-gradient(135deg,#0d0d0f,#1a1228 50%,#0d1a1a);border-bottom:1px solid var(--border);padding:44px 24px 32px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(124,106,247,.13) 0%,transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(106,247,194,.09) 0%,transparent 60%);pointer-events:none;}
+.hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--a1);border:1px solid rgba(124,106,247,.4);padding:4px 14px;border-radius:20px;margin-bottom:14px;}
+.hero h1{font-size:clamp(22px,5vw,38px);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#e8e8f0,#7c6af7 50%,#6af7c2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;}
+.hero p{color:var(--dim);font-size:13px;}
+.hero-stats{display:flex;justify-content:center;gap:24px;margin-top:16px;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat-n{font-size:22px;font-weight:900;color:var(--a2);}
+.stat-l{font-size:11px;color:var(--dim);letter-spacing:1px;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,13,15,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 16px;}
+.nav::-webkit-scrollbar{display:none;}
+.nb{flex-shrink:0;padding:13px 16px;font-size:13px;font-weight:500;color:var(--dim);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;}
+.nb:hover{color:var(--txt);}
+.nb.on{color:var(--a1);border-bottom-color:var(--a1);}
+.main{max-width:920px;margin:0 auto;padding:28px 16px 80px;}
+.sec{display:none;}
+.sec.on{display:block;}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.badge{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 11px;border-radius:6px;}
+.b1{background:rgba(124,106,247,.15);color:var(--a1);border:1px solid rgba(124,106,247,.3);}
+.b2{background:rgba(106,247,194,.12);color:var(--a3);border:1px solid rgba(106,247,194,.3);}
+.ba{background:rgba(247,194,106,.12);color:var(--a2);border:1px solid rgba(247,194,106,.3);}
+.st{font-size:19px;font-weight:700;}
+.ul{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin:28px 0 12px;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:12px;transition:border-color .2s;}
+.card:hover{border-color:#3a3a50;}
+.ch{display:flex;align-items:flex-start;gap:11px;margin-bottom:10px;}
+.ci{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px;}
+.cp{background:rgba(124,106,247,.15);}
+.cg{background:rgba(106,247,194,.12);}
+.cy{background:rgba(247,194,106,.12);}
+.cr{background:rgba(247,106,154,.12);}
+.cb{background:rgba(106,180,247,.12);}
+.ct{font-size:14.5px;font-weight:700;line-height:1.4;}
+.cb2{font-size:13px;color:#b8b8cc;line-height:1.8;}
+.formula{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--a2);border-radius:8px;padding:11px 15px;margin:9px 0;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--a2);line-height:1.9;white-space:pre-wrap;}
+.proof{background:rgba(124,106,247,.05);border:1px solid rgba(124,106,247,.2);border-radius:8px;padding:11px 15px;margin:9px 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#a9a0f0;line-height:1.9;white-space:pre-wrap;}
+.proof-title{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--a1);margin-bottom:5px;}
+.tip{background:rgba(106,247,194,.06);border:1px solid rgba(106,247,194,.2);border-radius:8px;padding:9px 13px;margin:9px 0;font-size:12.5px;color:var(--a3);line-height:1.7;}
+.tip::before{content:'💡 ';}
+.warn{background:rgba(247,106,154,.06);border:1px solid rgba(247,106,154,.2);border-radius:8px;padding:9px 13px;margin:9px 0;font-size:12.5px;color:var(--a4);line-height:1.7;}
+.warn::before{content:'⚠️ ';}
+.cond{background:rgba(106,180,247,.06);border:1px solid rgba(106,180,247,.2);border-radius:8px;padding:9px 13px;margin:9px 0;font-size:12.5px;color:var(--a5);line-height:1.7;}
+.cond::before{content:'🎯 적용 조건: ';}
+.svg-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px;margin:10px 0;display:flex;justify-content:center;overflow:hidden;}
+.svg-wrap svg{max-width:100%;height:auto;}
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+@media(max-width:560px){.ov-grid{grid-template-columns:1fr;}}
+.ovc{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;}
+.ovc-t{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.ovi{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(42,42,58,.4);font-size:12.5px;}
+.ovi:last-child{border-bottom:none;}
+.ovi-s{color:var(--a2);font-size:11px;}
+.src-g{color:var(--a1);font-size:10px;background:rgba(124,106,247,.1);padding:2px 6px;border-radius:4px;}
+.src-a{color:var(--a3);font-size:10px;background:rgba(106,247,194,.1);padding:2px 6px;border-radius:4px;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0;}
+th{background:var(--bg3);padding:9px 12px;text-align:left;font-weight:600;color:var(--dim);border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.5px;}
+td{padding:9px 12px;border-bottom:1px solid rgba(42,42,58,.4);color:var(--txt);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,.02);}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="hero-tag">수능 수학 실전 치트키 완전판</div>
+<h1>수학I · 수학II 마스터 공략집</h1>
+<p>기본서 밖의 실전 개념 · 비율 관계 · 연산 단축 공식 완전 수록</p>
+<div class="hero-stats">
+<div class="stat"><div class="stat-n">46</div><div class="stat-l">총 치트키</div></div>
+<div class="stat"><div class="stat-n">9</div><div class="stat-l">SVG 그래프</div></div>
+<div class="stat"><div class="stat-n">12</div><div class="stat-l">증명 수록</div></div>
+</div>
+</div>
+<nav class="nav">
+<button class="nb on" onclick="show('ov')">전체 개요</button>
+<button class="nb" onclick="show('exp')">지수·로그</button>
+<button class="nb" onclick="show('trig')">삼각함수</button>
+<button class="nb" onclick="show('seq')">수열</button>
+<button class="nb" onclick="show('lim')">극한·연속</button>
+<button class="nb" onclick="show('dif')">미분</button>
+<button class="nb" onclick="show('int')">적분</button>
+</nav>
+<div class="main">
+
+<!-- ======= OVERVIEW ======= -->
+<div class="sec on" id="ov">
+<div class="sh"><span class="badge ba">Overview</span><span class="st">전체 치트키 지도</span></div>
+<div class="ov-grid">
+<div class="ovc">
+<div class="ovc-t">📘 수학I — 지수·로그</div>
+<div class="ovi"><span>기울기 -1 직선 · √2 법칙</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>등차↔등비 변환 구조</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>로그함수 넓이 보존</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>대소비교 경계값 대입 강령</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>쌍곡선함수 합성 구조</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>격자점 부등식 영역화</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>로그 부등식 케이스 분류</span><span class="ovi-s">★★★</span></div>
+</div>
+<div class="ovc">
+<div class="ovc-t">📘 수학I — 삼각함수</div>
+<div class="ovi"><span>4등분 박스 법칙</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>대칭축 교점의 합 공식</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>합성 공식 역방향</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>단위원 대칭 이동 독해법</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>외접원·지름 직각삼각형</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>내접 사각형 (마주보는 각)</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>할선 정리</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>사영 정리 · 넓이 3종 세트</span><span class="ovi-s">★★★★</span></div>
+</div>
+<div class="ovc">
+<div class="ovc-t">📘 수학I — 수열</div>
+<div class="ovi"><span>S_n 이차함수 대칭축 추론</span><span class="ovi-s">★★★★★</span></div>
+<div class="ovi"><span>S_n 절댓값 조건 기하학</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>블록 합 등차·등비 보존</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>개차수열 일반화 공식</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>연속한 두/세 수 곱의 Σ</span><span class="ovi-s">★★★</span></div>
+<div class="ovi"><span>부분분수 망원합 간격별</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>귀납수열 고정점·궤도</span><span class="ovi-s">★★★★★</span></div>
+<div class="ovi"><span>∑k·rᵏ 소거법</span><span class="ovi-s">★★★★</span></div>
+</div>
+<div class="ovc">
+<div class="ovc-t">📗 수학II — 미분·적분</div>
+<div class="ovi"><span>삼차함수 1:2 비율</span><span class="ovi-s">★★★★★</span></div>
+<div class="ovi"><span>삼차함수 1:√3 · 8칸 박스</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>접점→교점 공식 (-2t-p)</span><span class="ovi-s">★★★★★</span></div>
+<div class="ovi"><span>매개변수 분리법</span><span class="ovi-s">★★★★★</span></div>
+<div class="ovi"><span>변곡접선 접선 개수 영역</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>사차함수 3:1 · 1:√2</span><span class="ovi-s">★★★★</span></div>
+<div class="ovi"><span>6분의·12분의·30분의</span><span class="ovi-s">★★★★★</span></div>
+<div class="ovi"><span>심프슨 공식</span><span class="ovi-s">★★★★</span></div>
+</div>
+</div>
+<table>
+<thead><tr><th>치트키</th><th>단원</th><th>파괴력</th><th>출처</th></tr></thead>
+<tbody>
+<tr><td>S_n 이차함수 대칭축 추론</td><td>수I·수열</td><td>★★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>귀납수열 고정점·궤도 분석</td><td>수I·수열</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
+<tr><td>삼차함수 1:2 비율 관계</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>접점→교점 공식 (-2t-p)</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
+<tr><td>매개변수 분리법</td><td>수II·미분</td><td>★★★★★</td><td><span class="src-a">추가</span></td></tr>
+<tr><td>6분의·12분의 넓이 공식</td><td>수II·적분</td><td>★★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>삼각함수 합성 역방향</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-a">추가</span></td></tr>
+<tr><td>대칭축 교점의 합 공식</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>사영 정리</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>개차수열 일반화</td><td>수I·수열</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>∑k·rᵏ 소거법</td><td>수I·수열</td><td>★★★★</td><td><span class="src-a">추가</span></td></tr>
+<tr><td>삼차함수 1:√3 · 8칸 박스</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>교점 x좌표의 합 보존</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>변곡접선 접선 개수 영역</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>합성함수 미분불가능점 2단계</td><td>수II·미분</td><td>★★★★</td><td><span class="src-a">추가</span></td></tr>
+<tr><td>심프슨 공식</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>역함수 정적분 (ㄱ자 넓이)</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>내접 사각형 마주보는 각</td><td>수I·삼각</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>S_n 절댓값 조건 기하학</td><td>수I·수열</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>삼차함수 극댓값·극솟값 차이</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>f(x)-f(t) 직관적 해석</td><td>수II·미분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>변곡접선 통짜 넓이 공식</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+<tr><td>속도·거리 삼각형 넓이</td><td>수II·적분</td><td>★★★★</td><td><span class="src-g">제미나이</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ======= 지수·로그 ======= -->
+<div class="sec" id="exp">
+<div class="sh"><span class="badge b1">수학I</span><span class="st">지수함수 · 로그함수</span></div>
+
+<div class="ul">역함수 관계와 대칭</div>
+<div class="card">
+<div class="ch"><div class="ci cp">📐</div><div class="ct">기울기 -1 직선과 √2 법칙</div></div>
+<div class="cb2">지수함수와 로그함수가 역함수 관계일 때, 기울기 -1인 직선 위의 두 교점은 반드시 y=x에 대해 대칭입니다.</div>
+<div class="formula">두 점의 x좌표 차이 = d
+→ 두 점 사이의 거리 = d√2
+
+일반 공식: 기울기 m인 직선 위 두 점 거리 = Δx · √(1+m²)
+m = -1 대입 → Δx · √2</div>
+<div class="cond">기울기 -1인 직선이 지수·로그함수 쌍과 만날 때</div>
+<div class="tip">교점 좌표를 직접 구하지 않아도 거리 계산 즉시 가능</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">🔄</div><div class="ct">등차↔등비 변환 구조</div></div>
+<div class="cb2">그래프 위 점들의 좌표를 설정할 때 x/y 중 어느 것이 등차·등비를 이루는지 즉시 판단합니다.</div>
+<div class="formula">y = aˣ  →  x가 등차수열 ⟹  y는 등비수열
+y = logₐx  →  x가 등비수열 ⟹  y는 등차수열</div>
+<div class="tip">일정 간격 점들: x, x+d, x+2d 또는 x, xr, xr² 로 고정 후 빠르게 연립 세팅</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">📏</div><div class="ct">로그함수 '넓이 보존' 법칙</div></div>
+<div class="cb2">y=logₐx 와 y=logₐ(kx) 는 평행이동 관계. 두 그래프와 두 수평선으로 둘러싸인 넓이는 적분 없이 구합니다.</div>
+<div class="formula">넓이 = (c₂ - c₁) × logₐk
+
+이유: 두 그래프의 가로 간격이 어느 높이에서도 일정(= logₐk)</div>
+<div class="tip">적분 계산 없이 평행사변형 넓이 공식처럼 처리</div>
+</div>
+
+<div class="ul">대소 비교 · 부등식</div>
+<div class="card">
+<div class="ch"><div class="ci cy">🔍</div><div class="ct">대소 비교 경계값 대입 강령</div></div>
+<div class="cb2">두 곡선의 교점 x₁의 범위를 추론할 때, 특정 경계값 x=k를 두 식에 각각 대입하여 y값의 위아래(대소 관계)가 어떻게 바뀌는지 확인합니다.</div>
+<div class="formula">예: "x₁ > 1/2 인가?" 검증 방법
+→  x = 1/2 를 두 함수에 각각 대입
+→  f(1/2) vs g(1/2) 대소 관계 확인
+→  교점 전후로 대소가 뒤집히는지 체크</div>
+<div class="cond">ㄱ/ㄴ/ㄷ 진위 판정형, 두 곡선 교점의 위치 추론 문제</div>
+<div class="tip">대략 찍는 게 아니라 수학적으로 정석인 행동 강령. 경계값 대입 하나로 해결</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">⚠️</div><div class="ct">로그 부등식 — 밑이 변수일 때 케이스 분류</div></div>
+<div class="cb2">밑에 변수가 들어가면 밑의 범위에 따라 부등호 방향이 뒤집힙니다. 이걸 즉석에서 생각하면 반드시 실수 납니다.</div>
+<div class="formula">log_{f(x)} g(x) > 0 꼴:
+
+① f(x) > 1  일 때:  g(x) > 1  (부등호 유지)
+② 0 < f(x) < 1  일 때:  0 < g(x) < 1  (부등호 유지, 범위 다름)
+
++ 공통 조건: f(x) > 0, f(x) ≠ 1, g(x) > 0 반드시 체크</div>
+<div class="warn">케이스 분류 표를 머릿속에 정형화해두지 않으면 시험장에서 반드시 실수</div>
+</div>
+
+<div class="ul">심화 · 격자점</div>
+<div class="card">
+<div class="ch"><div class="ci cb">∞</div><div class="ct">쌍곡선함수 합성 구조</div></div>
+<div class="cb2">f(x) = (aˣ+a⁻ˣ)/2, g(x) = (aˣ-a⁻ˣ)/2 꼴이 조건으로 나올 때 이 성질을 모르면 연립에 5분 낭비.</div>
+<div class="formula">f(x)  →  y축 대칭 (우함수)
+g(x)  →  원점 대칭 (기함수)
+
+[핵심 항등식]  {f(x)}² - {g(x)}² = 1  (항상 성립)</div>
+<div class="proof"><div class="proof-title">증명</div>{f(x)}² - {g(x)}² 
+= [(aˣ+a⁻ˣ)/2]² - [(aˣ-a⁻ˣ)/2]²
+= [aˣ+a⁻ˣ + aˣ-a⁻ˣ]/2 · [aˣ+a⁻ˣ - aˣ+a⁻ˣ]/2
+= (2aˣ/2) · (2a⁻ˣ/2) = aˣ · a⁻ˣ = 1  ✓</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">🔲</div><div class="ct">격자점 문제 — 부등식 영역화와 층별 분할</div></div>
+<div class="cb2">지수·로그 곡선 사이의 격자점을 하나씩 세다가는 시험 종이 칩니다.</div>
+<div class="formula">치트키 1: aˣ ≤ n 꼴 → 무조건 log 변환 후 정수 구간 처리
+  aˣ ≤ n  →  x ≤ logₐn
+
+치트키 2: y = aˣ 와 y = logₐx (역함수 관계) 사이의
+격자점 개수 = y=x 아래쪽 격자점 × 2 + 대칭축 위의 점</div>
+<div class="tip">y축 방향으로 층별로 잘라서 각 층의 x 범위를 정수 구간으로 처리</div>
+</div>
+</div>
+
+<!-- ======= 삼각함수 ======= -->
+<div class="sec" id="trig">
+<div class="sh"><span class="badge b1">수학I</span><span class="st">삼각함수</span></div>
+
+<div class="ul">그래프 · 방정식</div>
+<div class="card">
+<div class="ch"><div class="ci cp">📦</div><div class="ct">사인/코사인 4등분 박스 법칙</div></div>
+<div class="cb2">한 주기를 직사각형 박스로 감싸면 4개의 합동 영역으로 쪼개집니다. 넓이 계산·대칭성 추론의 기반.</div>
+<div class="svg-wrap">
+<svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" width="300" height="120">
+<defs><style>.ax{stroke:#3a3a50;stroke-width:1;fill:none;} .cv{stroke:#7c6af7;stroke-width:2;fill:none;} .dl{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;} .lb{fill:#888899;font-size:9px;font-family:sans-serif;} .lh{fill:#f7c26a;font-size:9px;font-family:sans-serif;} .pt{fill:#6af7c2;} .rb{fill:rgba(124,106,247,.08);stroke:rgba(124,106,247,.3);stroke-width:1;}</style></defs>
+<!-- 박스 배경 -->
+<rect x="30" y="15" width="60" height="55" class="rb"/>
+<rect x="90" y="15" width="60" height="55" class="rb"/>
+<rect x="150" y="15" width="60" height="55" class="rb"/>
+<rect x="210" y="15" width="60" height="55" class="rb"/>
+<!-- x축 -->
+<line x1="20" y1="70" x2="285" y2="70" class="ax"/>
+<!-- 중간선 -->
+<line x1="20" y1="42" x2="285" y2="42" class="dl"/>
+<!-- 세로선 -->
+<line x1="30" y1="10" x2="30" y2="80" class="dl"/>
+<line x1="90" y1="10" x2="90" y2="80" class="dl"/>
+<line x1="150" y1="10" x2="150" y2="80" class="dl"/>
+<line x1="210" y1="10" x2="210" y2="80" class="dl"/>
+<line x1="270" y1="10" x2="270" y2="80" class="dl"/>
+<!-- sin 곡선 한 주기 (0 to 2π) -->
+<path d="M 30,70 C 45,70 55,15 90,15 C 125,15 135,70 150,70 C 165,70 175,105 210,105 C 245,105 255,70 270,70" class="cv"/>
+<!-- 수평 진폭선 -->
+<line x1="25" y1="15" x2="155" y2="15" stroke="#6af7c2" stroke-width="1" stroke-dasharray="3,2"/>
+<!-- 레이블 -->
+<text x="55" y="105" class="lb" text-anchor="middle">①</text>
+<text x="115" y="105" class="lb" text-anchor="middle">②</text>
+<text x="175" y="105" class="lb" text-anchor="middle">③</text>
+<text x="235" y="105" class="lb" text-anchor="middle">④</text>
+<text x="55" y="40" class="lh" text-anchor="middle">합동</text>
+<text x="115" y="40" class="lh" text-anchor="middle">합동</text>
+<text x="175" y="92" class="lh" text-anchor="middle">합동</text>
+<text x="235" y="92" class="lh" text-anchor="middle">합동</text>
+<text x="30" y="9" class="lb">0</text>
+<text x="87" y="9" class="lb">π/2</text>
+<text x="147" y="9" class="lb">π</text>
+<text x="203" y="9" class="lb">3π/2</text>
+<text x="265" y="9" class="lb">2π</text>
+</svg>
+</div>
+<div class="formula">한 주기 = 4개의 합동 직사각형 박스
+각 박스의 가로 = T/4  (T: 주기)
+
+1:√3 비율: 수평선 y=k가 박스와 만날 때
+→ 대칭축으로부터 교점까지의 거리 비율이 특수각과 연결</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">🎯</div><div class="ct">대칭축을 이용한 교점의 합 공식</div></div>
+<div class="cb2">y=sin(ωx)와 수평선 y=k의 교점 x₁, x₂를 직접 구하지 않아도 합을 알 수 있습니다.</div>
+<div class="formula">x₁ + x₂ = 2 × (가장 가까운 대칭축의 x좌표)
+
+예: y=sin(x)와 y=0.5의 교점 x₁, x₂ (0 < x < π)
+    → 대칭축 x = π/2
+    → x₁ + x₂ = π</div>
+<div class="proof"><div class="proof-title">원리</div>sin(α) = sin(π-α) 이므로
+두 교점은 항상 삼각함수 대칭축에 대해 대칭.
+x₁ + x₂ = 2 × (대칭축) 자동 성립.</div>
+<div class="tip">방정식의 근의 합을 그래프 대칭축으로 눈으로 읽음 → 계산 없이 연립 해소</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">🔀</div><div class="ct">합성 공식 역방향 실전</div></div>
+<div class="cb2">기본서는 "합성 후 단순화"를 가르치지만, 수능에서는 역방향이 훨씬 강력합니다.</div>
+<div class="formula">a·sinθ + b·cosθ 의 최댓값 = √(a² + b²)
+
+역방향 적용:
+"최댓값이 k이다" 조건 → a² + b² = k²
+                     → 계수 관계를 연립방정식으로 바로 세팅</div>
+<div class="cond">최댓값/최솟값이 조건으로 주어지고, a, b 중 일부를 역산해야 할 때</div>
+<div class="tip">합성 과정 자체를 생략. "최댓값² = a² + b²"만 기억하면 됨</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cb">🔵</div><div class="ct">단위원 대칭 이동 독해법</div></div>
+<div class="cb2">sin/cos 각 변환을 공식 암기 대신 단위원 위의 점의 이동으로 파악합니다. 해의 개수 문제를 2초 안에 시각화.</div>
+<div class="formula">sin(π - x) = sin x     → y축 대칭
+sin(π + x) = -sin x    → 원점 대칭
+sin(-x) = -sin x       → x축 대칭
+cos(π/2 + x) = -sin x  → 90° 반시계 회전</div>
+<div class="tip">삼각방정식 해의 개수 → 단위원 위에 수평선/수직선 하나 긋는 것으로 2초 컷</div>
+</div>
+
+<div class="ul">사인법칙 · 코사인법칙</div>
+<div class="card">
+<div class="ch"><div class="ci cp">⭕</div><div class="ct">외접원과 지름의 직각삼각형 활용</div></div>
+<div class="cb2">문제에 외접원이 나오고 원주각이 보이면 십중팔구 사인법칙이 출발점입니다.</div>
+<div class="formula">사인법칙: a/sinA = b/sinB = c/sinC = 2R
+
+외접원 지름 = 2R 이면:
+→ 지름의 끝점에서 보이는 원주각 = 90°
+→ 직각삼각형 생성 → 피타고라스/삼각비 활용</div>
+<div class="cond">외접원 반지름 R이 주어지거나 구해야 할 때</div>
+<div class="tip">2R = a/sinA → R = a/(2sinA). 외접원 나오면 이 식부터 쓸 것</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">🔷</div><div class="ct">내접 사각형 — 마주보는 각의 합 180°</div></div>
+<div class="cb2">원에 내접하는 사각형의 마주보는 두 각의 합은 항상 π. 이를 이용해 대각선을 공유하는 두 삼각형에 코사인 법칙을 연립합니다.</div>
+<div class="formula">원에 내접하는 사각형 ABCD:
+∠A + ∠C = π,  ∠B + ∠D = π
+
+∠C = π - ∠A  이므로
+cos(∠C) = cos(π - ∠A) = -cos(∠A)
+
+→ 대각선 AC를 공유하는 △ABC와 △ACD에
+  각각 코사인 법칙 적용 후 연립 (cos∠A = -cos∠C 이용)</div>
+<div class="cond">원에 내접하는 사각형 + 대각선 길이 또는 넓이를 구하는 문제</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">⊙</div><div class="ct">할선 정리 (교차하는 현)</div></div>
+<div class="cb2">삼각함수 활용 단원이지만 원 안에서 두 현이 교차할 때 성립하는 중학 기하 성질이 4점짜리 결정적 단서로 등장합니다.</div>
+<div class="formula">두 현 AC, BD가 원 안의 점 P에서 교차할 때:
+PA · PC = PB · PD
+
+원 밖의 점 P에서 할선 두 개를 그을 때:
+PA · PB = PC · PD  (A, B는 한 할선의 교점, C, D는 다른 할선)</div>
+<div class="tip">원과 직선이 나오고 길이 관계를 묻는 문제 → 이 공식이 핵심 단서일 가능성 높음</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">📐</div><div class="ct">사영 정리 (제1코사인법칙)</div></div>
+<div class="cb2">교과서에서 사라진 공식이지만 수능 도형 문제에서 한 줄 선형 연립을 만들어줍니다.</div>
+<div class="formula">삼각형 ABC에서 A에서 BC에 수선의 발을 내릴 때:
+a = b·cosC + c·cosB
+
+"한 변 = 다른 두 변을 바닥에 사영한 길이의 합"</div>
+<div class="proof"><div class="proof-title">유도</div>코사인 법칙 b² = a²+c²-2ac·cosB 에서 c에 대해 정리,
+c² = a²+b²-2ab·cosC 에서 b에 대해 정리하여 더하면
+a = b·cosC + c·cosB 가 나옵니다 (교육과정 내 수준).</div>
+<div class="tip">제곱(a²) 없이 선형 방정식. 두 변이 주어지고 세 번째 변을 구할 때 연립을 단순화</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">△</div><div class="ct">삼각형 넓이 3종 세트 + 코사인 이차방정식</div></div>
+<div class="formula">넓이 기본:  S = (1/2)ab·sinC
+넓이 외접원: S = abc / (4R)
+넓이 내접원: S = (a+b+c)·r / 2
+
+코사인 법칙의 c에 대한 이차방정식:
+c² - (2b·cosA)c + (b²-a²) = 0
+→ 두 근의 합 = 2b·cosA,  두 근의 곱 = b²-a²</div>
+<div class="tip">세 변과 외접원 R이 주어질 때 abc/(4R)로 넓이 한 줄 처리. c를 모를 땐 이차방정식 세워서 근과 계수 관계 사용</div>
+</div>
+</div>
+
+<!-- ======= 수열 ======= -->
+<div class="sec" id="seq">
+<div class="sh"><span class="badge b1">수학I</span><span class="st">수열</span></div>
+
+<div class="ul">등차수열의 합 S_n</div>
+<div class="card">
+<div class="ch"><div class="ci cp">📈</div><div class="ct">S_n — 상수항 없는 이차함수 관점</div></div>
+<div class="formula">S_n = (d/2)n² + (a₁ - d/2)n    ← 상수항 = 0 항상!
+
+꼭짓점(대칭축): n = -(a₁-d/2)/(d) = (d/2-a₁)/d 근처 자연수
+원점 외 교점 (S_n=0): 꼭짓점 n의 정확히 2배</div>
+<div class="svg-wrap">
+<svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg" width="280" height="130">
+<defs><style>.ax2{stroke:#3a3a50;stroke-width:1;fill:none;}.cv2{stroke:#7c6af7;stroke-width:2;fill:none;}.dl2{stroke:#888899;stroke-width:1;stroke-dasharray:3,3;}.lb2{fill:#888899;font-size:9px;font-family:sans-serif;}.lh2{fill:#f7c26a;font-size:10px;font-family:sans-serif;}.pt2{fill:#6af7c2;r:4;}</style></defs>
+<line x1="15" y1="100" x2="265" y2="100" class="ax2"/>
+<line x1="15" y1="110" x2="15" y2="10" class="ax2"/>
+<!-- S_n = n(12-n) 형태 (a₁=11, d=-2, 꼭짓점 n=6) -->
+<path d="M 15,100 C 30,60 50,20 80,10 C 110,2 140,10 170,30 C 195,50 220,80 250,100" class="cv2"/>
+<!-- 꼭짓점 -->
+<circle cx="80" cy="10" r="3.5" fill="#6af7c2"/>
+<line x1="80" y1="10" x2="80" y2="100" class="dl2"/>
+<!-- 2배 위치 -->
+<circle cx="160" cy="100" r="3.5" fill="#f7c26a"/>
+<!-- 레이블 -->
+<text x="70" y="9" class="lb2">꼭짓점</text>
+<text x="68" y="19" class="lb2">(최댓값)</text>
+<text x="152" y="95" class="lb2">S=0</text>
+<text x="145" y="112" class="lb2">꼭짓점×2</text>
+<!-- 2배 화살표 -->
+<line x1="82" y1="107" x2="158" y2="107" stroke="#f7c26a" stroke-width="1" marker-end="url(#arr)"/>
+<text x="108" y="120" fill="#f7c26a" font-size="9" font-family="sans-serif">× 2</text>
+<text x="18" y="110" class="lb2">0</text>
+</svg>
+</div>
+<div class="tip">"S₁₁에서 최댓값" → S₂₂ 또는 S₂₃ 근처에서 S_n=0으로 꺾임. 대입 없이 구조 파악 가능</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">|S|</div><div class="ct">S_n 절댓값 조건 — 기하학적 대칭성</div></div>
+<div class="cb2">|S_n| = |S_m| 또는 S_k = S_{2k} 같은 조건은 식을 세우는 게 아니라 이차함수 그래프의 대칭성으로 해결합니다.</div>
+<div class="formula">S_n = An² + Bn (상수항 0, 대칭축: n = -B/(2A))
+
+|S_n| = |S_m| 조건:
+→ 그래프 위 두 점의 "절댓값 높이"가 같음
+→ 대칭축에 대해 대칭이거나 x축에 대해 대칭
+→ 가능한 경우: n+m = 2×(대칭축) 또는 n, m이 S_n=0 교점 중 하나</div>
+<div class="warn">식을 전개해서 n, m을 연립하면 시간 폭발. 반드시 그래프로 먼저 파악할 것</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">🔗</div><div class="ct">블록 합 등차·등비 보존 성질</div></div>
+<div class="formula">등차수열을 k개씩 블록으로 합산 → 새 수열도 등차
+  (새 공차 = 원래 공차 × k²)
+
+등비수열을 k개씩 블록으로 합산 → 새 수열도 등비
+  (새 공비 = 원래 공비의 k제곱)</div>
+<div class="tip">수열 문제에서 "k개씩 묶어서" 나오면 블록 합 성질 먼저 확인</div>
+</div>
+
+<div class="ul">점화식 · 귀납수열</div>
+<div class="card">
+<div class="ch"><div class="ci cp">Δ</div><div class="ct">개차수열 일반화 공식 (점화식 축차대입)</div></div>
+<div class="cb2">a_{n+1} - a_n = f(n) 꼴을 1부터 n-1까지 대입해서 더하는 노가다를 Σ 한 줄로 압축합니다.</div>
+<div class="formula">a_{n+1} - a_n = f(n) 꼴일 때:
+
+a_n = a_1 + Σ[k=1 to n-1] f(k)
+
+(단, n ≥ 2. n=1은 별도 확인)</div>
+<div class="proof"><div class="proof-title">유도 (축차대입)</div>a_2 - a_1 = f(1)
+a_3 - a_2 = f(2)
+  ⋮
+a_n - a_{n-1} = f(n-1)
+─────────────────────
+모두 더하면: a_n - a_1 = Σ[k=1 to n-1] f(k)
+따라서 a_n = a_1 + Σ[k=1 to n-1] f(k)</div>
+<div class="tip">이 공식을 외워두면 1~(n-1) 대입 노가다 없이 바로 Σ 계산으로 점프</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">🌀</div><div class="ct">귀납수열 고정점 · 궤도 분석</div></div>
+<div class="cb2">a_{n+1}=f(a_n) 킬러 수열에서 역추적 수형도 그리기 전에 반드시 이 작업 먼저.</div>
+<div class="formula">고정점: f(x) = x 를 만족하는 x
+→ 수열이 도달하면 영원히 머무는 값
+
+주기 궤도: f(f(x)) = x 이지만 f(x) ≠ x 인 x
+→ 두 값을 왔다갔다 하는 2주기 수열 가능</div>
+<div class="formula">실전 순서:
+1단계: 고정점 찾기 → 가능한 a₁의 범위 좁히기
+2단계: 주기 궤도 존재 여부 확인
+3단계: 역추적 수형도 그려서 a₁의 개수 세기</div>
+<div class="warn">수형도를 바로 그리면 경우의 수가 너무 많아 시간 폭발. 반드시 고정점 먼저</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">🌿</div><div class="ct">역추적 수형도 (Backtracking)</div></div>
+<div class="cb2">뒤 항 조건이 먼저 주어질 때 화살표를 거꾸로 타고 올라가며 a₁을 찾는 정형화된 구조.</div>
+<div class="formula">a₅ 조건 주어짐
+   ↑ 역추적: f(x) = a₅를 만족하는 a₄ 나열
+a₄ 가능한 값들
+   ↑ 역추적: 각 a₄에 대해 a₃ 나열
+a₃ 가능한 값들
+   ⋮
+a₁ 가능한 값 ← 조건을 만족하는 개수 카운트</div>
+<div class="tip">각 분기점에서 f(x) = k 의 역상(preimage)을 구하는 것이 핵심. 고정점 분석 후 하면 분기수가 훨씬 줄어듦</div>
+</div>
+
+<div class="ul">시그마 심화</div>
+<div class="card">
+<div class="ch"><div class="ci cy">∑</div><div class="ct">연속한 두·세 수의 곱의 합 공식</div></div>
+<div class="formula">연속한 두 수의 곱의 합:
+Σ[k=1 to n] k(k+1) = n(n+1)(n+2)/3
+
+연속한 세 수의 곱의 합:
+Σ[k=1 to n] k(k+1)(k+2) = n(n+1)(n+2)(n+3)/4</div>
+<div class="proof"><div class="proof-title">유도 원리 (계차법)</div>k(k+1) = [(k+1)k(k-1+2)] ... 
+더 간단하게: 부분분수 없이
+k(k+1)(k+2)를 Σk, Σk², Σk³ 으로 전개하면 
+위 공식이 나옵니다. 분모 = (항 개수+1) 규칙.</div>
+<div class="tip">분수형 수열을 부분분수로 찢거나 전개해서 따로따로 Σ 쓰는 시간을 완전히 제로로 만듦</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">🔭</div><div class="ct">부분분수 망원합 — 간격별 압축 공식</div></div>
+<div class="formula">간격 1칸: Σ(1/k - 1/(k+1)) → 맨 앞 1개 - 맨 뒤 1개
+  = 1 - 1/(n+1)
+
+간격 2칸: Σ(1/k - 1/(k+2)) → 앞 2개 - 뒤 2개
+  = (1 + 1/2) - (1/(n+1) + 1/(n+2))
+
+간격 d칸: 앞 d개의 합 - 뒤 d개의 합</div>
+<div class="tip">중간 항을 10~20개 나열하며 지우는 과정 자체를 생략 → 계산 실수 원천 차단</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">rᵏ</div><div class="ct">∑k·rᵏ 소거법 (등차×등비 합)</div></div>
+<div class="formula">S = Σ[k=1 to n] k·rᵏ
+rS = Σ[k=1 to n] k·rᵏ⁺¹
+─────────────────────────────
+(1-r)S = r + r² + ··· + rⁿ - nrⁿ⁺¹
+       = r(1-rⁿ)/(1-r) - nrⁿ⁺¹</div>
+<div class="proof"><div class="proof-title">핵심 행동 강령</div>공식을 외우는 게 아니라
+"S - rS 소거" 라는 행동 강령을 외울 것.
+시험에서 변형 꼴이 나와도 즉석 유도 가능.</div>
+<div class="warn">이 꼴이 복잡하게 변형되어 나올 수 있음. S-rS 소거 메커니즘을 완벽히 내재화할 것</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">🔢</div><div class="ct">군수열 역방향 추정</div></div>
+<div class="formula">n번째 항이 제 몇 군인지 역추정:
+k군까지 항 수 = k(k+1)/2 = n
+→  k ≈ (√(8n+1) - 1) / 2 근처 자연수 확인</div>
+<div class="tip">정확한 값이 아닌 "근처 자연수를 빠르게 추정"하는 용도. 그 주변 1~2개만 확인하면 끝</div>
+</div>
+</div>
+
+<!-- ======= 극한·연속 ======= -->
+<div class="sec" id="lim">
+<div class="sh"><span class="badge b2">수학II</span><span class="st">함수의 극한 · 연속</span></div>
+
+<div class="ul">극한 조건으로 함수 결정</div>
+<div class="card">
+<div class="ch"><div class="ci cb">∞</div><div class="ct">다항함수 결정 법칙 — 극한 조건 두 개</div></div>
+<div class="formula">lim(x→∞) 조건  →  최고차항의 차수·계수 결정
+lim(x→0) 조건  →  최저차항의 차수·계수 결정
+
+예: lim[x→0] f(x)/x² = 3
+  → f(x)는 x²을 인수로 갖고, 상수항·1차항 = 0
+  → f(x) = 3x² + (고차항들)</div>
+<div class="tip">두 극한 조건이 주어지면 함수의 "머리(최고차)"와 "꼬리(최저차)"를 각각 결정하는 것으로 구조화</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">🔑</div><div class="ct">극한·인수 정리 초고속 공식</div></div>
+<div class="cb2">극한 조건에서 함수의 인수를 즉시 읽어내는 행동 강령입니다.</div>
+<div class="formula">lim[x→a] f(x)/(x-a)ⁿ = k  (k ≠ 0)
+
+→  f(x)는 (x-a)ⁿ을 인수로 가짐
+→  f(x) = (x-a)ⁿ · Q(x),  Q(a) = k
+
+→  Q(a) = k를 이용해 나머지 계수를 바로 결정</div>
+<div class="tip">연립방정식 없이 인수와 계수를 즉시 읽어냄. 다항함수 추론 킬러의 기본 무기</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">📝</div><div class="ct">로피탈 정리 (L'Hôpital's Rule)</div></div>
+<div class="cb2">교육과정 외지만 다항함수 0/0 꼴에서 미분계수 형태로 묶기 어려울 때 3초 컷.</div>
+<div class="formula">lim[x→a] f(x)/g(x)  (0/0 또는 ∞/∞ 꼴)
+= lim[x→a] f'(x)/g'(x)  (이 극한이 존재하면)</div>
+<div class="warn">수능에서 채점상 불이익은 없으나, 미분한 후의 극한이 존재하는 조건을 반드시 확인해야 안전. 다항함수 범위에서만 사용.</div>
+</div>
+
+<div class="ul">연속 · 미분가능</div>
+<div class="card">
+<div class="ch"><div class="ci cp">🧮</div><div class="ct">인수 개수 법칙 — 연속·미분가능</div></div>
+<div class="cb2">불연속 함수에 (x-α)ⁿ을 곱할 때 n의 개수가 결과를 결정합니다.</div>
+<div class="formula">(x-α)¹ 곱하기  →  끊긴 점을 연속으로
+(x-α)² 곱하기  →  꺾인 첨점을 미분가능하게 (접함)
+(x-α)³ 곱하기  →  변곡점 형태로 통과
+
+역방향: 그래프가 α에서 어떻게 보이느냐로
+→  필요한 인수 개수를 역산</div>
+<div class="tip">조건부 함수의 미분가능성 문제에서 인수를 몇 개 곱해야 하는지 즉시 판단 가능</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">🔍</div><div class="ct">합성함수 h(x)=f(g(x)) 미분불가능점 2단계</div></div>
+<div class="formula">1단계: g(x) 자체가 미분불가능한 x=a 전부 체크
+  → h'(a) 존재 여부 별도 확인 필요
+
+2단계: g(c) = b 이고 f가 x=b에서 미분불가능한
+  모든 x=c 를 찾아서 체크</div>
+<div class="warn">⚠️ 핵심 예외: 2단계에서 g'(c) = 0 이면
+f'(b)가 없어도 h'(c) = f'(g(c))·g'(c) = 0 으로
+미분가능할 수 있음. 이 케이스 빠뜨리면 오답!</div>
+</div>
+</div>
+
+<!-- ======= 미분 ======= -->
+<div class="sec" id="dif">
+<div class="sh"><span class="badge b2">수학II</span><span class="st">다항함수의 미분</span></div>
+
+<div class="ul">삼차함수 비율 관계 (핵심)</div>
+<div class="card">
+<div class="ch"><div class="ci cy">📊</div><div class="ct">삼차함수 1 : 2 비율 관계</div></div>
+<div class="cb2">f(x) = a(x-α)²(x-β) 꼴에서 미분 없이 극점의 위치를 1초에 찾습니다.</div>
+<div class="svg-wrap">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" width="300" height="150">
+<defs><style>.c3{stroke:#7c6af7;stroke-width:2;fill:none;}.a3{stroke:#3a3a50;stroke-width:1;fill:none;}.d3{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;}.t3{fill:#888899;font-size:9px;font-family:sans-serif;}.y3{fill:#f7c26a;font-size:9px;font-family:sans-serif;}.g3{fill:#6af7c2;font-size:9px;font-family:sans-serif;}.p3{fill:#6af7c2;}.pv{fill:#f7c26a;}</style></defs>
+<!-- x축 -->
+<line x1="10" y1="55" x2="285" y2="55" class="a3"/>
+<!-- 곡선: (x-α)²(x-β) shape, 접점α=55, 극소=167, 교점β=225 -->
+<path d="M 15,65 C 28,57 40,55 55,55 C 68,55 105,118 135,130 C 155,136 162,138 167,136 C 178,133 200,95 225,55 C 235,40 252,22 270,5" class="c3"/>
+<!-- 수직 점선 -->
+<line x1="55" y1="30" x2="55" y2="65" class="d3"/>
+<line x1="167" y1="30" x2="167" y2="136" class="d3"/>
+<line x1="225" y1="30" x2="225" y2="65" class="d3"/>
+<!-- 거리 표시 (위쪽) -->
+<line x1="55" y1="32" x2="167" y2="32" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="167" y1="32" x2="225" y2="32" stroke="#6af7c2" stroke-width="1.2"/>
+<!-- 화살표 끝 -->
+<line x1="55" y1="28" x2="55" y2="36" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="167" y1="28" x2="167" y2="36" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="225" y1="28" x2="225" y2="36" stroke="#6af7c2" stroke-width="1.2"/>
+<!-- 레이블 -->
+<text x="95" y="27" class="y3" text-anchor="middle">← 2d →</text>
+<text x="196" y="27" class="g3" text-anchor="middle">← d →</text>
+<!-- 점 -->
+<circle cx="55" cy="55" r="4" class="p3"/>
+<circle cx="167" cy="136" r="4" class="pv"/>
+<circle cx="225" cy="55" r="4" class="p3"/>
+<!-- 점 레이블 -->
+<text x="50" y="68" class="t3">α(접점)</text>
+<text x="155" y="148" class="t3">극점</text>
+<text x="218" y="68" class="t3">β(교점)</text>
+<!-- 공식 -->
+<text x="10" y="145" fill="#a9a0f0" font-size="10" font-family="sans-serif">극점 x = (2β + α) / 3</text>
+</svg>
+</div>
+<div class="formula">f(x) = a(x-α)²(x-β) 일 때
+
+[접점 α] ─── 2d ─── [극점] ─── d ─── [교점 β]
+
+극점의 x좌표 = (2β + α) / 3</div>
+<div class="proof"><div class="proof-title">유도</div>f'(x) = 2a(x-α)(x-β) + a(x-α)²
+      = a(x-α)[2(x-β)+(x-α)]
+      = a(x-α)[3x - 2β - α]
+
+f'(x) = 0 → x = α 또는 x = (2β+α)/3  ✓</div>
+<div class="cond">인수분해가 a(x-α)²(x-β) 형태로 보이는 순간</div>
+<div class="tip">보자마자 극점 x = (α+2β)/3 이라고 쓰면 미분 0줄. 가장 자주 쓰이는 치트키</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">📐</div><div class="ct">삼차함수 1 : √3 비율 + 8칸 박스</div></div>
+<div class="cb2">변곡점을 지나는 수평선과 삼각함수 교점 사이의 비율. 8칸 박스 구조 이해의 핵심.</div>
+<div class="svg-wrap">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" width="300" height="150">
+<defs><style>.c4{stroke:#6af7c2;stroke-width:2;fill:none;}.a4{stroke:#3a3a50;stroke-width:1;fill:none;}.d4{stroke:#888899;stroke-width:1;stroke-dasharray:4,3;}.t4{fill:#888899;font-size:9px;font-family:sans-serif;}.y4{fill:#f7c26a;font-size:9px;font-family:sans-serif;}.g4{fill:#6af7c2;font-size:9px;font-family:sans-serif;}.p4c{fill:#6af7c2;}.p4y{fill:#f7c26a;}.p4p{fill:#7c6af7;}</style></defs>
+<!-- y축 (대칭축) -->
+<line x1="150" y1="10" x2="150" y2="140" class="d4"/>
+<!-- x축/변곡점 수평선 -->
+<line x1="10" y1="75" x2="285" y2="75" class="a4"/>
+<!-- 극대 수평선 -->
+<line x1="10" y1="32" x2="285" y2="32" stroke="#f7c26a" stroke-width="1" stroke-dasharray="3,3"/>
+<!-- 극소 수평선 -->
+<line x1="10" y1="118" x2="285" y2="118" stroke="#f76a9a" stroke-width="1" stroke-dasharray="3,3"/>
+<!-- 삼차함수 S커브 (x³-3x 형태) -->
+<path d="M 20,130 C 35,125 50,95 75,32 C 95,28 115,28 125,31 C 135,34 142,55 150,75 C 158,95 165,118 175,119 C 185,120 205,118 225,116 C 245,70 265,26 280,20" class="c4"/>
+<!-- 변곡점 -->
+<circle cx="150" cy="75" r="4" class="p4p"/>
+<!-- 극대점 (x=-d=-54px), 변곡점에서 d=54px 거리 -->
+<circle cx="96" cy="32" r="4" class="p4y"/>
+<!-- 극소점 (x=+d=+54px) -->
+<circle cx="204" cy="118" r="4" class="p4y"/>
+<!-- 왼쪽 외부 교점 (변곡점에서 √3·d = 93.5px) -->
+<circle cx="57" cy="75" r="4" class="p4c"/>
+<!-- 오른쪽 외부 교점 -->
+<circle cx="243" cy="75" r="4" class="p4c"/>
+<!-- 거리 화살표 (변곡점에서 각 방향) -->
+<line x1="96" y1="83" x2="150" y2="83" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="150" y1="83" x2="204" y2="83" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="57" y1="65" x2="150" y2="65" stroke="#6af7c2" stroke-width="1.2"/>
+<line x1="150" y1="65" x2="243" y2="65" stroke="#6af7c2" stroke-width="1.2"/>
+<!-- 레이블 -->
+<text x="120" y="95" class="y4" text-anchor="middle">1</text>
+<text x="178" y="95" class="y4" text-anchor="middle">1</text>
+<text x="100" y="59" class="g4" text-anchor="middle">√3</text>
+<text x="198" y="59" class="g4" text-anchor="middle">√3</text>
+<text x="148" y="72" fill="#7c6af7" font-size="8" font-family="sans-serif">변곡</text>
+<text x="88" y="28" class="y4">극대</text>
+<text x="197" y="115" class="y4">극소</text>
+<text x="38" y="71" class="g4">교점</text>
+<text x="237" y="71" class="g4">교점</text>
+</svg>
+</div>
+<div class="formula">변곡점에서 극점(극대/극소)까지 거리 : 1
+변곡점에서 수평선(변곡점 y값 기준) 바깥 교점까지 거리 : √3
+
+[바깥교점] ─√3─ [극점] ─1─ [변곡점] ─1─ [극점] ─√3─ [바깥교점]</div>
+<div class="tip">기함수 f(x)=x³-ax 에서 극점이 x=1이면 변곡점 수평선 바깥 교점은 바로 x=√3</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">📦</div><div class="ct">삼차함수 8칸 박스 구조 (완전 정리)</div></div>
+<div class="formula">극대점과 극소점을 꼭짓점으로 감싸는 직사각형을 그리면
+→ 가로 4등분 (간격 d로 균등)
+→ 세로 2등분 (변곡점 y값이 정중앙)
+→ 총 8개의 합동 직사각형 박스
+
+x 방향 배치 (등간격 d):
+[극대] ─d─ [변곡점] ─d─ [극소] ─d─ [수평선 교점]
+(수평선 = 극대 또는 극소 높이에서 그은 선)
+
+y 방향: 극댓값, 변곡점 y, 극솟값이 등간격</div>
+<div class="tip">이 박스 구조를 머릿속에 그리면 1:2 법칙과 1:√3 법칙이 왜 성립하는지 직관적으로 이해됨</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">⚡</div><div class="ct">삼차함수 극댓값·극솟값 차이 공식</div></div>
+<div class="cb2">도함수의 근을 알 때 극댓값과 극솟값의 차이를 식에 대입하지 않고 구합니다.</div>
+<div class="formula">f(x) = ax³ + ··· 의 도함수 f'(x) = 0 의
+두 근이 α, β (α < β) 일 때:
+
+극댓값 - 극솟값 = |a| · (β-α)³ / 2
+
+(도함수 이차함수의 넓이 공식에서 유도)</div>
+<div class="proof"><div class="proof-title">유도</div>f'(x) = a·(x-α)(x-β) (이차함수)
+극값의 차 = |∫[α to β] f'(x) dx|
+          = |a| · (β-α)³ / 6 ... 
+정확히는: |a|/2 · |β-α|³
+(6분의 공식 변형, 계수 a/2 주의)</div>
+<div class="tip">극점의 x좌표만 알면 극댓값과 극솟값의 차이를 바로 계산 → 그래프 높이 파악 즉시</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">⚡</div><div class="ct">접점 → 교점 공식 (−2t − p)</div></div>
+<div class="cb2">x=t에서의 접선이 삼차함수와 다시 만나는 점을 미분·연립 없이 1초에 찾습니다. 대치동 킬러 치트키.</div>
+<div class="formula">f(x) = x³ + px² + qx + r 에서
+x = t에서의 접선이 만나는 나머지 교점의 x좌표:
+
+s = −2t − p</div>
+<div class="proof"><div class="proof-title">증명</div>f(x) - [x=t에서의 접선] = (x-t)² · (x-s)
+
+좌변 전개 시 x²의 계수 비교:
+p - (-2t) = -(2t+s)
+즉  2t + s = -p  →  s = -2t - p  ✓</div>
+<div class="tip">접점 x=t 와 최고차항 이차계수 p 만 알면 나머지 교점 즉시 확정. 연립방정식 한 줄 절약</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cb">∑</div><div class="ct">교점 x좌표의 합 보존 법칙</div></div>
+<div class="formula">f(x) = x³ + px² + ··· 와 임의의 직선이 만나는
+세 교점의 x좌표 α, β, γ:
+
+α + β + γ = −p  (근과 계수의 관계, 항상 불변)
+
+직선이 이동해도 세 교점의 합은 변하지 않음</div>
+<div class="tip">두 교점을 알면 세 번째 교점을 계산 없이 즉시 도출. 연립 통째 생략 가능</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">🧪</div><div class="ct">f(x)−f(t) = f'(t)(x−t) 직관적 해석</div></div>
+<div class="cb2">수능 22번 단골 표현. 식으로 접근하면 계산 지옥. 기하학으로 먼저 파악해야 합니다.</div>
+<div class="formula">f(x) - f(t) - f'(t)(x-t) = 0
+
+직관: "곡선 f(x) 와 x=t에서의 접선의 차이"를
+나타내는 함수
+
+→ 반드시 x=t 에서 최소 2중근을 가짐
+→ 2중근이면 접함 (튕김)
+→ 3중근이면 변곡점 통과 (꺾이지 않고 통과)</div>
+<div class="tip">이 식이 나오면 "접선과 곡선의 거리"로 즉시 해석. 2중근/3중근 판별이 핵심 분기점</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">🗺️</div><div class="ct">매개변수 분리법 — 실근 개수 킬러</div></div>
+<div class="svg-wrap">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" width="300" height="150">
+<defs><style>.c5{stroke:#f7c26a;stroke-width:2;fill:none;}.a5{stroke:#3a3a50;stroke-width:1;fill:none;}.kl{stroke:#f76a9a;stroke-width:1.5;stroke-dasharray:5,3;}.t5{fill:#888899;font-size:9px;font-family:sans-serif;}.g5{fill:#6af7c2;font-size:9px;font-family:sans-serif;}.p5{fill:#f76a9a;r:3.5;}</style></defs>
+<!-- 축 -->
+<line x1="15" y1="120" x2="285" y2="120" class="a5"/>
+<line x1="40" y1="10" x2="40" y2="135" class="a5"/>
+<!-- y = f(x) 삼차함수 (극대 = (90,40), 극소 = (200,95)) -->
+<path d="M 15,130 C 30,125 55,80 90,40 C 115,15 140,30 160,55 C 175,72 185,88 200,95 C 215,102 240,85 270,30" class="c5"/>
+<!-- k값 수평선들 -->
+<line x1="15" y1="40" x2="285" y2="40" class="kl" opacity="0.5"/>
+<line x1="15" y1="65" x2="285" y2="65" class="kl"/>
+<line x1="15" y1="95" x2="285" y2="95" class="kl" opacity="0.5"/>
+<!-- 교점 표시 -->
+<circle cx="90" cy="40" r="3.5" fill="#f7c26a"/>
+<circle cx="200" cy="95" r="3.5" fill="#f7c26a"/>
+<!-- k=65 교점들 -->
+<circle cx="62" cy="65" r="3" fill="#f76a9a"/>
+<circle cx="128" cy="65" r="3" fill="#f76a9a"/>
+<circle cx="235" cy="65" r="3" fill="#f76a9a"/>
+<!-- 레이블 -->
+<text x="285" y="37" class="t5">k=극댓값 (교점 1개 or 접점)</text>
+<text x="285" y="62" fill="#f76a9a" font-size="9" font-family="sans-serif">k=중간값 (교점 3개)</text>
+<text x="285" y="92" class="t5">k=극솟값 (교점 1개 or 접점)</text>
+<text x="43" y="130" class="t5">y=f(x)</text>
+<text x="20" y="15" class="g5">y</text>
+</svg>
+</div>
+<div class="formula">f(x) = k 의 실근 개수
+= y=f(x) 와 수평선 y=k 의 교점 개수
+
+|f(x)| = k 일 때:
+1. y=f(x) 그래프 그리기
+2. x축 아래 부분을 위로 접기 → y=|f(x)|
+3. y=k 수평선과의 교점 개수 세기</div>
+<div class="warn">직접 방정식을 풀면 거의 대부분 시간 초과. 반드시 그래프 교점 개수로 전환할 것</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">🔒</div><div class="ct">변곡접선과 접선의 개수 — 영역 분할 법칙</div></div>
+<div class="cb2">삼차함수 외부의 점에서 그을 수 있는 접선의 개수를 영역으로 결정합니다.</div>
+<div class="formula">경계선: 삼차함수 곡선 자체 + 변곡점에서의 접선
+
+점의 위치에 따른 접선 개수:
+· 변곡접선 위 또는 곡선의 볼록한 바깥쪽: 1개
+· 변곡점 자체: 1개
+· 곡선과 변곡접선 사이 안쪽 영역: 3개
+· 곡선 위의 점 (변곡점 제외): 2개</div>
+<div class="tip">"접선의 개수가 3개" 조건 → 변곡접선 구하고, 그 아래 영역에 점이 있다는 부등식으로 전환</div>
+</div>
+
+<div class="ul">사차함수 비율 관계</div>
+<div class="card">
+<div class="ch"><div class="ci cp">📊</div><div class="ct">사차함수 3 : 1 비율 (3중근 형태)</div></div>
+<div class="svg-wrap">
+<svg viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg" width="280" height="140">
+<defs><style>.c6{stroke:#7c6af7;stroke-width:2;fill:none;}.a6{stroke:#3a3a50;stroke-width:1;}.d6{stroke:#888899;stroke-width:1;stroke-dasharray:3,3;}.t6{fill:#888899;font-size:9px;font-family:sans-serif;}.y6{fill:#f7c26a;font-size:9px;font-family:sans-serif;}</style></defs>
+<line x1="10" y1="50" x2="265" y2="50" class="a6" fill="none"/>
+<!-- (x-0)³(x-4) shape: 3중근at x=0, 극소at x=3, 교점at x=4 -->
+<!-- SVG x: α=40, extreme=176, β=216 (3:1 = 136:40 ≈ 3.4:1, let me use 45,175,220) -->
+<!-- α=45(x_svg), extreme=180, β=223 → 180-45=135, 223-180=43 ≈ 3:1 -->
+<path d="M 10,25 C 22,25 33,40 45,50 C 55,57 70,95 105,115 C 130,127 155,130 180,125 C 200,120 215,85 223,50 C 230,32 242,15 258,5" class="c6"/>
+<!-- 수직 점선 -->
+<line x1="45" y1="30" x2="45" y2="60" class="d6"/>
+<line x1="180" y1="30" x2="180" y2="125" class="d6"/>
+<line x1="223" y1="30" x2="223" y2="60" class="d6"/>
+<!-- 거리 표시 -->
+<line x1="45" y1="33" x2="180" y2="33" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="180" y1="33" x2="223" y2="33" stroke="#6af7c2" stroke-width="1.2"/>
+<!-- 포인트 -->
+<circle cx="45" cy="50" r="4" fill="#6af7c2"/>
+<circle cx="180" cy="125" r="4" fill="#f7c26a"/>
+<circle cx="223" cy="50" r="4" fill="#6af7c2"/>
+<!-- 레이블 -->
+<text x="105" y="28" class="y6" text-anchor="middle">← 3d →</text>
+<text x="202" y="28" fill="#6af7c2" font-size="9" font-family="sans-serif" text-anchor="middle">←d→</text>
+<text x="30" y="63" class="t6">α(3중근)</text>
+<text x="165" y="138" class="t6">극소</text>
+<text x="217" y="63" class="t6">β</text>
+<text x="10" y="135" fill="#a9a0f0" font-size="9" font-family="sans-serif">극소 x = (3β+α)/4 = α + 3(β-α)/4</text>
+</svg>
+</div>
+<div class="formula">f(x) = a(x-α)³(x-β) 일 때
+
+[3중근 α] ─── 3d ─── [극소] ─── d ─── [교점 β]
+
+극소점의 x좌표 = α + 3(β-α)/4 = (3β+α)/4</div>
+<div class="proof"><div class="proof-title">유도</div>f'(x) = 3a(x-α)²(x-β) + a(x-α)³
+      = a(x-α)²[3(x-β)+(x-α)]
+      = a(x-α)²[4x - 3β - α]
+
+f'(x) = 0 → x = α 또는 x = (3β+α)/4  ✓</div>
+<div class="tip">f(x) = x³(x-4): 3중근 α=0, 교점 β=4 → 극소 = (3·4+0)/4 = 3 즉시 확정</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">🅆</div><div class="ct">사차함수 1 : √2 비율 (W자 대칭형)</div></div>
+<div class="svg-wrap">
+<svg viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg" width="280" height="140">
+<defs><style>.c7{stroke:#6af7c2;stroke-width:2;fill:none;}.a7{stroke:#3a3a50;stroke-width:1;}.d7{stroke:#888899;stroke-width:1;stroke-dasharray:3,3;}.t7{fill:#888899;font-size:9px;font-family:sans-serif;}</style></defs>
+<line x1="10" y1="120" x2="265" y2="120" class="a7" fill="none"/>
+<!-- 중앙 극대 기준선 -->
+<line x1="10" y1="30" x2="265" y2="30" class="d7"/>
+<!-- W shape: 극대(140,30), 극소(86,120)과(194,120), √2 교점(50,30)과(230,30) -->
+<path d="M 15,25 C 25,25 38,25 50,30 C 62,35 70,90 86,120 C 100,135 120,138 140,130 C 160,122 168,100 175,88 C 180,80 183,70 186,60 C 188,50 190,35 194,120 C 200,135 218,35 230,30 C 240,25 253,22 265,18" class="c7"/>
+<!-- 더 정확한 W 곡선 -->
+<path d="M 15,20 C 30,20 40,26 50,30 C 63,36 73,88 86,120 C 96,130 118,135 140,130 C 162,125 170,95 180,70 C 184,60 187,50 190,45 C 193,42 196,50 200,70 C 206,90 214,115 222,128 C 230,135 250,40 262,22" class="c7"/>
+<!-- 수직 점선 -->
+<line x1="50" y1="15" x2="50" y2="35" class="d7"/>
+<line x1="86" y1="15" x2="86" y2="122" class="d7"/>
+<line x1="140" y1="15" x2="140" y2="132" class="d7"/>
+<line x1="194" y1="15" x2="194" y2="122" class="d7"/>
+<line x1="230" y1="15" x2="230" y2="35" class="d7"/>
+<!-- 거리 표시 (위 기준선 위) -->
+<line x1="86" y1="18" x2="140" y2="18" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="140" y1="18" x2="194" y2="18" stroke="#f7c26a" stroke-width="1.2"/>
+<line x1="50" y1="10" x2="140" y2="10" stroke="#f76a9a" stroke-width="1.2"/>
+<line x1="140" y1="10" x2="230" y2="10" stroke="#f76a9a" stroke-width="1.2"/>
+<!-- 포인트 -->
+<circle cx="50" cy="30" r="3.5" fill="#6af7c2"/>
+<circle cx="86" cy="120" r="3.5" fill="#f7c26a"/>
+<circle cx="140" cy="30" r="3.5" fill="#7c6af7"/>
+<circle cx="194" cy="120" r="3.5" fill="#f7c26a"/>
+<circle cx="230" cy="30" r="3.5" fill="#6af7c2"/>
+<!-- 레이블 -->
+<text x="113" y="14" fill="#f7c26a" font-size="9" font-family="sans-serif" text-anchor="middle">1</text>
+<text x="167" y="14" fill="#f7c26a" font-size="9" font-family="sans-serif" text-anchor="middle">1</text>
+<text x="95" y="7" fill="#f76a9a" font-size="9" font-family="sans-serif" text-anchor="middle">√2</text>
+<text x="185" y="7" fill="#f76a9a" font-size="9" font-family="sans-serif" text-anchor="middle">√2</text>
+<text x="130" y="27" fill="#7c6af7" font-size="8" font-family="sans-serif">극대</text>
+<text x="75" y="133" fill="#f7c26a" font-size="8" font-family="sans-serif">극소</text>
+<text x="185" y="133" fill="#f7c26a" font-size="8" font-family="sans-serif">극소</text>
+<text x="38" y="44" fill="#6af7c2" font-size="8" font-family="sans-serif">교점</text>
+<text x="222" y="44" fill="#6af7c2" font-size="8" font-family="sans-serif">교점</text>
+</svg>
+</div>
+<div class="formula">좌우 대칭 W자 사차함수에서 극대점 기준 수평선을 그을 때:
+
+[극대 기준 수평선과 외부 교점] 까지의 거리
+ 극대→극소 거리 : 극대→교점 거리 = 1 : √2</div>
+<div class="tip">극대 x=0, 극소 x=1이면 바깥 교점은 x=±√2. 계산 불필요</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">📏</div><div class="ct">W자 사차함수 높이 차이 공식</div></div>
+<div class="formula">최고차항 계수 a, 극대↔극소 x간격 d인
+대칭형 사차함수에서:
+
+극댓값 - 극솟값 = a · d⁴
+
+예: 계수=1, d=2 → 높이 차이 = 1×2⁴ = 16</div>
+<div class="tip">미분하고 식 구하고 대입하는 과정을 완전히 생략</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cb">🔬</div><div class="ct">롤의 정리 실전 활용</div></div>
+<div class="cb2">교육과정 외이지만 킬러 문항에서 암묵적으로 전제되는 논리입니다.</div>
+<div class="formula">롤의 정리: f(a) = f(b) 이면
+열린 구간 (a, b)에서 f'(c) = 0 인 c가 반드시 존재
+
+평균값 정리: [f(b)-f(a)]/(b-a) 와 같은 기울기의
+접선이 (a,b) 사이에 반드시 존재</div>
+<div class="tip">문제에서 두 점의 함숫값이 같다는 조건 → 그 사이에 극값(f'=0)이 존재함을 보장하는 근거로 사용</div>
+</div>
+</div>
+
+<!-- ======= 적분 ======= -->
+<div class="sec" id="int">
+<div class="sh"><span class="badge b2">수학II</span><span class="st">다항함수의 적분</span></div>
+
+<div class="ul">넓이 공식 핵심 시리즈 (필수 암기)</div>
+<div class="card">
+<div class="ch"><div class="ci cy">⑥</div><div class="ct">6분의 공식 — 이차함수와 직선</div></div>
+<div class="svg-wrap">
+<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" width="260" height="120">
+<defs><style>.c8{stroke:#f7c26a;stroke-width:2;fill:none;}.a8{stroke:#3a3a50;stroke-width:1;fill:none;}.sh8{fill:rgba(124,106,247,.15);stroke:none;}.t8{fill:#888899;font-size:9px;font-family:sans-serif;}</style></defs>
+<line x1="10" y1="90" x2="245" y2="90" class="a8"/>
+<!-- 이차함수 포물선 (아래로, 두 근 α=60, β=200) -->
+<path d="M 40,90 C 60,90 75,25 130,10 C 185,25 200,90 220,90" fill="rgba(124,106,247,.12)" stroke="#7c6af7" stroke-width="1.5"/>
+<!-- x축 (직선 y=0) -->
+<line x1="40" y1="90" x2="220" y2="90" stroke="#f7c26a" stroke-width="1.5"/>
+<!-- 포인트 -->
+<circle cx="40" cy="90" r="3" fill="#6af7c2"/>
+<circle cx="220" cy="90" r="3" fill="#6af7c2"/>
+<!-- l 레이블 -->
+<line x1="40" y1="100" x2="220" y2="100" stroke="#6af7c2" stroke-width="1"/>
+<text x="130" y="112" fill="#6af7c2" font-size="9" font-family="sans-serif" text-anchor="middle">← l = β - α →</text>
+<text x="40" y="104" fill="#888899" font-size="8" font-family="sans-serif">α</text>
+<text x="215" y="104" fill="#888899" font-size="8" font-family="sans-serif">β</text>
+<!-- 공식 -->
+<text x="10" y="15" fill="#f7c26a" font-size="10" font-family="sans-serif">S = |a|/6 · l³</text>
+</svg>
+</div>
+<div class="formula">∫[α→β] a(x-α)(x-β) dx = −a/6 · l³
+넓이 S = |a|/6 · l³    (l = β − α)
+
+적용: 두 교점의 x좌표 차이 l만 알면
+∫ 기호 없이 한 줄 계산</div>
+<div class="tip">이차함수와 x축, 또는 이차함수와 직선 사이의 넓이 문제에서 무조건 이 공식 먼저</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">⑫</div><div class="ct">12분의 공식 — 삼차함수와 접선</div></div>
+<div class="svg-wrap">
+<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" width="260" height="120">
+<defs><style>.c9{stroke:#6af7c2;stroke-width:2;fill:none;}</style></defs>
+<line x1="10" y1="55" x2="245" y2="55" stroke="#3a3a50" stroke-width="1" fill="none"/>
+<!-- 삼차함수: (x-α)²(x-β) 형태, 접점α=50, 교점β=210 -->
+<path d="M 15,62 C 30,57 42,55 50,55 C 62,55 100,105 135,113 C 160,118 185,105 210,55 C 220,38 238,18 250,5" stroke="#6af7c2" stroke-width="2" fill="none"/>
+<!-- 직선 y=55 (x축) -->
+<!-- 음영 -->
+<path d="M 50,55 C 62,55 100,105 135,113 C 160,118 185,105 210,55 Z" fill="rgba(106,247,194,.12)"/>
+<!-- 포인트 -->
+<circle cx="50" cy="55" r="3.5" fill="#f7c26a"/>
+<circle cx="210" cy="55" r="3.5" fill="#6af7c2"/>
+<!-- l 레이블 -->
+<line x1="50" y1="43" x2="210" y2="43" stroke="#f7c26a" stroke-width="1"/>
+<text x="130" y="38" fill="#f7c26a" font-size="9" font-family="sans-serif" text-anchor="middle">← l →</text>
+<!-- 공식 -->
+<text x="8" y="15" fill="#6af7c2" font-size="10" font-family="sans-serif">S = |a|/12 · l⁴</text>
+<text x="38" y="68" fill="#888899" font-size="8" font-family="sans-serif">α (접)</text>
+<text x="200" y="68" fill="#888899" font-size="8" font-family="sans-serif">β (교)</text>
+</svg>
+</div>
+<div class="formula">∫[α→β] a(x-α)²(x-β) dx = −a/12 · l⁴
+넓이 S = |a|/12 · l⁴    (l = β − α)
+
+1:2 비율 관계와 결합 시 시너지 극대화
+→ 접점·교점만 알면 넓이 즉시 계산</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">㉚</div><div class="ct">30분의 공식 시리즈 — 사차함수</div></div>
+<div class="formula">W자 바닥형:   a(x-α)²(x-β)²  →  넓이 = |a|/30 · l⁵
+
+3중근 접선형: a(x-α)³(x-β)  →  넓이 = |a|/20 · l⁵
+
+한 접점 두 교점: a(x-α)²(x-β)(x-γ) (특수형)
+  →  20분의 공식 변형 (접점이 정중앙일 때)</div>
+<div class="formula">분모 정리표:
+이차 × 1차 (6분의):   l³ / 6
+삼차 (12분의):        l⁴ / 12
+사차 3중근 (20분의):   l⁵ / 20
+사차 W바닥 (30분의):   l⁵ / 30</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">✂️</div><div class="ct">평행이동으로 인수 단순화 — 핵심 행동 강령</div></div>
+<div class="formula">지저분한 숫자가 나오면 x축 방향 평행이동으로
+인수를 x 꼴로 먼저 바꾸기:
+
+∫[2→5] (x-2)²(x-5) dx
+→ x축 방향 -2 이동
+∫[0→3] x²(x-3) dx
+→ 12분의 공식: |a|/12 · 3⁴ = 81/12 = 27/4</div>
+<div class="proof"><div class="proof-title">근거</div>정적분은 평행이동에 불변:
+∫[a→b] f(x)dx = ∫[a+c→b+c] f(x-c)dx</div>
+<div class="tip">항상 구간이 0에서 시작하도록 이동시킬 것. 계산 실수 원천 차단</div>
+</div>
+
+<div class="ul">심화 적분 공식</div>
+<div class="card">
+<div class="ch"><div class="ci cy">S</div><div class="ct">삼차함수 세 근 사이 넓이 (변형 공식)</div></div>
+<div class="formula">f(x) = a(x-α)(x-β)(x-γ) (세 근 α < β < γ)
+
+∫[α→β] f(x) dx = a/12 · (β-α)³ · (4β-3α-γ)
+
+특수 케이스 — 등간격 (β-α = γ-β = d):
+∫[α→β] f(x) dx = a/4 · d⁴</div>
+<div class="tip">세 근이 등간격이면 4분의 공식으로 한 번에 처리</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">∫∫</div><div class="ct">변곡접선 통짜 넓이 공식</div></div>
+<div class="formula">삼차함수 f(x)에서 변곡점을 지나는 직선이
+곡선과 만드는 두 영역의 통짜 넓이:
+
+두 교점 사이 거리 = l 일 때
+통짜 넓이 S = |a|/4 · l⁴
+(양쪽 각각 |a|/8 · l⁴)</div>
+<div class="tip">삼각함수 대칭축으로 자른 면적 = 대칭이므로 각 부분은 |a|/8 · l⁴. 인테그랄 완전 소멸</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">📐</div><div class="ct">심프슨 공식 (이차·삼차함수에서 정확 성립)</div></div>
+<div class="formula">∫[a→b] f(x) dx = (b-a)/6 · [f(a) + 4f(m) + f(b)]
+    (m = (a+b)/2 : 구간 중점)
+
+⚠️  이차·삼차함수에서만 정확히 성립
+    사차 이상은 근삿값</div>
+<div class="proof"><div class="proof-title">왜 이차·삼차에서 정확한가?</div>삼차 이하의 다항함수는 심프슨 규칙의
+오차항이 정확히 0이 됩니다.
+→ 6분의 공식의 일반화 형태</div>
+<div class="tip">식을 연립하기 어렵지만 세 점 (a, f(a)), (m, f(m)), (b, f(b))의 높이만 기하적으로 알 때 한 줄 컷</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cy">↩️</div><div class="ct">역함수 정적분 — ㄱ자 넓이</div></div>
+<div class="formula">∫[a→b] f(x)dx + ∫[f(a)→f(b)] f⁻¹(x)dx
+= b·f(b) − a·f(a)</div>
+<div class="proof"><div class="proof-title">기하학적 의미</div>y=f(x)와 y=f⁻¹(x)로 둘러싸인 넓이가
+큰 직사각형(b×f(b))에서 작은 직사각형(a×f(a))을 뺀
+"ㄱ자 모양 넓이"와 같음.</div>
+<div class="tip">원함수 적분 + 역함수 적분이 동시에 나오는 문제 → 이 공식으로 연산 없이 처리</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">🔁</div><div class="ct">주기함수 정적분 평행이동</div></div>
+<div class="formula">f(x+p) = f(x) (주기 p)이면:
+
+∫[a→a+p] f(x)dx = ∫[0→p] f(x)dx  (구간 무관, 항상 동일)
+
+∫[2024→2026] f(x)dx  (주기 2인 경우)
+→ ∫[0→2] f(x)dx 로 강제 이동</div>
+<div class="tip">아무리 더러운 숫자가 나와도 주기를 빼서 가장 계산 편한 대칭 구간으로 이동</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cb">↔️</div><div class="ct">우함수·기함수 적분 변환</div></div>
+<div class="formula">∫[-a→a] 기함수 dx = 0
+∫[-a→a] 우함수 dx = 2·∫[0→a] 우함수 dx
+
+우함수 적분 → 기함수
+기함수 적분 → 우함수 (상수항 때문에 y축 대칭이나 원점 통과 아닐 수 있음)</div>
+<div class="tip">대칭 조건 있는 함수를 정적분 함수 F(x)로 확장할 때 그래프 개형을 미분 없이 파악</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cr">🚗</div><div class="ct">속도·위치·거리 — 삼각형 넓이로 처리</div></div>
+<div class="formula">v(t)가 직선(1차식)이면 이동 거리를 적분 대신
+삼각형·사다리꼴 넓이 공식으로 처리:
+
+이동 거리 = v(t) 그래프와 t축 사이의 넓이
+(방향 전환 시 각 구간별로 넓이 합산)
+
+v(t) = 0이 되는 t를 먼저 찾아 구간 분리</div>
+<div class="warn">위치 변화량 = ∫v dt (부호 포함), 이동 거리 = ∫|v| dt (절댓값). 둘을 혼동하지 말 것</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cp">⏱️</div><div class="ct">등가속도 운동 — 평균속도 공식</div></div>
+<div class="formula">v(t)가 1차식(등가속도)일 때:
+
+t₁~t₂ 구간 이동 거리
+= 평균 속도 × 걸린 시간
+= [v(t₁) + v(t₂)]/2 × (t₂ - t₁)
+
+= 사다리꼴 넓이!</div>
+<div class="tip">적분 연산 없이 초·말 속도의 평균 × 시간으로 즉시 계산</div>
+</div>
+
+<div class="card">
+<div class="ch"><div class="ci cg">🔗</div><div class="ct">이중접선 1:1 법칙 (W자 사차함수)</div></div>
+<div class="formula">W자 사차함수에서 두 극소점을 동시에 지나는
+"공통 접선(이중접선)"이 존재할 때:
+
+두 접점 α, β 사이의 중점 = 가운데 극대점의 x좌표
+
+→ 극대점 = (α + β) / 2  (1:1 내분)</div>
+<div class="tip">좌우 비대칭 W자에서도 성립. 이중접선이 나오면 두 접점의 중점이 극대점</div>
+</div>
+</div>
+
+</div><!-- /main -->
+<script>
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  const ids=['ov','exp','trig','seq','lim','dif','int'];
+  document.querySelectorAll('.nb')[ids.indexOf(id)].classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
